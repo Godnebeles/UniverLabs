@@ -1,0 +1,16 @@
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\bin\Debug\net5.0\Lab1_block2.exe
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\bin\Debug\net5.0\Lab1_block2.deps.json
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\bin\Debug\net5.0\Lab1_block2.runtimeconfig.json
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\bin\Debug\net5.0\Lab1_block2.runtimeconfig.dev.json
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\bin\Debug\net5.0\Lab1_block2.dll
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\bin\Debug\net5.0\ref\Lab1_block2.dll
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\bin\Debug\net5.0\Lab1_block2.pdb
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.csproj.AssemblyReference.cache
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.AssemblyInfoInputs.cache
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.AssemblyInfo.cs
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.csproj.CoreCompileInputs.cache
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.dll
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\ref\Lab1_block2.dll
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.pdb
+D:\Programming\Sharp\Labs\Lab1\Lab1_block2\obj\Debug\net5.0\Lab1_block2.genruntimeconfig.cache
