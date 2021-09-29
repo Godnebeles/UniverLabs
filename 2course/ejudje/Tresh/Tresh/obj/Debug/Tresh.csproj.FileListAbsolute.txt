@@ -1,0 +1,7 @@
+D:\Programming\Sharp\Tresh\Tresh\bin\Debug\Tresh.exe.config
+D:\Programming\Sharp\Tresh\Tresh\bin\Debug\Tresh.exe
+D:\Programming\Sharp\Tresh\Tresh\bin\Debug\Tresh.pdb
+D:\Programming\Sharp\Tresh\Tresh\obj\Debug\Tresh.csproj.AssemblyReference.cache
+D:\Programming\Sharp\Tresh\Tresh\obj\Debug\Tresh.csproj.CoreCompileInputs.cache
+D:\Programming\Sharp\Tresh\Tresh\obj\Debug\Tresh.exe
+D:\Programming\Sharp\Tresh\Tresh\obj\Debug\Tresh.pdb

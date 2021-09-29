@@ -8,7 +8,19 @@ namespace Lab1_block2
 {
     class TCircle
     {
-        public double radius { get; set; }
+        public double radius 
+        { 
+            get 
+            { 
+                return radius; 
+            } 
+            set 
+            { 
+                if (value > 0) 
+                    radius = value; 
+                else throw new Exception("Kapec"); 
+            } 
+        }
 
         public TCircle()
         {
@@ -18,9 +30,7 @@ namespace Lab1_block2
         public TCircle(double radius)
         {
             this.radius = radius;
-        }
-
-        
+        }      
 
         public virtual double CircleArea()
         {

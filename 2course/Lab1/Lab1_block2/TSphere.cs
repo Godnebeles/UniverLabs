@@ -17,14 +17,17 @@ namespace Lab1_block2
         {
             this.radius = radius;
         }
+
         public double VolumeBall()
         {
             return (4 * Math.PI * Math.Pow(radius, 3)) / 3;
         }
+
         public override double CircleArea()
         {
             return 2 * Math.PI * Math.Pow( radius, 2) * radius;
         }
+
         //Площадь поверхности шара равна четырем его радиусам в 
         //    квадрате умноженным на число π.Площадь поверхности 
         //    шара равна квадрату его диаметра умноженного на число π.
