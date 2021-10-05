@@ -8,19 +8,7 @@ namespace Lab1_block2
 {
     class TCircle
     {
-        public double radius 
-        { 
-            get 
-            { 
-                return radius; 
-            } 
-            set 
-            { 
-                if (value > 0) 
-                    radius = value; 
-                else throw new Exception("Kapec"); 
-            } 
-        }
+        public double radius { get; set; }
 
         public TCircle()
         {

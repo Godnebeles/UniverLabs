@@ -1,0 +1,16 @@
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\bin\Debug\net5.0\Lab2.exe
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\bin\Debug\net5.0\Lab2.deps.json
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\bin\Debug\net5.0\Lab2.runtimeconfig.json
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\bin\Debug\net5.0\Lab2.runtimeconfig.dev.json
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\bin\Debug\net5.0\Lab2.dll
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\bin\Debug\net5.0\ref\Lab2.dll
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\bin\Debug\net5.0\Lab2.pdb
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.csproj.AssemblyReference.cache
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.AssemblyInfoInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.AssemblyInfo.cs
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.csproj.CoreCompileInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.dll
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\ref\Lab2.dll
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.pdb
+D:\Programming\Sharp\UniverLabs\2course\Lab2\Lab2\obj\Debug\net5.0\Lab2.genruntimeconfig.cache

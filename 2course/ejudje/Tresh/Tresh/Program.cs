@@ -63,13 +63,13 @@ namespace Tresh
                         break;
                     case "birthday":
                         result = birthday.Month.CompareTo(other.birthday.Month) == 0 ? 
-                            birthday.Day.CompareTo(other.birthday.Day) :
-                            birthday.Month.CompareTo(other.birthday.Month);
+                                 birthday.Day.CompareTo(other.birthday.Day) :
+                                 birthday.Month.CompareTo(other.birthday.Month);
                         break;
                     case "class":
                         result = classNumber == other.classNumber ? 
-                            classLetter.CompareTo(other.classLetter) :
-                            classNumber.CompareTo(other.classNumber);
+                                 classLetter.CompareTo(other.classLetter) :
+                                 classNumber.CompareTo(other.classNumber);
                         break;
 
                 }
@@ -103,8 +103,9 @@ namespace Tresh
                     string classRoom = file.ReadLine();
                     string[] birth = file.ReadLine().Split('.');
                     DateTime birthday = new DateTime(int.Parse(birth[2]) > 21 ?
-                        int.Parse("19" + birth[2]) :
-                        int.Parse("20" + birth[2]), int.Parse(birth[1]), int.Parse(birth[0]));
+                                                     int.Parse("19" + birth[2]) : 
+                                                     int.Parse("20" + birth[2]), 
+                                                     int.Parse(birth[1]), int.Parse(birth[0]));
                     people[i] = new Person(lastName, firstName, classRoom, birthday, whatSort);
                 }
             }
