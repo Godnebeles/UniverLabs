@@ -1,0 +1,16 @@
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.csproj.AssemblyReference.cache
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.AssemblyInfoInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.AssemblyInfo.cs
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.csproj.CoreCompileInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\bin\Debug\net5.0\HashTables.exe
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\bin\Debug\net5.0\HashTables.deps.json
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\bin\Debug\net5.0\HashTables.runtimeconfig.json
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\bin\Debug\net5.0\HashTables.runtimeconfig.dev.json
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\bin\Debug\net5.0\HashTables.dll
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\bin\Debug\net5.0\ref\HashTables.dll
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\bin\Debug\net5.0\HashTables.pdb
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.dll
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\ref\HashTables.dll
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.pdb
+D:\Programming\Sharp\UniverLabs\2course\AlgorithmsAndDataStructures\HashTables\HashTables\obj\Debug\net5.0\HashTables.genruntimeconfig.cache

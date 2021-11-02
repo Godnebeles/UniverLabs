@@ -65,6 +65,11 @@ namespace BLock2
             this.hour += seconds >= 3600 ? seconds / 3600 : 0;
         }
 
+        public int TimeSinceMidnight()
+        {
+            return this.hour * 60 * 60 + this.minute * 60 + this.second;
+        }
+
         public void AddSeconds(int seconds)
         {
             //calc seconds
@@ -131,10 +136,7 @@ namespace BLock2
             }
         }
 
-        public int TimeSinceMidnight()
-        {
-            return this.hour * 60 * 60 + this.minute * 60 + this.second;
-        }
+        
 
         public string WhatLesson()
         {

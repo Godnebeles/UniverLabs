@@ -1,0 +1,16 @@
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\bin\Debug\net5.0\HashSet.exe
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\bin\Debug\net5.0\HashSet.deps.json
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\bin\Debug\net5.0\HashSet.runtimeconfig.json
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\bin\Debug\net5.0\HashSet.runtimeconfig.dev.json
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\bin\Debug\net5.0\HashSet.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\bin\Debug\net5.0\ref\HashSet.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\bin\Debug\net5.0\HashSet.pdb
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.csproj.AssemblyReference.cache
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.AssemblyInfoInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.AssemblyInfo.cs
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.csproj.CoreCompileInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\ref\HashSet.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.pdb
+D:\Programming\Sharp\UniverLabs\2course\ejudje\HashSet\HashSet\obj\Debug\net5.0\HashSet.genruntimeconfig.cache

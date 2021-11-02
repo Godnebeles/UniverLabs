@@ -9,41 +9,41 @@ namespace Lab2
     public partial class MyMatrix
     {
         private double[,] matrix;
-        public int Height { get; }
-        public int Width { get; }
+        public int Height { get { return matrix.GetLength(0);  } }
+        public int Width { get { return matrix.GetLength(1);  } }
 
         public MyMatrix(int i, int j)
         {
             matrix = new double[i, j];
-            Height = matrix.GetLength(0);
-            Width = matrix.GetLength(1);
+            //Height = matrix.GetLength(0);
+            //Width = matrix.GetLength(1);
         }
 
         public MyMatrix(MyMatrix obj)
         {
             matrix = (double[,])obj.matrix.Clone();
-            Height = matrix.GetLength(0);
-            Width = matrix.GetLength(1);
+            //Height = matrix.GetLength(0);
+            //Width = matrix.GetLength(1);
         }
 
         public MyMatrix(double[,] matrix)
         {
             this.matrix = (double[,])matrix.Clone();
-            Height = matrix.GetLength(0);
-            Width = matrix.GetLength(1);
+            //Height = matrix.GetLength(0);
+            //Width = matrix.GetLength(1);
 
         }
 
         public MyMatrix(double[][] matrix)
         {
 
-            Height = matrix.Length;
-            Width = matrix[0].Length;
-            for (int i = 1; i < Height; i++)
+            //Height = matrix.Length;
+            //Width = matrix[0].Length;
+            for (int i = 1; i < matrix.Length; i++)
             {
-                if (matrix[i].Length != Width) throw new Exception("Matrix must be rectangular");
+                if (matrix[i].Length != matrix[0].Length) throw new Exception("Matrix must be rectangular");
             }
-            this.matrix = new double[Height, Width];
+            this.matrix = new double[matrix.Length, matrix[0].Length];
 
             for (int i = 0; i < Height; i++)
             {
@@ -57,16 +57,12 @@ namespace Lab2
         public MyMatrix(string[] matrix)
         {
             this.matrix = GetMatrixFromArrayString(matrix);
-            Height = this.matrix.GetLength(0);
-            Width = this.matrix.GetLength(1);
         }
 
         public MyMatrix(string matrix)
         {
             string[] rows = matrix.Split('\n');
             this.matrix = GetMatrixFromArrayString(rows);
-            Height = this.matrix.GetLength(0);
-            Width = this.matrix.GetLength(1);
         }
 
         private double[,] GetMatrixFromArrayString(string[] rows)
