@@ -1,0 +1,295 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+ 
+namespace MazeRenderWF
+{ 
+    public class Graph
+    {
+        //graph[i] - index это вершины
+        //значение это вершины к которым соеденина вершина тобишь индекс
+        private Point _player;
+        private int[,] _matrix;
+        private List<Point> _exits = new List<Point>();
+        private Queue<Point> _pathesForRenderer = new Queue<Point>();
+
+        public Graph(string side, string freeWave, string player, string filePath)
+        {
+            CreateAdjacencyMatrix(side, freeWave, player, filePath);
+        }
+
+        #region RENDER
+        public void RenderMaze(IGraphRenderer renderer)
+        {
+            renderer.ShowWalls(_matrix, _exits);
+        }
+
+        public void ShowPathLenghtes(IGraphRenderer renderer)
+        {
+            renderer.ShowPathLengths(_matrix);
+        }
+
+        public void ShowElements(IGraphRenderer renderer)
+        {
+            Queue<Point> queue = new Queue<Point>();
+
+            queue.Enqueue(_player);
+
+            while (queue.Count != 0)
+            {
+                Point currentNode = queue.Peek();
+               
+                queue.Dequeue();
+
+                Point[] points = GetNearestElements(currentNode);
+
+                for (int i = 0; i < points.Length; i++)
+                {
+                    
+                    if (CoordinateExistence(points[i]))
+                    {
+                        if (_matrix[points[i].X, points[i].Y] == 0 && points[i] != _player)
+                        {  
+                            queue.Enqueue(points[i]);
+                        }                       
+                    }
+                }
+            }
+        }
+        #endregion
+
+        public Point GetStartCoordinate()
+        {
+            return new Point(_player.X, _player.Y);
+        }
+
+        public Queue<Point> GetPathesForRenderer()
+        {
+            return _pathesForRenderer;
+        }
+
+        private void CreateAdjacencyMatrix(string side, string freeWave, string player, string filePath)
+        {
+            int[] size = GetMazeSizeFromTxt(filePath);
+
+            _matrix = new int[size[0], size[1]];
+
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                int i = 0;
+                string line = "";
+                while ((line = reader.ReadLine()) != null)
+                {
+                    for (int j = 0; j < line.Length; j++)
+                    {
+                        string currentCell = Convert.ToString(line[j]);
+                        if (currentCell == side)
+                            _matrix[i, j] = -1;
+                        else if (currentCell == freeWave)
+                            _matrix[i, j] = 0;
+                        if (currentCell == player)
+                            _player = new Point(i, j);
+                    }
+                    i++;
+                }
+            }
+        }
+
+
+        private int[] GetMazeSizeFromTxt(string path)
+        {
+            // size[0] = rows,  size[1] = cols
+            int[] size = new int[2];
+
+            using (StreamReader file = new StreamReader(path))
+            {
+                size[1] = file.ReadLine().Length;
+
+                int rows = 1;
+
+                while (file.ReadLine() != null)
+                {
+                    rows++;
+                }
+
+                size[0] = rows;
+            }
+
+            return size;
+        }
+
+
+        public Point[] GetNearestElements(Point node)
+        {
+            Point[] points = new Point[4];
+
+            points[0] = new Point(node.X, node.Y - 1);
+            points[1] = new Point(node.X, node.Y + 1);
+            points[2] = new Point(node.X - 1, node.Y);
+            points[3] = new Point(node.X + 1, node.Y);
+
+            return points;
+        }
+
+
+        public int[,] Bfs(/*IGraphRenderer renderer*/)
+        {
+            Queue<Point> queue = new Queue<Point>();
+
+            queue.Enqueue(_player);
+
+            _pathesForRenderer.Enqueue(_player);
+
+            while (queue.Count != 0)
+            {
+                Point currentNode = queue.Peek();
+
+                queue.Dequeue();
+
+                Point[] points = GetNearestElements(currentNode);
+
+                for (int i = 0; i < points.Length; i++)
+                {
+                    if (CoordinateExistence(points[i]))
+                    {
+                        if (_matrix[points[i].X, points[i].Y] == 0 && points[i] != _player)
+                        {
+                            if (IsEdgeOfTheMaze(points[i]))
+                            {
+                                _exits.Add(points[i]);
+                            }
+
+                            _matrix[points[i].X, points[i].Y] = _matrix[currentNode.X, currentNode.Y] + 1;
+
+                            //Task.Run(async () =>
+                            //{
+                            //    await Task.Delay(2000);
+                            //    renderer.ShowElement(currentNode, _matrix[currentNode.X, currentNode.Y]);
+                            //});
+
+                            _pathesForRenderer.Enqueue(points[i]);
+                            queue.Enqueue(points[i]);
+                        }                       
+                    }
+                }
+            }
+            return _matrix;
+        }
+
+        private bool IsEdgeOfTheMaze(Point point)
+        {
+            if (
+                point.X == 0 ||
+                point.Y == 0 ||
+                point.X == _matrix.GetLength(0) - 1 ||
+                point.Y == _matrix.GetLength(1) - 1
+               )
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        private bool CoordinateExistence(Point point)
+        {
+            if (
+                point.X >= 0 &&
+                point.X < _matrix.GetLength(0) &&
+                point.Y >= 0 &&
+                point.Y < _matrix.GetLength(1)
+              )
+            {
+                return _matrix[point.X, point.Y] > -1;
+            }
+            return false;
+        }
+
+        // через отдельный лист выходов которые задаются в бфс
+        // переделать на обход краёв лабиринта
+        private Point FindShotestExit()
+        {
+            Point shortestExit = _exits[0];
+            int currentShortestLength = _matrix[_exits[0].X, _exits[0].Y];
+
+            for (int i = 0; i < _exits.Count; i++)
+            {
+                int currentPath = _matrix[_exits[i].X, _exits[i].Y];
+                if (currentPath < currentShortestLength)
+                {
+                    shortestExit = _exits[i];
+                    currentShortestLength = currentPath;
+                }
+            }
+
+            return shortestExit;
+        }
+
+
+        public Point[] GetShortestPath(Point goal)
+        {
+            int currentPathNumber = _matrix[goal.X, goal.Y];
+            Point[] path = new Point[currentPathNumber + 1];
+
+            path[0] = goal;
+
+            Point currentNode = goal;
+            int index = 1;
+            while (currentPathNumber != 0)
+            {
+                Point[] points = GetNearestElements(currentNode);
+
+                for (int i = 0; i < points.Length; i++)
+                {
+                    if (CoordinateExistence(points[i]))
+                    {
+                        int searchedNumberPath = _matrix[points[i].X, points[i].Y];
+                        if (currentPathNumber - 1 == searchedNumberPath)
+                        {
+                            currentNode = points[i];
+                            currentPathNumber = searchedNumberPath;
+                            path[index] = points[i];
+                            index++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return path;
+        }
+
+
+        public void PrintLabyryntInConsole()
+        {
+            Point[] shortestPath = GetShortestPath(FindShotestExit());
+
+            for (int i = 0; i < _matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < _matrix.GetLength(1); j++)
+                {
+                    if (_matrix[i, j] == -1)
+                        Console.Write(" # ");
+                    else
+                    {
+                        bool isDelivered = false;
+                        for (int k = 0; k < shortestPath.Length; k++)
+                        {
+                            Point tempPoint = new Point(i, j);
+                            if (tempPoint == shortestPath[k])
+                            {
+                                Console.Write(" P ");
+                                isDelivered = true;
+                            }
+                        }
+                        if (!isDelivered)
+                            Console.Write(" * ");
+                    }
+                    // Console.Write(" * ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+    }
+}

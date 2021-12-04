@@ -7,12 +7,20 @@ namespace Lab3_BLock1
     {
         static void Main(string[] args)
         {
-            string goodFiles = "overflow.txt";
+            string overflowFiles = "overflow.txt";
             string badFiles = "bad_data.txt";
             string noFiles = "no_files.txt";
-            File.Delete(goodFiles);
-            File.Delete(badFiles);
-            File.Delete(noFiles);
+            try
+            {
+                File.Delete(overflowFiles);
+                File.Delete(badFiles);
+                File.Delete(noFiles);
+            }
+            catch(UnauthorizedAccessException)
+            {
+                throw new Exception("Files is not txt format");
+            }
+            
 
             int sumMultipy = 0;
             int countGoodFiles = 0; 
@@ -27,9 +35,8 @@ namespace Lab3_BLock1
 
                         int secondNumber = int.Parse(file.ReadLine());
 
-                        sumMultipy += firstNumber * secondNumber;
+                        sumMultipy += checked(firstNumber * secondNumber);
                     }
-                    WriteInAnyFile(goodFiles ,currentPath);
                     countGoodFiles++;
                 }
                 catch (FileNotFoundException)
@@ -42,8 +49,9 @@ namespace Lab3_BLock1
                 }
                 catch (OverflowException)
                 {
-                    WriteInAnyFile(badFiles, currentPath);
+                    WriteInAnyFile(overflowFiles, currentPath);
                 }
+
             }
             try
             {

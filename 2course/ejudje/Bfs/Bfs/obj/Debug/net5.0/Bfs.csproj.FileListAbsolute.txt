@@ -1,0 +1,16 @@
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\bin\Debug\net5.0\Bfs.exe
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\bin\Debug\net5.0\Bfs.deps.json
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\bin\Debug\net5.0\Bfs.runtimeconfig.json
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\bin\Debug\net5.0\Bfs.runtimeconfig.dev.json
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\bin\Debug\net5.0\Bfs.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\bin\Debug\net5.0\ref\Bfs.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\bin\Debug\net5.0\Bfs.pdb
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.csproj.AssemblyReference.cache
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.AssemblyInfoInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.AssemblyInfo.cs
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.csproj.CoreCompileInputs.cache
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\ref\Bfs.dll
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.pdb
+D:\Programming\Sharp\UniverLabs\2course\ejudje\Bfs\Bfs\obj\Debug\net5.0\Bfs.genruntimeconfig.cache

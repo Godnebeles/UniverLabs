@@ -19,10 +19,18 @@ namespace Test
                 if(regexExtForImage.IsMatch(Path.GetExtension(file)))
                 {
                     string name = file.Substring(0, file.LastIndexOf('.'));
-                    MessageBox.Show(file + " is a picture!");
-                    Bitmap picture = new Bitmap(file);
-                    picture.RotateFlip(RotateFlipType.Rotate180FlipY);
-                    picture.Save(name + "-mirrored.gif");
+                    try
+                    {
+                        Bitmap picture = new Bitmap(file);
+                        picture.RotateFlip(RotateFlipType.Rotate180FlipY);
+                        MessageBox.Show(file + " is a picture!");
+                        Console.WriteLine(file);
+                        picture.Save(name + "-mirrored.gif");
+                    }
+                    catch
+                    {
+                        MessageBox.Show(file + " is not a picture");
+                    }                  
                 }
             }
             

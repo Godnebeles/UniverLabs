@@ -1,0 +1,16 @@
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\bin\Debug\net5.0\MathOperation.exe
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\bin\Debug\net5.0\MathOperation.deps.json
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\bin\Debug\net5.0\MathOperation.runtimeconfig.json
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\bin\Debug\net5.0\MathOperation.runtimeconfig.dev.json
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\bin\Debug\net5.0\MathOperation.dll
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\bin\Debug\net5.0\ref\MathOperation.dll
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\bin\Debug\net5.0\MathOperation.pdb
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.AssemblyInfoInputs.cache
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.AssemblyInfo.cs
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.dll
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\ref\MathOperation.dll
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.pdb
+D:\Univer\UniverLabs\2course\Lab4\Lab4\MathOperation\obj\Debug\net5.0\MathOperation.genruntimeconfig.cache

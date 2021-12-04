@@ -1,0 +1,10 @@
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\bin\Debug\MazeRenderWF.exe.config
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\bin\Debug\MazeRenderWF.exe
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\bin\Debug\MazeRenderWF.pdb
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.Form1.resources
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.Properties.Resources.resources
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.csproj.GenerateResource.cache
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.exe
+D:\Univer\UniverLabs\2course\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.pdb

@@ -36,8 +36,8 @@ namespace Lab1_block1
         public string PrintDecussationPoint(string letter)
         {
             if (letter == "x") return DecussationPoint(letter) + "; 0; 0;" ;
-            if (letter == "y") return "0; " + DecussationPoint(letter) + "; 0;";
-            if (letter == "z") return "0; 0; " + DecussationPoint(letter) + ";";
+            else if (letter == "y") return "0; " + DecussationPoint(letter) + "; 0;";
+            else if (letter == "z") return "0; 0; " + DecussationPoint(letter) + ";";
             else throw new Exception("This axis is missing");
         }
 
