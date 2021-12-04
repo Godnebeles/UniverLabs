@@ -11,7 +11,7 @@ namespace MazeRenderWF
     {
         private PictureBox _pictureBox;
         private Bitmap _bm;
-        Graphics _graphics;
+        private Graphics _graphics;
 
         public WinFormsRenderer(Bitmap bm, PictureBox pictureBox)
         {

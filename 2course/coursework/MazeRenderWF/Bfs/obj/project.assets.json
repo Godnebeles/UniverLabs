@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univer\\UniverLabs\\2course\\MazeRenderWF\\Bfs\\Bfs.csproj",
+      "projectUniqueName": "D:\\Univer\\UniverLabs\\2course\\coursework\\MazeRenderWF\\Bfs\\Bfs.csproj",
       "projectName": "Bfs",
-      "projectPath": "D:\\Univer\\UniverLabs\\2course\\MazeRenderWF\\Bfs\\Bfs.csproj",
+      "projectPath": "D:\\Univer\\UniverLabs\\2course\\coursework\\MazeRenderWF\\Bfs\\Bfs.csproj",
       "packagesPath": "C:\\Users\\Nyashuka\\.nuget\\packages\\",
-      "outputPath": "D:\\Univer\\UniverLabs\\2course\\MazeRenderWF\\Bfs\\obj\\",
+      "outputPath": "D:\\Univer\\UniverLabs\\2course\\coursework\\MazeRenderWF\\Bfs\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

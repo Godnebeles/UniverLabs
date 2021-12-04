@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
-namespace Bfs
+﻿namespace Bfs
 {
     class Program
     {
@@ -14,9 +10,5 @@ namespace Bfs
             graph.PrintLabyryntInConsole();
 
         }
-
-       
     }
-
-
 }

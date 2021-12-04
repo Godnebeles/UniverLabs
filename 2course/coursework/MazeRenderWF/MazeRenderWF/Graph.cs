@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
  
 namespace MazeRenderWF
 { 
@@ -91,6 +90,7 @@ namespace MazeRenderWF
                         if (currentCell == player)
                             _player = new Point(i, j);
                     }
+
                     i++;
                 }
             }
@@ -99,7 +99,6 @@ namespace MazeRenderWF
 
         private int[] GetMazeSizeFromTxt(string path)
         {
-            // size[0] = rows,  size[1] = cols
             int[] size = new int[2];
 
             using (StreamReader file = new StreamReader(path))
@@ -133,7 +132,7 @@ namespace MazeRenderWF
         }
 
 
-        public int[,] Bfs(/*IGraphRenderer renderer*/)
+        public int[,] Bfs()
         {
             Queue<Point> queue = new Queue<Point>();
 
@@ -161,12 +160,6 @@ namespace MazeRenderWF
                             }
 
                             _matrix[points[i].X, points[i].Y] = _matrix[currentNode.X, currentNode.Y] + 1;
-
-                            //Task.Run(async () =>
-                            //{
-                            //    await Task.Delay(2000);
-                            //    renderer.ShowElement(currentNode, _matrix[currentNode.X, currentNode.Y]);
-                            //});
 
                             _pathesForRenderer.Enqueue(points[i]);
                             queue.Enqueue(points[i]);
@@ -257,39 +250,7 @@ namespace MazeRenderWF
             }
 
             return path;
-        }
-
-
-        public void PrintLabyryntInConsole()
-        {
-            Point[] shortestPath = GetShortestPath(FindShotestExit());
-
-            for (int i = 0; i < _matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < _matrix.GetLength(1); j++)
-                {
-                    if (_matrix[i, j] == -1)
-                        Console.Write(" # ");
-                    else
-                    {
-                        bool isDelivered = false;
-                        for (int k = 0; k < shortestPath.Length; k++)
-                        {
-                            Point tempPoint = new Point(i, j);
-                            if (tempPoint == shortestPath[k])
-                            {
-                                Console.Write(" P ");
-                                isDelivered = true;
-                            }
-                        }
-                        if (!isDelivered)
-                            Console.Write(" * ");
-                    }
-                    // Console.Write(" * ");
-                }
-                Console.WriteLine();
-            }
-        }
+        }   
 
     }
 }

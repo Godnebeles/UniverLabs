@@ -1,0 +1,10 @@
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\bin\Debug\Cursach_reborn.exe.config
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\bin\Debug\Cursach_reborn.exe
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\bin\Debug\Cursach_reborn.pdb
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\obj\Debug\Cursach_reborn.csprojAssemblyReference.cache
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\obj\Debug\Cursach_reborn.Form1.resources
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\obj\Debug\Cursach_reborn.Properties.Resources.resources
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\obj\Debug\Cursach_reborn.csproj.GenerateResource.cache
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\obj\Debug\Cursach_reborn.csproj.CoreCompileInputs.cache
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\obj\Debug\Cursach_reborn.exe
+D:\Home work\OOP\Cursach_reborn\Cursach_reborn\obj\Debug\Cursach_reborn.pdb

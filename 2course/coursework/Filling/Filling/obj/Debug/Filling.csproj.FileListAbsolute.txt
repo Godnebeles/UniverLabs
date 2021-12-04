@@ -1,0 +1,10 @@
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\bin\Debug\Filling.exe.config
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\bin\Debug\Filling.exe
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\bin\Debug\Filling.pdb
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\obj\Debug\Filling.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\obj\Debug\Cursach_reborn.Form1.resources
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\obj\Debug\Filling.Properties.Resources.resources
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\obj\Debug\Filling.csproj.GenerateResource.cache
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\obj\Debug\Filling.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\obj\Debug\Filling.exe
+D:\Univer\UniverLabs\2course\coursework\Filling\Filling\obj\Debug\Filling.pdb
