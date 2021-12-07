@@ -60,7 +60,6 @@ namespace MazeRenderWF
 
         private void ShowPathLengthsThread(object param)
         {
-
             var matrix = (int[,])param;
             Font font = new Font("Arial", 18);
             Brush brush = Brushes.Black;

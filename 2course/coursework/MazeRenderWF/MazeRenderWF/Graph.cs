@@ -18,18 +18,8 @@ namespace MazeRenderWF
             CreateAdjacencyMatrix(side, freeWave, player, filePath);
         }
 
-        #region RENDER
-        public void RenderMaze(IGraphRenderer renderer)
-        {
-            renderer.ShowWalls(_matrix, _exits);
-        }
-
-        public void ShowPathLenghtes(IGraphRenderer renderer)
-        {
-            renderer.ShowPathLengths(_matrix);
-        }
-
-        public void ShowElements(IGraphRenderer renderer)
+        // trash method
+        public void ShowElements()
         {
             Queue<Point> queue = new Queue<Point>();
 
@@ -55,8 +45,7 @@ namespace MazeRenderWF
                     }
                 }
             }
-        }
-        #endregion
+        }        
 
         public Point GetStartCoordinate()
         {
@@ -200,7 +189,7 @@ namespace MazeRenderWF
 
         // через отдельный лист выходов которые задаются в бфс
         // переделать на обход краёв лабиринта
-        private Point FindShotestExit()
+        private Point GetShotestExit()
         {
             Point shortestExit = _exits[0];
             int currentShortestLength = _matrix[_exits[0].X, _exits[0].Y];
@@ -219,14 +208,13 @@ namespace MazeRenderWF
         }
 
 
-        public Point[] GetShortestPath(Point goal)
+        public Point[] GetShortestPath()
         {
-            int currentPathNumber = _matrix[goal.X, goal.Y];
-            Point[] path = new Point[currentPathNumber + 1];
+            Point currentNode = GetShotestExit();
+            int currentPathNumber = _matrix[currentNode.X, currentNode.Y]; // length of the last coordinate of the shortest exit
+            Point[] path = new Point[currentPathNumber + 1]; // +1 because counting start with zero
+            path[0] = currentNode;       
 
-            path[0] = goal;
-
-            Point currentNode = goal;
             int index = 1;
             while (currentPathNumber != 0)
             {
