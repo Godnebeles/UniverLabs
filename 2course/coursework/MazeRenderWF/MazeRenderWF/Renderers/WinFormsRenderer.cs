@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace MazeRenderWF
 {
-    public class WinFormsRenderer : IGraphRenderer
+    public class WinFormsRenderer
     {
         private PictureBox _pictureBox;
         private Bitmap _bm;
@@ -50,7 +50,6 @@ namespace MazeRenderWF
                 _pictureBox.Image = _bm;
             }
         }
-
 
         public void ShowPathLengths(int[,] matrix)
         {

@@ -23,7 +23,8 @@ namespace MazeRenderWF
             InitializeComponent();
 
             _bm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            _graphics = Graphics.FromImage(_bm);     
+            _graphics = Graphics.FromImage(_bm);
+            _graphics.Clear(Color.White);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,23 +33,29 @@ namespace MazeRenderWF
 
             _graph = new Graph("*", ".", "S", path);
 
-            _renderer = new WithTimerRenderer(_graphics, _graph.Bfs());
+            _renderer = new WithTimerRenderer(pictureBox1, _graphics, _graph);
+
+            _renderer.ShowWalls();
+
+            pictureBox1.Image = _bm;
 
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            bool endRender = _renderer.ShowPathLengths();
-                
-            pictureBox1.Image = _bm;
+            bool endRenderPathes = _renderer.ShowPathLengths();           
 
-            if (endRender)
+            if (endRenderPathes)
             {
+                pictureBox1.Image = null;
+                _graphics.Clear(Color.White);
+                _renderer.ShowWalls();
                 _renderer.ShowShortestPath();
+                pictureBox1.Image = _bm;
                 timer1.Stop();
             }
-                
+            pictureBox1.Image = _bm;
         }
 
         private void button2_Click(object sender, EventArgs e)
