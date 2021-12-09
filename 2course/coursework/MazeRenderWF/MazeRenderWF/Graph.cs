@@ -17,35 +17,7 @@ namespace MazeRenderWF
         {
             CreateAdjacencyMatrix(side, freeWave, player, filePath);
         }
-
-        // trash method
-        public void ShowElements()
-        {
-            Queue<Point> queue = new Queue<Point>();
-
-            queue.Enqueue(_player);
-
-            while (queue.Count != 0)
-            {
-                Point currentNode = queue.Peek();
-               
-                queue.Dequeue();
-
-                Point[] points = GetNearestElements(currentNode);
-
-                for (int i = 0; i < points.Length; i++)
-                {
-                    
-                    if (CoordinateExistence(points[i]))
-                    {
-                        if (_matrix[points[i].X, points[i].Y] == 0 && points[i] != _player)
-                        {  
-                            queue.Enqueue(points[i]);
-                        }                       
-                    }
-                }
-            }
-        }        
+     
 
         public Point GetStartCoordinate()
         {
@@ -161,30 +133,23 @@ namespace MazeRenderWF
 
         private bool IsEdgeOfTheMaze(Point point)
         {
-            if (
-                point.X == 0 ||
-                point.Y == 0 ||
-                point.X == _matrix.GetLength(0) - 1 ||
-                point.Y == _matrix.GetLength(1) - 1
-               )
-            {
-                return true;
-            }
-            else return false;
+            return (
+                    point.X == 0 ||
+                    point.Y == 0 ||
+                    point.X == _matrix.GetLength(0) - 1 ||
+                    point.Y == _matrix.GetLength(1) - 1
+                   );
+
         }
 
         private bool CoordinateExistence(Point point)
         {
-            if (
-                point.X >= 0 &&
-                point.X < _matrix.GetLength(0) &&
-                point.Y >= 0 &&
-                point.Y < _matrix.GetLength(1)
-              )
-            {
-                return _matrix[point.X, point.Y] > -1;
-            }
-            return false;
+            return (
+                    point.X >= 0 &&
+                    point.X < _matrix.GetLength(0) &&
+                    point.Y >= 0 &&
+                    point.Y < _matrix.GetLength(1)
+                   );
         }
 
         // через отдельный лист выходов которые задаются в бфс

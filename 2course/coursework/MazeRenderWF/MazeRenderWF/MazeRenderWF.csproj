@@ -53,8 +53,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Graph.cs" />
-    <Compile Include="Renderers\WinFormsRenderer.cs" />
-    <Compile Include="Renderers\IGraphRenderer.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
