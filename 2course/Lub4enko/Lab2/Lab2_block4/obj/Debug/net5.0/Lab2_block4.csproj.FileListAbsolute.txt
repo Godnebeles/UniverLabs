@@ -1,0 +1,16 @@
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\bin\Debug\net5.0\Lab2_block4.exe
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\bin\Debug\net5.0\Lab2_block4.deps.json
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\bin\Debug\net5.0\Lab2_block4.runtimeconfig.json
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\bin\Debug\net5.0\Lab2_block4.runtimeconfig.dev.json
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\bin\Debug\net5.0\Lab2_block4.dll
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\bin\Debug\net5.0\ref\Lab2_block4.dll
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\bin\Debug\net5.0\Lab2_block4.pdb
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.AssemblyInfoInputs.cache
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.AssemblyInfo.cs
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.dll
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\ref\Lab2_block4.dll
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.pdb
+D:\Univer\UniverLabs\2course\Lub4enko\Lab2\Lab2_block4\obj\Debug\net5.0\Lab2_block4.genruntimeconfig.cache

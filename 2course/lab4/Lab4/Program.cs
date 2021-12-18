@@ -7,6 +7,7 @@ namespace Lab4
         static void Main(string[] args)
         {
             MyFrac[] arr = FillArray();
+            
             testSort(arr);
 
             testSquaresDifference(new MyFrac(1, 3), new MyFrac(1, 6));

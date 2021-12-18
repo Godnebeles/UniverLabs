@@ -41,7 +41,7 @@ namespace Lab1_block2
 
             circle1 += circle2;
 
-            //sphere1 += sphere2;
+            ////sphere1 += sphere2;
             Console.ReadKey();
         }
     }

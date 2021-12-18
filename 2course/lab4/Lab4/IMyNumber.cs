@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab4
 {
@@ -12,6 +8,9 @@ namespace Lab4
         T Substract(T b);
         T Multiply(T b);
         T Divide(T b);
-
+        public void Test()
+        {
+            Console.WriteLine("Test");
+        }
     }
 }

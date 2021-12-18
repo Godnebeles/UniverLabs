@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univer\\UniverLabs\\2course\\Lab4\\Lab4\\MathOperation\\MathOperation.csproj",
+      "projectUniqueName": "D:\\Univer\\UniverLabs\\2course\\Lab4My\\Lab4\\MathOperation\\MathOperation.csproj",
       "projectName": "MathOperation",
-      "projectPath": "D:\\Univer\\UniverLabs\\2course\\Lab4\\Lab4\\MathOperation\\MathOperation.csproj",
+      "projectPath": "D:\\Univer\\UniverLabs\\2course\\Lab4My\\Lab4\\MathOperation\\MathOperation.csproj",
       "packagesPath": "C:\\Users\\Nyashuka\\.nuget\\packages\\",
-      "outputPath": "D:\\Univer\\UniverLabs\\2course\\Lab4\\Lab4\\MathOperation\\obj\\",
+      "outputPath": "D:\\Univer\\UniverLabs\\2course\\Lab4My\\Lab4\\MathOperation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

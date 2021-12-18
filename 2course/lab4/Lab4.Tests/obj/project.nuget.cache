@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bTIqkPel9yHGlWlYwkKweoAJkqiYq7zQVrMWUcYnlT6igGWo54xoQchiNTDMuMXBKFF40uPB/SNNo38HXdKAMw==",
+  "dgSpecHash": "DvP+NphSHb6fa9ohplAmINzdAvsgLujZt2c/jzq2bRkXYX42Kbsi+xuXrJWrifvPcteNvQVxg4E4Xnz6uihAiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nyashuka\\Desktop\\Архив WinRAR\\Lab4.Tests\\Lab4.Tests.csproj",
+  "projectFilePath": "D:\\Univer\\UniverLabs\\2course\\lab4\\Lab4.Tests\\Lab4.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nyashuka\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\Nyashuka\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",
