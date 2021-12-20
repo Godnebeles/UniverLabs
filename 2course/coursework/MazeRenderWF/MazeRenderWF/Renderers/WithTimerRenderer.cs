@@ -52,18 +52,31 @@ namespace MazeRenderWF
         }
 
         public bool ShowPathLengths()
-        {               
+        {
             while (_nextSteps.Count != 0)
             {
                 Point currentNode = _nextSteps.Peek();
 
                 _nextSteps.Dequeue();
+                if (IsShortestPath(currentNode))
+                {
+                    _graphics.DrawString(
+                                   Convert.ToString(_markedGraph[currentNode.X, currentNode.Y]),
+                                   _font, _brushForShortestPath,
+                                   currentNode.Y * 50, currentNode.X * 50, new StringFormat()
+                                  );
+                }
+                else
+                {
+                    _graphics.DrawString(
+                                    Convert.ToString(_markedGraph[currentNode.X, currentNode.Y]),
+                                    _font, _brushForMarkers,
+                                    currentNode.Y * 50, currentNode.X * 50, new StringFormat()
+                                   );
+                }
+                if (IsFoundEndOfShortestPath(currentNode))
+                    break;
 
-                _graphics.DrawString(
-                                     Convert.ToString(_markedGraph[currentNode.X, currentNode.Y]),
-                                     _font, _brushForMarkers,
-                                     currentNode.Y * 50, currentNode.X * 50, new StringFormat()
-                                    );          
                 return false;
             }
 
@@ -77,11 +90,25 @@ namespace MazeRenderWF
             {
                 _graphics.DrawString(
                                     Convert.ToString(_markedGraph[_shortestPath[i].X, _shortestPath[i].Y]),
-                                    _font, _brushForMarkers,
+                                    _font, _brushForShortestPath,
                                     _shortestPath[i].Y * 50, _shortestPath[i].X * 50, new StringFormat()
                                    );
             }
         }
 
+        private bool IsShortestPath(Point point)
+        {
+            for (int i = 0; i < _shortestPath.Length; i++)
+            {
+                if (_shortestPath[i] == point)
+                    return true;
+            }
+            return false;
+        }
+
+        private bool IsFoundEndOfShortestPath (Point point)
+        {
+            return _shortestPath[0] == point;
+        }
     }
 }

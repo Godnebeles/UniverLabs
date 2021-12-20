@@ -11,7 +11,7 @@ namespace MazeRenderWF
         private Point _player;
         private int[,] _matrix;
         private List<Point> _exits = new List<Point>();
-        private Queue<Point> _pathesForRenderer = new Queue<Point>();
+        private Queue<Point> _BFSHistory = new Queue<Point>();
 
         public Graph(string side, string freeWave, string player, string filePath)
         {
@@ -26,7 +26,7 @@ namespace MazeRenderWF
 
         public Queue<Point> GetPathesForRenderer()
         {
-            return _pathesForRenderer;
+            return _BFSHistory;
         }
 
         private void CreateAdjacencyMatrix(string side, string freeWave, string player, string filePath)
@@ -99,7 +99,7 @@ namespace MazeRenderWF
 
             queue.Enqueue(_player);
 
-            _pathesForRenderer.Enqueue(_player);
+            _BFSHistory.Enqueue(_player);
 
             while (queue.Count != 0)
             {
@@ -122,7 +122,7 @@ namespace MazeRenderWF
 
                             _matrix[points[i].X, points[i].Y] = _matrix[currentNode.X, currentNode.Y] + 1;
 
-                            _pathesForRenderer.Enqueue(points[i]);
+                            _BFSHistory.Enqueue(points[i]);
                             queue.Enqueue(points[i]);
                         }                       
                     }

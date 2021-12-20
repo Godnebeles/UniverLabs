@@ -23,7 +23,7 @@ namespace MazeRenderWF
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string path = "labr.txt";
+            string path = "maze.txt";
 
             _graph = new Graph("*", ".", "S", path);
 
@@ -55,6 +55,8 @@ namespace MazeRenderWF
         private void button2_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
+            _graphics.Clear(Color.White);
+
         }
 
         
