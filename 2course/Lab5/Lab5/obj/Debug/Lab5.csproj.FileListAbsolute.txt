@@ -1,0 +1,10 @@
+D:\Univer\UniverLabs\2course\Lab5\Lab5\bin\Debug\Lab5.exe.config
+D:\Univer\UniverLabs\2course\Lab5\Lab5\bin\Debug\Lab5.exe
+D:\Univer\UniverLabs\2course\Lab5\Lab5\bin\Debug\Lab5.pdb
+D:\Univer\UniverLabs\2course\Lab5\Lab5\obj\Debug\Lab5.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course\Lab5\Lab5\obj\Debug\Lab5.Properties.Resources.resources
+D:\Univer\UniverLabs\2course\Lab5\Lab5\obj\Debug\Lab5.csproj.GenerateResource.cache
+D:\Univer\UniverLabs\2course\Lab5\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course\Lab5\Lab5\obj\Debug\Lab5.exe
+D:\Univer\UniverLabs\2course\Lab5\Lab5\obj\Debug\Lab5.pdb
+D:\Univer\UniverLabs\2course\Lab5\Lab5\obj\Debug\Lab5.Form1.resources

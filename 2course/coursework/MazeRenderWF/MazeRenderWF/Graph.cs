@@ -6,11 +6,16 @@ namespace MazeRenderWF
 { 
     public class Graph
     {
-        //graph[i] - index это вершины
-        //значение это вершины к которым соеденина вершина тобишь индекс
+        
+        //координати гравця, звідки буде почато пошук(старт)
         private Point _player;
+        //graph[i,j] - index це вершина
+        //значення це довжина кроку від старту
         private int[,] _matrix;
+        //координати виходів
         private List<Point> _exits = new List<Point>();
+        //історія роботи алгоритму пошуку в ширину
+        //потрібно щоб правильно відмалювати
         private Queue<Point> _BFSHistory = new Queue<Point>();
 
         public Graph(string side, string freeWave, string player, string filePath)
