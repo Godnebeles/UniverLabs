@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ebde0cf8-44f8-4be6-b223-4030cc0faa0f": {
+      "ProjectGuid": "ebde0cf8-44f8-4be6-b223-4030cc0faa0f",
+      "DisplayName": "MazeRenderWF",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

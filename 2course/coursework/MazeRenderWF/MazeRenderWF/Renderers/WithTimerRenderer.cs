@@ -1,19 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
-
-/*
-1) рендерим стены
-2) выводим ратояние каждой клетки
-3) Красим самый короткий путь
-
-Structs: 
- 
-    1) bool ShowPathLengths
-
-
- */
 
 namespace MazeRenderWF
 {
@@ -23,20 +10,18 @@ namespace MazeRenderWF
         private Queue<Point> _nextSteps;
         private int[,] _markedGraph;
         private Graphics _graphics;
-        private PictureBox _pictureBox;
-        private Graph _graph;
+        private Maze _maze;
         private Font _font = new Font("Arial", 18);
         private Brush _brushForMarkers = Brushes.Green;
         private Brush _brushForShortestPath = Brushes.Red;
 
-        public WithTimerRenderer(PictureBox pictureBox, Graphics graphics, Graph graph)
+        public WithTimerRenderer(Graphics graphics, Maze maze)
         {
-            _pictureBox = pictureBox;
             _graphics = graphics;
-            _graph = graph;
-            _markedGraph = _graph.Bfs();
-            _nextSteps = _graph.GetPathesForRenderer();
-            _shortestPath = _graph.GetShortestPath();
+            _maze = maze;
+            _markedGraph = _maze.Bfs();
+            _nextSteps = _maze.GetPathesForRenderer();
+            _shortestPath = _maze.GetShortestPath();
         }
 
         public void ShowWalls()

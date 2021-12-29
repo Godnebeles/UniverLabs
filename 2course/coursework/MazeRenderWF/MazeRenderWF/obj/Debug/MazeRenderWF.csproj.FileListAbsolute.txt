@@ -18,3 +18,4 @@ D:\Univer\UniverLabs\2course\coursework\MazeRenderWF\MazeRenderWF\obj\Debug\Maze
 D:\Univer\UniverLabs\2course\coursework\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.csproj.CoreCompileInputs.cache
 D:\Univer\UniverLabs\2course\coursework\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.exe
 D:\Univer\UniverLabs\2course\coursework\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.pdb
+D:\Univer\UniverLabs\2course\coursework\MazeRenderWF\MazeRenderWF\obj\Debug\MazeRenderWF.csproj.SuggestedBindingRedirects.cache

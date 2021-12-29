@@ -6,7 +6,7 @@ namespace MazeRenderWF
 { 
     public partial class Form1 : Form
     {
-        private Graph _graph;
+        private Maze _maze;
         private WithTimerRenderer _renderer;
 
         private Graphics _graphics;
@@ -25,9 +25,9 @@ namespace MazeRenderWF
         {
             string path = "maze.txt";
 
-            _graph = new Graph("*", ".", "S", path);
+            _maze = new Maze("*", ".", "S", path);
 
-            _renderer = new WithTimerRenderer(pictureBox1, _graphics, _graph);
+            _renderer = new WithTimerRenderer(_graphics, _maze);
 
             _renderer.ShowWalls();
 
