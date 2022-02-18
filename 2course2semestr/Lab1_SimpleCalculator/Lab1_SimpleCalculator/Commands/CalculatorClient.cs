@@ -84,7 +84,11 @@ namespace Lab1_SimpleCalculator
                 return;
 
             if (number == "")
+            {
+                _commandsHistory.Pop();
                 return;
+            }
+                
 
             ICommand command;
             command = _commandsHistory.Peek();

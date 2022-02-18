@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab1_SimpleCalculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="450" Width="350" FontSize="16"
+        Title="Calculator" Height="450" Width="350" FontSize="20"
         MinWidth="300" MinHeight="450">
     <Grid>
         <Grid>
@@ -57,7 +57,7 @@
                 <Button Grid.Column="2" Grid.Row="1" Content="9" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="2" Grid.Row="2" Content="6" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="2" Grid.Row="3" Content="3" Click="buttonsNumber_Click"/>
-                <Button Grid.Column="2" Grid.Row="4" Content="."/>
+                <Button Grid.Column="2" Grid.Row="4" Content="." Click="buttonsNumber_Click"/>
 
                 <Button Grid.Column="3" Grid.Row="0" Content="/" Click="buttonsOperation_Click"/>
                 <Button Grid.Column="3" Grid.Row="1" Content="x" Click="buttonsOperation_Click"/>
@@ -65,7 +65,6 @@
                 <Button Grid.Column="3" Grid.Row="3" Content="+" Click="buttonsOperation_Click"/>
                 <Button Grid.Column="3" Grid.Row="4" Content="=" Click="buttonsResult_Click"/>
 
-              
             </Grid>
             
         </Grid>

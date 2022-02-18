@@ -5,7 +5,6 @@ D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator
 D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator\bin\Debug\net5.0-windows\Lab1_SimpleCalculator.dll
 D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator\bin\Debug\net5.0-windows\ref\Lab1_SimpleCalculator.dll
 D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator\bin\Debug\net5.0-windows\Lab1_SimpleCalculator.pdb
-D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator\obj\Debug\net5.0-windows\Lab1_SimpleCalculator.csproj.AssemblyReference.cache
 D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator\obj\Debug\net5.0-windows\MainWindow.g.cs
 D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator\obj\Debug\net5.0-windows\App.g.cs
 D:\Univer\UniverLabs\2course2semestr\Lab1_SimpleCalculator\Lab1_SimpleCalculator\obj\Debug\net5.0-windows\Lab1_SimpleCalculator_MarkupCompile.cache

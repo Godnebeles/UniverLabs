@@ -19,7 +19,7 @@ namespace Lab1_SimpleCalculator
     public partial class MainWindow : Window
     {
         private CalculatorClient _calculatorClient;
-        private string _action;
+        private string _action = "";
         private bool _resultReceived = false;
 
         public MainWindow()
@@ -32,11 +32,15 @@ namespace Lab1_SimpleCalculator
         {
             Button button = (Button)sender;
 
+            if (button.Content.ToString() == "." && textBoxInput.Text.IndexOf(".") > 0)
+                return;
+
             textBoxInput.Text += button.Content;
         }
 
         private void ButtonClear_Click(object sender, RoutedEventArgs e)
         {
+            _action = "";
             _calculatorClient.Clear();
             textBoxInput.Text = "";
             labelResult.Content = 0;    
@@ -85,7 +89,7 @@ namespace Lab1_SimpleCalculator
 
         private void UpdateInterface()
         {
-            labelResult.Content = _calculatorClient.GetCurrentNumber() + _action;
+            labelResult.Content = _calculatorClient.GetCurrentNumber() + " " + _action;
             textBoxInput.Text = "";
         }
 
@@ -93,11 +97,9 @@ namespace Lab1_SimpleCalculator
         {
             _calculatorClient.CalcResult(textBoxInput.Text);
             _resultReceived = true;
-
-
-            labelResult.Content = _calculatorClient.GetCurrentNumber();
-            textBoxInput.Text = "";
             _action = "";
+            
+            UpdateInterface();         
         }
     }
 }
