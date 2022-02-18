@@ -20,6 +20,7 @@ namespace Lab1_SimpleCalculator
     {
         private CalculatorClient _calculatorClient;
         private string _action;
+        private bool _resultReceived = false;
 
         public MainWindow()
         {
@@ -41,6 +42,13 @@ namespace Lab1_SimpleCalculator
             labelResult.Content = 0;    
         }
 
+        private void buttonBackOperation_Click(object sender, RoutedEventArgs e)
+        {
+            _calculatorClient.UndoCommand();
+
+            labelResult.Content = _calculatorClient.GetCurrentNumber();
+        }
+
         private void buttonsClearOneNumber_Click(object sender, RoutedEventArgs e)
         {
             if (textBoxInput.Text.Length == 0)
@@ -55,19 +63,37 @@ namespace Lab1_SimpleCalculator
             Button button = (Button)sender;
             _action = (string)button.Content;
 
-            double number = textBoxInput.Text == "" ? 0 : Convert.ToDouble(textBoxInput.Text);
+            if (textBoxInput.Text == "" && _calculatorClient.GetCountOperation() > 1)
+            {
+                if (_resultReceived)
+                    _resultReceived = false;
+                _calculatorClient.ChangeOperation(_action);
+                UpdateInterface();
+                return;
+            }
 
-            _calculatorClient.AddOperation(number, _action);
+            if (_resultReceived && textBoxInput.Text != "" &&  _calculatorClient.GetCountOperation() > 1)
+            {
+                _calculatorClient.Clear();
+                _resultReceived = false;
+            }
 
+            _calculatorClient.AddOperation(textBoxInput.Text, _action);
+
+            UpdateInterface();
+        }
+
+        private void UpdateInterface()
+        {
             labelResult.Content = _calculatorClient.GetCurrentNumber() + _action;
             textBoxInput.Text = "";
         }
 
         private void buttonsResult_Click(object sender, RoutedEventArgs e)
         {
-            double number = textBoxInput.Text == "" ? 0 : Convert.ToDouble(textBoxInput.Text);
+            _calculatorClient.CalcResult(textBoxInput.Text);
+            _resultReceived = true;
 
-            _calculatorClient.CalcResult(number);
 
             labelResult.Content = _calculatorClient.GetCurrentNumber();
             textBoxInput.Text = "";

@@ -20,6 +20,9 @@ namespace Lab1_SimpleCalculator
 
         public void UndoCommand()
         {
+            if (_commandsHistory.Count == 0)
+                return;
+
             ICommand command = _commandsHistory.Pop();
 
             command.Undo();
@@ -31,53 +34,61 @@ namespace Lab1_SimpleCalculator
             _calculator.Number = 0;
         }
 
-        public void AddOperation(double number, string action)
+        public void AddOperation(string number, string action)
         {
+            if (number == "")
+                return;
+
             ICommand command;
 
             if (_commandsHistory.Count == 0)
             {
                 command = new PlusCommand(_calculator);
-                command.Number = number;
+                command.Number = Convert.ToDouble(number);
                 command.Execute();
                 _commandsHistory.Push(command);
             }
             if (_commandsHistory.Count > 1)
             {
                 command = _commandsHistory.Peek();
-                command.Number = number;
+                command.Number = Convert.ToDouble(number);
                 command.Execute();
-            }
+            }         
 
-            switch (action)
-            {
-                case "+":
-                    command = new PlusCommand(_calculator);
-                    break;
-                case "-":
-                    command = new SubstructCommand(_calculator);
-                    break;
-                case "x":
-                    command = new MultiplyCommand(_calculator);
-                    break;
-                case "/":
-                    command = new DivideCommand(_calculator);
-                    break;
-                default:
-                    return;
-            }
+            command = GetOperation(action);
 
             _commandsHistory.Push(command);
         }
 
-        public void CalcResult(double number)
+        private ICommand GetOperation(string action)
+        {
+            switch (action)
+            {
+                case "+":
+                    return new PlusCommand(_calculator);
+                case "-":
+                    return new SubstructCommand(_calculator);
+                case "x":
+                    return new MultiplyCommand(_calculator);
+                case "/":
+                    return new DivideCommand(_calculator);
+
+            }
+
+            return null;
+        }
+
+        public void CalcResult(string number)
         {
             if (_commandsHistory.Count == 0)
                 return;
 
+            if (number == "")
+                return;
+
             ICommand command;
             command = _commandsHistory.Peek();
-            command.Number = number;
+            command.Number = Convert.ToDouble(number);
             command.Execute();
         }
 
@@ -86,5 +97,16 @@ namespace Lab1_SimpleCalculator
             return _calculator.Number;
         }
 
+        public void ChangeOperation(string action)
+        {
+            ICommand command = GetOperation(action);
+            command.Number = _commandsHistory.Pop().Number;
+            _commandsHistory.Push(command);
+        }
+
+        public int GetCountOperation()
+        {
+            return _commandsHistory.Count;
+        }
     }
 }

@@ -41,7 +41,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Button Grid.Column="0" Grid.Row="0" Content="CE"/>
+                <Button Grid.Column="0" Grid.Row="0" Content="CE" Click="buttonBackOperation_Click"/>
                 <Button Grid.Column="0" Grid.Row="1" Content="7" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="0" Grid.Row="2" Content="4" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="0" Grid.Row="3" Content="1" Click="buttonsNumber_Click"/>
@@ -59,7 +59,7 @@
                 <Button Grid.Column="2" Grid.Row="3" Content="3" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="2" Grid.Row="4" Content="."/>
 
-                <Button Grid.Column="3" Grid.Row="0" Content="÷" Click="buttonsOperation_Click"/>
+                <Button Grid.Column="3" Grid.Row="0" Content="/" Click="buttonsOperation_Click"/>
                 <Button Grid.Column="3" Grid.Row="1" Content="x" Click="buttonsOperation_Click"/>
                 <Button Grid.Column="3" Grid.Row="2" Content="-" Click="buttonsOperation_Click"/>
                 <Button Grid.Column="3" Grid.Row="3" Content="+" Click="buttonsOperation_Click"/>
