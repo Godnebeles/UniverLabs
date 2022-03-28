@@ -8,31 +8,31 @@ namespace Lab1_SimpleCalculator
 {
     public class Calculator : ICalculator
     {
-        public double Number { get; set; }
+        public double CurrentNumber { get; set; }
 
         public Calculator()
         {
-            Number = 0;
+            CurrentNumber = 0;
         }
 
         public void Divide(double number)
         {
-            Number /= number;
+            CurrentNumber /= number;
         }
 
         public void Substruct(double number)
         {
-            Number -= number;
+            CurrentNumber -= number;
         }
 
         public void Multiply(double number)
         {
-            Number *= number;
+            CurrentNumber *= number;
         }
 
         public void Plus(double number)
         {
-           Number += number;
+           CurrentNumber += number;
         }
     }
 }

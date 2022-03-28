@@ -9,6 +9,7 @@ namespace Lab1_SimpleCalculator
     public interface ICommand
     {
         double Number { get; set; }
+        double PreviousNumber { get; set; }
         void Execute();
         void Undo();
     }

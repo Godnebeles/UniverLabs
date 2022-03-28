@@ -10,6 +10,7 @@ namespace Lab1_SimpleCalculator
     {
         private ICalculator _calculator;
         public double Number { get; set; }
+        public double PreviousNumber { get; set; }
 
         public PlusCommand(ICalculator calculator)
         {
@@ -18,12 +19,14 @@ namespace Lab1_SimpleCalculator
 
         public void Execute()
         {
+            PreviousNumber = _calculator.CurrentNumber;
             _calculator.Plus(Number);
         }
 
         public void Undo()
         {
-            _calculator.Substruct(Number);
+            //_calculator.Substruct(Number);
+            _calculator.CurrentNumber = PreviousNumber;
         }
     }
 }

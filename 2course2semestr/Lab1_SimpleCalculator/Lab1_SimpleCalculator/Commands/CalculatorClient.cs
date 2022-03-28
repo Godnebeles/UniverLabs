@@ -9,6 +9,7 @@ namespace Lab1_SimpleCalculator
     public class CalculatorClient
     {
         private ICalculator _calculator;
+        private bool _resultReceived = false;
 
         private Stack<ICommand> _commandsHistory;
 
@@ -31,11 +32,25 @@ namespace Lab1_SimpleCalculator
         public void Clear()
         {
             _commandsHistory.Clear();
-            _calculator.Number = 0;
+            _calculator.CurrentNumber = 0;
         }
 
         public void AddOperation(string number, string action)
         {
+            if (number == "" && GetCountOperation() > 1)
+            {
+                if (_resultReceived)
+                    _resultReceived = false;
+                ChangeOperation(action);       
+                return;
+            }
+
+            if (_resultReceived && number != "" && GetCountOperation() > 1)
+            {
+                Clear();
+                _resultReceived = false;
+            }
+
             if (number == "")
                 return;
 
@@ -43,12 +58,14 @@ namespace Lab1_SimpleCalculator
 
             if (_commandsHistory.Count == 0)
             {
-                command = new PlusCommand(_calculator);
-                command.Number = Convert.ToDouble(number);
-                command.Execute();
-                _commandsHistory.Push(command);
+                //command = new PlusCommand(_calculator);
+                //command.Number = Convert.ToDouble(number);
+                //command.Execute();
+                //_commandsHistory.Push(command);
+                _calculator.CurrentNumber = Convert.ToDouble(number);
             }
-            if (_commandsHistory.Count > 1)
+
+            if (_commandsHistory.Count >= 1)
             {
                 command = _commandsHistory.Peek();
                 command.Number = Convert.ToDouble(number);
@@ -72,7 +89,6 @@ namespace Lab1_SimpleCalculator
                     return new MultiplyCommand(_calculator);
                 case "/":
                     return new DivideCommand(_calculator);
-
             }
 
             return null;
@@ -87,18 +103,14 @@ namespace Lab1_SimpleCalculator
             {
                 _commandsHistory.Pop();
                 return;
-            }
-                
+            }                
 
             ICommand command;
             command = _commandsHistory.Peek();
             command.Number = Convert.ToDouble(number);
             command.Execute();
-        }
 
-        public double GetCurrentNumber()
-        {
-            return _calculator.Number;
+            _resultReceived = true;
         }
 
         public void ChangeOperation(string action)
@@ -111,6 +123,11 @@ namespace Lab1_SimpleCalculator
         public int GetCountOperation()
         {
             return _commandsHistory.Count;
+        }
+
+        public double GetCurrentNumber()
+        {
+            return _calculator.CurrentNumber;
         }
     }
 }

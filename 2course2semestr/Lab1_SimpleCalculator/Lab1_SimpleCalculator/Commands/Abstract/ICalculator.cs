@@ -8,7 +8,7 @@ namespace Lab1_SimpleCalculator
 {
     public interface ICalculator
     {
-        double Number { get; set; }
+        double CurrentNumber { get; set; }
         void Plus(double number);
         void Divide(double number);
         void Multiply(double number);

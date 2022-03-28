@@ -20,7 +20,6 @@ namespace Lab1_SimpleCalculator
     {
         private CalculatorClient _calculatorClient;
         private string _action = "";
-        private bool _resultReceived = false;
 
         public MainWindow()
         {
@@ -38,12 +37,13 @@ namespace Lab1_SimpleCalculator
             textBoxInput.Text += button.Content;
         }
 
-        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
-            _action = "";
-            _calculatorClient.Clear();
+            _action = "";          
             textBoxInput.Text = "";
-            labelResult.Content = 0;    
+            labelResult.Content = 0;
+
+            _calculatorClient.Clear();
         }
 
         private void buttonBackOperation_Click(object sender, RoutedEventArgs e)
@@ -67,21 +67,6 @@ namespace Lab1_SimpleCalculator
             Button button = (Button)sender;
             _action = (string)button.Content;
 
-            if (textBoxInput.Text == "" && _calculatorClient.GetCountOperation() > 1)
-            {
-                if (_resultReceived)
-                    _resultReceived = false;
-                _calculatorClient.ChangeOperation(_action);
-                UpdateInterface();
-                return;
-            }
-
-            if (_resultReceived && textBoxInput.Text != "" &&  _calculatorClient.GetCountOperation() > 1)
-            {
-                _calculatorClient.Clear();
-                _resultReceived = false;
-            }
-
             _calculatorClient.AddOperation(textBoxInput.Text, _action);
 
             UpdateInterface();
@@ -93,13 +78,21 @@ namespace Lab1_SimpleCalculator
             textBoxInput.Text = "";
         }
 
-        private void buttonsResult_Click(object sender, RoutedEventArgs e)
+        private void ButtonsResult_Click(object sender, RoutedEventArgs e)
         {
             _calculatorClient.CalcResult(textBoxInput.Text);
-            _resultReceived = true;
             _action = "";
             
             UpdateInterface();         
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ButtonsResult_Click(sender, e);
+            }
+            int a = 0;
         }
     }
 }

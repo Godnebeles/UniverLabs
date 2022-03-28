@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab1_SimpleCalculator"
         mc:Ignorable="d"
         Title="Calculator" Height="450" Width="350" FontSize="20"
-        MinWidth="300" MinHeight="450">
+        MinWidth="300" MinHeight="450" KeyDown="Window_KeyDown">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Grid>
+            <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.3*"/>
                     <RowDefinition />
@@ -47,7 +47,7 @@
                 <Button Grid.Column="0" Grid.Row="3" Content="1" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="0" Grid.Row="4" Content="00" Click="buttonsNumber_Click"/>
 
-                <Button Grid.Column="1" Grid.Row="0" Content="C" Click="ButtonClear_Click"/>
+                <Button Grid.Column="1" Grid.Row="0" Content="C" Click="buttonClear_Click"/>
                 <Button Grid.Column="1" Grid.Row="1" Content="8" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="1" Grid.Row="2" Content="5" Click="buttonsNumber_Click"/>
                 <Button Grid.Column="1" Grid.Row="3" Content="2" Click="buttonsNumber_Click"/>
@@ -63,7 +63,7 @@
                 <Button Grid.Column="3" Grid.Row="1" Content="x" Click="buttonsOperation_Click"/>
                 <Button Grid.Column="3" Grid.Row="2" Content="-" Click="buttonsOperation_Click"/>
                 <Button Grid.Column="3" Grid.Row="3" Content="+" Click="buttonsOperation_Click"/>
-                <Button Grid.Column="3" Grid.Row="4" Content="=" Click="buttonsResult_Click"/>
+                <Button Grid.Column="3" Grid.Row="4" Content="=" Click="ButtonsResult_Click"/>
 
             </Grid>
             

@@ -1,0 +1,12 @@
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\bin\Debug\net5.0\MyLibrary.deps.json
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\bin\Debug\net5.0\MyLibrary.dll
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\bin\Debug\net5.0\MyLibrary.pdb
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\MyLibrary.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\MyLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\MyLibrary.AssemblyInfoInputs.cache
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\MyLibrary.AssemblyInfo.cs
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\MyLibrary.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\MyLibrary.dll
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\refint\MyLibrary.dll
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\MyLibrary.pdb
+D:\Univer\UniverLabs\2course2semestr\Lab2_DLL_Variant1\MyLibrary\obj\Debug\net5.0\ref\MyLibrary.dll
