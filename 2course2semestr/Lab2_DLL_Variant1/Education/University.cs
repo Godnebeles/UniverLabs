@@ -4,19 +4,19 @@ namespace Education
 {
     public class University
     {
-        private StudentRandomCreator studentRandomCreator;
+        private StudentRandomCreator _studentRandomCreator;
         private string _path = "json_for_example.json";
 
         public University()
         {
-            studentRandomCreator = new StudentRandomCreator();
+            _studentRandomCreator = new StudentRandomCreator();
         }
 
         public void SaveStudentsToJson()
         {
             StudentAdapter studentAdapter = new StudentAdapter();
 
-            Student[] studentModels = studentRandomCreator.GetRandomStudents();
+            Student[] studentModels = _studentRandomCreator.GetRandomStudents();
             
             StudentDTO[] studentDTOs = new StudentDTO[studentModels.Length];
 

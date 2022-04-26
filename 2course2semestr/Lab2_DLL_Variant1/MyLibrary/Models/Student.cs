@@ -1,12 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MyLibrary
 {
-    public class Student
+    public class Student : IComparable<Student>, ICloneable
     {
         public Person PersonInfo { get; private set; }
         public EducationalLevels LevelToObtain { get; private set; }
-        public List<Exam> PassedExams { get; private set; }
+
+        private List<Exam> _passedExams;
+        public List<Exam> PassedExams {
+            get
+            {
+                List<Exam> newExams = new List<Exam>();
+                _passedExams.ForEach((exam) => { newExams.Add(exam);});
+                return newExams;
+            } 
+            private set 
+            {
+                _passedExams = value;
+            } 
+        }
 
         public Student(Person person, EducationalLevels levelToObtain)
         {
@@ -22,7 +36,7 @@ namespace MyLibrary
 
         public void AddPassedExam(Exam exam)
         {
-           PassedExams.Add(exam);
+            _passedExams.Add(exam);
         }
 
         public override string ToString()
@@ -49,10 +63,20 @@ namespace MyLibrary
 
             foreach (var exam in PassedExams)
             {
-                totalGrade += exam.Grade;
+                totalGrade += exam.Mark;
             }
 
             return totalGrade / PassedExams.Count;
-        }   
+        }
+
+        public int CompareTo(Student other)
+        {
+            return PersonInfo.CompareTo(other.PersonInfo);
+        }
+
+        public object Clone()
+        {
+            return new Student((Person)PersonInfo.Clone(), LevelToObtain, PassedExams);
+        }
     }
 }

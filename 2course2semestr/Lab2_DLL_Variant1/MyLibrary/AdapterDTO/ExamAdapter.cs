@@ -5,10 +5,10 @@
         public ExamDTO ConvertToDTO(Exam model) => new ExamDTO()
         {
             Title = model.Title,
-            Date = model.Date,
-            Grade = model.Grade
+            Grade = model.Mark,
+            Date = model.Date
         };
 
-        public Exam ConvertToModel(ExamDTO dto) => new Exam(dto.Title, dto.Date, dto.Grade);
+        public Exam ConvertToModel(ExamDTO dto) => new Exam(dto.Title, dto.Grade, dto.Date);
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace MyLibrary
+﻿namespace MyLibrary
 {
     public class StudentAdapter : IAdapter<Student, StudentDTO>
     {
@@ -33,7 +31,7 @@ namespace MyLibrary
 
             foreach (var exam in dto.PassedExams)
             {
-                student.PassedExams.Add(examAdpter.ConvertToModel(exam));
+                student.AddPassedExam(examAdpter.ConvertToModel(exam));
             }
 
             return student;

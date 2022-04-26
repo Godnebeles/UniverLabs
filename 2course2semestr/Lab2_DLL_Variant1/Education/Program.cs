@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using MyLibrary;
 
 namespace Education
@@ -14,34 +13,41 @@ namespace Education
             {
                 ConsoleKeyInfo key = Console.ReadKey(true);
 
-                if (key.Key != ConsoleKey.F && key.Key != ConsoleKey.S)
-                {
-                    break;
-                }
-
                 Console.Clear();
-
-                university.SaveStudentsToJson();
-                Student[] students = university.GetStudentsFromJson();
-                
-                if(key.Key == ConsoleKey.F)
+        
+                if(key.Key == ConsoleKey.C)
                 {
+                    university.SaveStudentsToJson();
+                    Console.WriteLine("Students Created");
+                }
+                else if (key.Key == ConsoleKey.F)
+                {
+                    Student[] students = university.GetStudentsFromJson();
+
+                    Array.Sort(students);
+
                     foreach (Student student in students)
                     {
                         Console.WriteLine(student);
                     }
                 }
-                else
+                else if(key.Key == ConsoleKey.S)
                 {
+                    Student[] students = university.GetStudentsFromJson();
+                    
                     foreach (Student student in students)
                     {
                         Console.WriteLine(student.ToStringShort());
                     }
                 }
-                
+                else
+                {
+                    break;
+                }
+                    
             }
 
-          
+            Console.ReadLine();
         }
     }
 }

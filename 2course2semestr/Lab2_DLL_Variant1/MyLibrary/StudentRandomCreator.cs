@@ -23,7 +23,7 @@ namespace MyLibrary
             Person person = new Person(
                 names[random.Next(0, names.Length)],
                 surnames[random.Next(0, surnames.Length)],
-                new DateTime(2020, random.Next(1, 12), random.Next(1, 28))
+                new DateTime(2002, random.Next(1, 12), random.Next(1, 28))
                 );
 
             return person;
@@ -39,8 +39,8 @@ namespace MyLibrary
             {
                 listExam.Add(new Exam(
                 exams[i],
-                new DateTime(2020, random.Next(1, 12), random.Next(1, 28)),
-                random.Next(0, 100)
+                random.Next(0, 100),
+                new DateTime(2021, random.Next(1, 12), random.Next(1, 28))
                 ));
             }
 
