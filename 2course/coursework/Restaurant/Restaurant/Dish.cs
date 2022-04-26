@@ -10,12 +10,12 @@ namespace Restaurant
     {
         public List<Ingredient> Ingredients { get; private set; }
 
-        public Dish(string name, double price) : base(name, price)
+        public Dish(string name, double weight, double price) : base(name, weight, price)
         {
             Ingredients = new List<Ingredient>();
         }
 
-        public Dish(string name, double price, List<Ingredient> ingredients) : base(name, price)
+        public Dish(string name, double weight, double price, List<Ingredient> ingredients) : base(name, weight, price)
         {
             Ingredients = ingredients;
         }

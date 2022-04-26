@@ -8,14 +8,14 @@ namespace Restaurant
 {
     public class Storage
     {
-        public Dictionary<Ingredient, int> Ingredients { get; private set; }
+        public Dictionary<string, int> Ingredients { get; private set; }
 
         public Storage()
         {
-            Ingredients = new Dictionary<Ingredient, int>();
+            Ingredients = new Dictionary<string, int>();
         }
 
-        public Storage(Dictionary<Ingredient, int> ingredients)
+        public Storage(Dictionary<string, int> ingredients)
         {
             Ingredients = ingredients;
         }
@@ -24,27 +24,22 @@ namespace Restaurant
         {
             int totalCount = 0;
 
-            foreach(var neenedIngredient in ingredientsList)
+            foreach (var neenedIngredient in ingredientsList)
             {
-                foreach(var ingredientKey in Ingredients.Keys)
+                if (!Ingredients.ContainsKey(neenedIngredient.Name))
                 {
-                    if(neenedIngredient.Name == ingredientKey.Name)
-                    {
-                        int count = Ingredients[ingredientKey];
-
-                        if(count == 0)
-                            return 0;
-                        else
-                        {
-                            if(totalCount == 0)
-                                totalCount = count;
-                            else
-                                totalCount = count < totalCount ? count : totalCount;
-                        }
-                    }
-                }
-                if (totalCount == 0)
                     return 0;
+                }
+
+                int count = Convert.ToInt32(Ingredients[neenedIngredient.Name]  / neenedIngredient.Weight);
+
+                if (count <= 0)
+                    return 0;
+
+                if (totalCount == 0)
+                    totalCount = count;
+                else
+                    totalCount = count < totalCount ? count : totalCount;  
             }
 
             return totalCount;

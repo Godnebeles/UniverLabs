@@ -24,7 +24,7 @@ namespace Restaurant
         {
             InitializeComponent();
 
-            Dish dish = new Dish("Soup", 13.0);
+            Dish dish = new Dish("Soup", 13.0, 500);
 
             Test_TextBox.Text += dish.ToString() + "\n";
 
