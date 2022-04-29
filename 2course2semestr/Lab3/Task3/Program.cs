@@ -14,7 +14,7 @@ namespace Task3
             Finder finder = FindDivider;
             
             finder(arr1);
-
+            Console.WriteLine("-----------------------------");
             finder(arr2);
         }
 
@@ -27,8 +27,7 @@ namespace Task3
                 {
                     Console.WriteLine(arr[i]);
                 }
-            }
-            Console.WriteLine("-----------------------------");
+            }            
         }
     }
 }

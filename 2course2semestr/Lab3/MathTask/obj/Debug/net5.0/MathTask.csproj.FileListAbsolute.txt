@@ -1,0 +1,16 @@
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\bin\Debug\net5.0\MathTask.exe
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\bin\Debug\net5.0\MathTask.deps.json
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\bin\Debug\net5.0\MathTask.runtimeconfig.json
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\bin\Debug\net5.0\MathTask.runtimeconfig.dev.json
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\bin\Debug\net5.0\MathTask.dll
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\bin\Debug\net5.0\MathTask.pdb
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.GeneratedMSBuildEditorConfig.editorconfig
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.AssemblyInfoInputs.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.AssemblyInfo.cs
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.dll
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\refint\MathTask.dll
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.pdb
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\MathTask.genruntimeconfig.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MathTask\obj\Debug\net5.0\ref\MathTask.dll
