@@ -8,30 +8,31 @@ namespace Restaurant
 {
     public class Storage
     {
-        public Dictionary<string, int> Ingredients { get; private set; }
+        public Dictionary<Ingredient, Weight> Ingredients { get; private set; }
 
         public Storage()
         {
-            Ingredients = new Dictionary<string, int>();
+            Ingredients = new Dictionary<Ingredient, Weight>();
         }
 
-        public Storage(Dictionary<string, int> ingredients)
+        public Storage(Dictionary<Ingredient, Weight> ingredients)
         {
             Ingredients = ingredients;
         }
 
-        public int GetCountDishCanCook(List<Ingredient> ingredientsList)
+        public int GetCountDishCanCook(Dictionary<Ingredient, Weight> ingredientsList)
         {
             int totalCount = 0;
 
-            foreach (var neenedIngredient in ingredientsList)
+            foreach (var neenedIngredient in ingredientsList.Keys)
             {
-                if (!Ingredients.ContainsKey(neenedIngredient.Name))
+                if (!Ingredients.ContainsKey(neenedIngredient))
                 {
                     return 0;
                 }
 
-                int count = Convert.ToInt32(Ingredients[neenedIngredient.Name]  / neenedIngredient.Weight);
+                int count = Convert.ToInt32(Ingredients[neenedIngredient].Value  /
+                                            ingredientsList[neenedIngredient].Value);
 
                 if (count <= 0)
                     return 0;

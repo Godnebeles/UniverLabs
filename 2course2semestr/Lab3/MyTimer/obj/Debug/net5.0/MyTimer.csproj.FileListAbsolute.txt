@@ -1,0 +1,16 @@
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\bin\Debug\net5.0\MyTimer.exe
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\bin\Debug\net5.0\MyTimer.deps.json
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\bin\Debug\net5.0\MyTimer.runtimeconfig.json
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\bin\Debug\net5.0\MyTimer.runtimeconfig.dev.json
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\bin\Debug\net5.0\MyTimer.dll
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\bin\Debug\net5.0\MyTimer.pdb
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.csproj.AssemblyReference.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.AssemblyInfoInputs.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.AssemblyInfo.cs
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.csproj.CoreCompileInputs.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.dll
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\refint\MyTimer.dll
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.pdb
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\MyTimer.genruntimeconfig.cache
+D:\Univer\UniverLabs\2course2semestr\Lab3\MyTimer\obj\Debug\net5.0\ref\MyTimer.dll

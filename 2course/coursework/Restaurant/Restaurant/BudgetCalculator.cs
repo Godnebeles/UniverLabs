@@ -42,7 +42,7 @@ namespace Restaurant
                 foreach(var dish in dishesList)
                 {
                     totalEarnings += dish.Price;
-                    foreach(var ingredient in dish.Ingredients)
+                    foreach(var ingredient in dish.Ingredients.Keys)
                     {
                         totalEarnings -= ingredient.Price;
                     }

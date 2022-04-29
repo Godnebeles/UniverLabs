@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class Budget
+    public abstract class Budget
     {
-        public double Price { get; private set; }
+        public abstract double Price { get;  set; }
       
         public Budget(double price)
         {
