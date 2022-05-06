@@ -14,12 +14,12 @@ namespace Restaurant
 
     public struct Weight
     {
-        public double Value { get; private set; }
+        public double Amount { get; private set; }
         public UnitOfWeight Unit { get; private set; }
 
         public Weight(double weight, UnitOfWeight unit)
         {
-            Value = weight;
+            Amount = weight;
             Unit = unit;
         }
 

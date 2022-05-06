@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class Dish : Ingredient
+    public class Dish : BaseModel
     {
+        public double PricePerServing { get; private set; }
+        public Weight WeightInOneServing { get; private set; }
         public Dictionary<Ingredient, Weight> Recipe { get; private set; }  
 
-        public Dish(string name, double price, Weight weight) : base(name, price, weight)
+        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing) : base(id, name)
         {
             Recipe = new Dictionary<Ingredient, Weight>();
         }
 
-        public Dish(string name, double price, Weight weight, Dictionary<Ingredient, Weight> ingredients) : base(name, price, weight)
+        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, Dictionary<Ingredient, Weight> ingredients) : base(id, name)
         {
             Recipe = ingredients;
         }

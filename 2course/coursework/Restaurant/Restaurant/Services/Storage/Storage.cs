@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class Storage
+    public class Storage : IStorage
     {
         public Dictionary<Ingredient, Weight> Ingredients { get; private set; }
 
@@ -31,8 +31,8 @@ namespace Restaurant
                     return 0;
                 }
 
-                int count = Convert.ToInt32(Ingredients[neenedIngredient].Value  /
-                                            ingredientsList[neenedIngredient].Value);
+                int count = Convert.ToInt32(Ingredients[neenedIngredient].Amount  /
+                                            ingredientsList[neenedIngredient].Amount);
 
                 if (count <= 0)
                     return 0;

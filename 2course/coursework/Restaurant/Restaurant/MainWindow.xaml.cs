@@ -36,7 +36,7 @@ namespace Restaurant
             InitializeComponent();
             MainFrame.Content = mainPage;
 
-            Dish dish = new Dish("Soup", 13.0, new Weight(500, UnitOfWeight.G));
+            Dish dish = new Dish(3,"Soup", 13.0, new Weight(500, UnitOfWeight.G));
 
             DateTimeContainer d1 = new DateTimeContainer(5, 2, 2022);
             DateTimeContainer d2 = new DateTimeContainer(5, 2, 2022);
