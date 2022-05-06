@@ -22,7 +22,5 @@ namespace Restaurant
             if(newName != "")
                 Name = newName;
         }
-
-
     }
 }

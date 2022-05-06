@@ -15,11 +15,13 @@ namespace Restaurant
         public Dish(int id, string name, double pricePerServing, Weight weightInOneServing) : base(id, name)
         {
             Recipe = new Dictionary<Ingredient, Weight>();
+            WeightInOneServing = weightInOneServing;
+            PricePerServing = pricePerServing;
         }
 
-        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, Dictionary<Ingredient, Weight> ingredients) : base(id, name)
+        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, Dictionary<Ingredient, Weight> recipe) : this(id, name, pricePerServing, weightInOneServing)
         {
-            Recipe = ingredients;
+            Recipe = recipe;
         }
 
         public void DeleteIngredient(Ingredient ingredient)
