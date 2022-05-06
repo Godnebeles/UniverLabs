@@ -3,6 +3,7 @@
 namespace SharpWasher
 {
     public delegate void CarWasherDelegate(Car car);
+
     public class Program
     {
         static void Main(string[] args)

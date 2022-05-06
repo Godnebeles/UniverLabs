@@ -7,8 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="Test_TextBox">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1.8*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             
-        </TextBox>
+            <Button Grid.Column="0" Content="Main Window" 
+                    Click="ToMenuButton_Click"></Button>
+            <Button Grid.Column="1" Content="List of Orders" 
+                    Click="ToListOfOrders_Click"></Button>
+            <Button Grid.Column="2" Content="Budget Calculator" 
+                    Click="ToCalculatorButton_Click"></Button>
+        </Grid>
+
+        <Frame Grid.Row="1" x:Name="MainFrame"></Frame>
     </Grid>
 </Window>

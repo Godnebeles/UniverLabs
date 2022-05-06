@@ -8,7 +8,7 @@ namespace MyTimer
     {
         static void Main(string[] args)
         {
-            MyTimer myTimer = new MyTimer(2000);
+            MyTimer myTimer = new MyTimer(5000);
 
             myTimer.fixedUpdate += PrintDestoys;
 

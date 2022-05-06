@@ -2,19 +2,21 @@
 
 namespace Task3
 {
-    internal class Program
+    public class Program
     {
         public delegate void Finder(int[] number);
-
 
         static void Main(string[] args)
         {
             int[] arr1 = { 1, 2, 3, 7, 14, 15, 21, 30, 42};
             int[] arr2 = { 1, 2, 3, 7, 14, 15, 21, 30, 42, 63};
+
             Finder finder = FindDivider;
             
             finder(arr1);
+
             Console.WriteLine("-----------------------------");
+
             finder(arr2);
         }
 

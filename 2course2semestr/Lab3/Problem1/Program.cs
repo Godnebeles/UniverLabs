@@ -5,7 +5,6 @@ namespace Problem1
     public delegate double CalculateFunction(double x);
     public class Program
     {
-
         static void Main(string[] args)
         {
             CalculateFunction[] calculateFunctions = { 
@@ -31,11 +30,11 @@ namespace Problem1
 
                     string[] answer = Console.ReadLine().Split();
 
-                    Console.WriteLine(calculateFunctions[Convert.ToInt32(answer[0])](Convert.ToInt32(answer[1])));
+                    Console.WriteLine(calculateFunctions[Convert.ToInt32(answer[0])](Convert.ToDouble(answer[1])));
                 }
                 catch (Exception)
                 {                  
-                    Console.WriteLine("Goodbye, Nigga!");
+                    Console.WriteLine("Goodbye, Friend!");
                     break;
                 }
 

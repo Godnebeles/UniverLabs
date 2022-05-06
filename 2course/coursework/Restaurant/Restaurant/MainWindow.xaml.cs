@@ -24,15 +24,34 @@ namespace Restaurant
         {
             InitializeComponent();
 
-            Dish dish = new Dish("Soup", 13.0, 500);
+            Dish dish = new Dish("Soup", 13.0, new Weight(500, UnitOfWeight.G));
 
-            Test_TextBox.Text += dish.ToString() + "\n";
+            DateTimeContainer d1 = new DateTimeContainer(5, 2, 2022);
+            DateTimeContainer d2 = new DateTimeContainer(5, 2, 2022);
+            DateTimeContainer d3 = new DateTimeContainer(6, 2, 2022);
+            Dictionary<DateTimeContainer, int> dictionary = new Dictionary<DateTimeContainer, int>();
+            dictionary.Add(d1, 2);
 
-            dish.ChangePrice(15.1);
+           
 
-            Test_TextBox.Text += dish.ToString();
+            bool result = d1.Equals(d2);
+            bool result1 = d1.Equals(d3);
         }
 
+        
 
+        private void ToMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new MainPage();
+        }
+        private void ToListOfOrders_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ListOfOrdersPage();
+        }
+
+        private void ToCalculatorButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new BudgetCalculatorPage();
+        }
     }
 }

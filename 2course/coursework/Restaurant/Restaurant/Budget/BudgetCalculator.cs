@@ -26,7 +26,7 @@ namespace Restaurant
 
             foreach (var budget in budgets)
             {
-                totalCost += budget.Price;
+                totalCost += budget.PricePerServing;
             }
 
             return totalCost;
@@ -37,14 +37,13 @@ namespace Restaurant
             double totalEarnings = 0;
 
             foreach(var dishesList in dishesLists.Values)
-            {
-                
+            {              
                 foreach(var dish in dishesList)
                 {
-                    totalEarnings += dish.Price;
-                    foreach(var ingredient in dish.Ingredients.Keys)
+                    totalEarnings += dish.PricePerServing;
+                    foreach(var ingredient in dish.Recipe.Keys)
                     {
-                        totalEarnings -= ingredient.Price;
+                        totalEarnings -= ingredient.PricePerServing;
                     }
                 }
 

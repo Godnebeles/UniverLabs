@@ -9,10 +9,9 @@ namespace Restaurant
     public class Ingredient : Budget
     {
         public string Name { get; private set; }
-        public Weight Weight { get; private set; }
-        public override double Price { get;  set; }
 
-        public Ingredient(string name, double price) : base(price)
+
+        public Ingredient(string name, double price, Weight weight) : base(price, weight)
         {
             Name = name;
         }
@@ -24,7 +23,7 @@ namespace Restaurant
         
         public override string ToString()
         {
-            return "Name: " + Name + " | Price: " + Price;
+            return "Name: " + Name + " | Price: " + PricePerServing;
         }
     }
 }
