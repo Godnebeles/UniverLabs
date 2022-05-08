@@ -10,38 +10,39 @@ namespace Restaurant
     {
         public double PricePerServing { get; private set; }
         public Weight WeightInOneServing { get; private set; }
-        public Dictionary<Ingredient, Weight> Recipe { get; private set; }  
+        public HashSet<RecipeIngredient> Recipe { get; private set; }  
 
         public Dish(int id, string name, double pricePerServing, Weight weightInOneServing) : base(id, name)
         {
-            Recipe = new Dictionary<Ingredient, Weight>();
+            Recipe = new HashSet<RecipeIngredient>();
             WeightInOneServing = weightInOneServing;
             PricePerServing = pricePerServing;
         }
 
-        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, Dictionary<Ingredient, Weight> recipe) : this(id, name, pricePerServing, weightInOneServing)
+        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, HashSet<RecipeIngredient> recipe) : this(id, name, pricePerServing, weightInOneServing)
         {
             Recipe = recipe;
         }
 
-        public void DeleteIngredient(Ingredient ingredient)
+        public void DeleteIngredient(RecipeIngredient ingredient)
         {
             Recipe.Remove(ingredient);
         }
 
-        public void ChangeWeightNeededIngredient(Ingredient ingredient, Weight newWeight)
+        public void ChangeWeightNeededIngredient(RecipeIngredient ingredient)
         {
-            if (Recipe.ContainsKey(ingredient))
+            if (Recipe.Contains(ingredient))
             {
-                Recipe[ingredient] = newWeight;
+                Recipe.Remove(ingredient);
+                Recipe.Add(ingredient);
             }
         }
 
-        public void AddIngredientInRecipe(Ingredient ingredient, Weight weight)
+        public void AddIngredientInRecipe(RecipeIngredient ingredient)
         {
-            if(!Recipe.ContainsKey(ingredient))
+            if(!Recipe.Contains(ingredient))
             {
-                Recipe.Add(ingredient, weight);
+                Recipe.Add(ingredient);
             }
         }
     }

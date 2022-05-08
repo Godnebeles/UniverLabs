@@ -23,35 +23,45 @@ namespace Restaurant
         MainPage mainPage = new MainPage();
         ListOfOrdersPage listOfOrdersPage = new ListOfOrdersPage();
         BudgetCalculatorPage budgetCalculatorPage = new BudgetCalculatorPage();
-        class Dishes
-        {
-            public int id { get; set; }
-            public string dishName { get; set; }
-            public int price { get; set; }
-            public int count { get; set; }
-        }
+        // my tests
+        private Storage _storage = new Storage();
+        private CookingPlan _cookingPlan = new CookingPlan();
+        private BudgetCalculator _budgetCalculator;
 
+        private DataLoader _dataLoader = new DataLoader("cooking_list.json", "storage.json");
+        //
         public MainWindow()
         {
             InitializeComponent();
             MainFrame.Content = mainPage;
 
-            Dish dish = new Dish(3,"Soup", 13.0, new Weight(500, UnitOfWeight.G));
+            Ingredient ingredient1 = new Ingredient(0, "Паштет", 100.0);
+            Ingredient ingredient2 = new Ingredient(1, "Крутони", 210.0);
+            Ingredient ingredient3 = new Ingredient(2, "Сало", 210.0);
+            Ingredient ingredient4 = new Ingredient(3, "Гірчиця", 210.0);
 
-            DateTimeContainer d1 = new DateTimeContainer(5, 2, 2022);
-            DateTimeContainer d2 = new DateTimeContainer(5, 2, 2022);
-            DateTimeContainer d3 = new DateTimeContainer(6, 2, 2022);
 
-            Dictionary<DateTimeContainer, int> dictionary = new Dictionary<DateTimeContainer, int>();
-            dictionary.Add(d1, 2);        
+            Dish dish1 = new Dish(0, "Паштет з ягідним джемом та крутонами", 90, new Weight(100, UnitOfWeight.G));
+            dish1.AddIngredientInRecipe(new RecipeIngredient(ingredient1, new Weight(220, UnitOfWeight.G)));
+            dish1.AddIngredientInRecipe(new RecipeIngredient(ingredient2, new Weight(60, UnitOfWeight.G)));
+            Dish dish2 = new Dish(1, "Сало з гірчицею", 107, new Weight(100, UnitOfWeight.G));
+            dish2.AddIngredientInRecipe(new RecipeIngredient(ingredient3, new Weight(60, UnitOfWeight.G)));
+            dish2.AddIngredientInRecipe(new RecipeIngredient(ingredient4, new Weight(60, UnitOfWeight.G)));
 
-            bool result = d1.Equals(d2);
-            bool result1 = d1.Equals(d3);
+            _storage.Ingredients.Add(new RecipeIngredient(ingredient1, new Weight(700.0, UnitOfWeight.G)));
+            _storage.Ingredients.Add(new RecipeIngredient(ingredient2, new Weight(633.0, UnitOfWeight.G)));
+            _storage.Ingredients.Add(new RecipeIngredient(ingredient3, new Weight(650, UnitOfWeight.G)));
+            _storage.Ingredients.Add(new RecipeIngredient(ingredient4, new Weight(120, UnitOfWeight.G)));
 
-            mainPage.DataGridDishes.ItemsSource = new List<Dishes>() { new Dishes() { id = 6, dishName = "Ketchup", price = 204320, count = 3 } };
-            
+            _storage.Menu.Add(dish1);
+            _storage.Menu.Add(dish2);
+
+            _cookingPlan.AddOrder(new DateTimeContainer(12, 3, 2022), dish1, 3);
+
+            _dataLoader.SaveCookingPlan(_cookingPlan);
+            _dataLoader.SaveStorage(_storage);
         }
-      
+
 
         private void ToMenuButton_Click(object sender, RoutedEventArgs e)
         {

@@ -16,6 +16,11 @@ namespace Restaurant
             Taxes = taxes;
         }
 
+        public double CalculateEarnings(Dictionary<Dish, int> dishesList)
+        {
+            throw new NotImplementedException();
+        }
+
         //private double CalculateTotalCost(List<Budget> budgets)
         //{
         //    double totalCost = 0;
@@ -28,29 +33,29 @@ namespace Restaurant
         //    return totalCost;
         //}
 
-        public double CalculateEarnings(Dictionary<Dish, int> dishesList)
-        {
-            double totalEarnings = 0;
+        //public double CalculateEarnings(Dictionary<Dish, int> dishesList)
+        //{
+        //    double totalEarnings = 0;
 
 
-            foreach (var dish in dishesList)
-            {
-                totalEarnings += dish.Key.PricePerServing;
+        //    foreach (var dish in dishesList)
+        //    {
+        //        totalEarnings += dish.Key.PricePerServing;
 
-                foreach (var ingredient in dish.Key.Recipe)
-                {
-                    totalEarnings -= ingredient.Key.GetPrice(new Weight(ingredient.Value.Amount, ingredient.Value.Unit));
-                }
-            }
+        //        foreach (var ingredient in dish.Key.Recipe)
+        //        {
+        //            totalEarnings -= ingredient.Key.GetPrice(new Weight(ingredient.Value.Amount, ingredient.Value.Unit));
+        //        }
+        //    }
 
 
-            foreach (var taxe in Taxes)
-            {
-                totalEarnings -= taxe.Amount;
-            }
+        //    foreach (var taxe in Taxes)
+        //    {
+        //        totalEarnings -= taxe.Amount;
+        //    }
 
-            return totalEarnings;
-        }
+        //    return totalEarnings;
+        //}
 
     }
 }

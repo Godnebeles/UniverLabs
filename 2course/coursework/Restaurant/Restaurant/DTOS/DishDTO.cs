@@ -13,7 +13,7 @@ namespace Restaurant
         public int Id { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonProperty("price_per_serving")]
         public double PricePerServing { get; set; }
@@ -22,6 +22,6 @@ namespace Restaurant
         public WeightDTO WeightInOneServing { get; set; }
 
         [JsonProperty("recipe")]
-        public Dictionary<IngredientDTO, WeightDTO> Recipe { get; set; }
+        public HashSet<RecipeIngredientDTO> Recipe { get; set; } = new HashSet<RecipeIngredientDTO>();
     }
 }

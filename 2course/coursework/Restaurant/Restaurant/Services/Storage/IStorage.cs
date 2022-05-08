@@ -8,6 +8,6 @@ namespace Restaurant
 {
     public interface IStorage
     {
-        int GetCountDishCanCook(Dictionary<Ingredient, Weight> ingredientsList);
+        int GetCountDishCanCook(HashSet<RecipeIngredient> ingredientsList);
     }
 }

@@ -10,14 +10,19 @@ namespace Restaurant
     {
         public StorageDTO ConvertToDTO(Storage model)
         {
-            IAdapter<Ingredient, IngredientDTO> dishAdapter = new IngredientAdapter();
-            IAdapter<Weight, WeightDTO> weightAdapter = new WeightAdapter();
+            IAdapter<Dish, DishDTO> dishAdapter = new DishAdapter();
+            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
 
             StorageDTO storageDTO = new StorageDTO();
 
             foreach (var item in model.Ingredients)
             {
-                storageDTO.Ingredients.Add(dishAdapter.ConvertToDTO(item.Key), weightAdapter.ConvertToDTO(item.Value));
+                storageDTO.Ingredients.Add(recipeAdapter.ConvertToDTO(item));
+            }
+
+            foreach (var item in model.Menu)
+            {
+                storageDTO.Menu.Add(dishAdapter.ConvertToDTO(item));
             }
 
             return storageDTO;
@@ -25,7 +30,17 @@ namespace Restaurant
 
         public Storage ConvertToModel(StorageDTO dto)
         {
-            throw new NotImplementedException();
+            IAdapter<Dish, DishDTO> dishAdapter = new DishAdapter();
+            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
+
+            Storage storage = new Storage();
+
+            foreach (var item in dto.Ingredients)
+            {
+                storage.Ingredients.Add(recipeAdapter.ConvertToModel(item));
+            }
+
+            return storage;
         }
     }
 }

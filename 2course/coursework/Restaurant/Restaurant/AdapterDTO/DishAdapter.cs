@@ -10,8 +10,8 @@ namespace Restaurant
     {
         public DishDTO ConvertToDTO(Dish model)
         {
-            IAdapter<Ingredient, IngredientDTO> adapterIngredietn = new IngredientAdapter();
             IAdapter<Weight, WeightDTO> adapterWeight = new WeightAdapter();
+            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
 
             DishDTO dto = new DishDTO();
 
@@ -21,7 +21,7 @@ namespace Restaurant
 
             foreach(var item in model.Recipe)
             {
-                dto.Recipe.Add(adapterIngredietn.ConvertToDTO(item.Key), adapterWeight.ConvertToDTO(item.Value));
+                dto.Recipe.Add(recipeAdapter.ConvertToDTO(item));
             }
 
             return dto;
@@ -29,14 +29,14 @@ namespace Restaurant
 
         public Dish ConvertToModel(DishDTO dto)
         {
-            IAdapter<Ingredient, IngredientDTO> adapterIngredietn = new IngredientAdapter();
             IAdapter<Weight, WeightDTO> adapterWeight = new WeightAdapter();
+            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
 
             Dish model = new Dish(dto.Id, dto.Name, dto.PricePerServing, adapterWeight.ConvertToModel(dto.WeightInOneServing));       
 
             foreach (var item in dto.Recipe)
             {
-                model.AddIngredientInRecipe(adapterIngredietn.ConvertToModel(item.Key), adapterWeight.ConvertToModel(item.Value));
+                model.AddIngredientInRecipe(recipeAdapter.ConvertToModel(item));
             }
 
             return model;

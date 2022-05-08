@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public struct DateTimeContainer
+    public struct DateTimeContainer : IEquatable<DateTimeContainer>
     {
         public DateTime DateTime { get; private set; }
 
@@ -15,18 +15,16 @@ namespace Restaurant
             DateTime = new DateTime(year, mounth, day);
         }
 
-        public override bool Equals(object obj)
-        {
-            var otherContainer = (DateTimeContainer)obj;
-
-            return this.DateTime.Day.Equals(otherContainer.DateTime.Day) &&
-                   this.DateTime.Month.Equals(otherContainer.DateTime.Month) &&
-                   this.DateTime.Year.Equals(otherContainer.DateTime.Year);
-        }
-
         public override int GetHashCode()
         {
             return this.DateTime.GetHashCode();
+        }
+
+        public bool Equals(DateTimeContainer other)
+        {
+            return this.DateTime.Day.Equals(other.DateTime.Day) &&
+                   this.DateTime.Month.Equals(other.DateTime.Month) &&
+                   this.DateTime.Year.Equals(other.DateTime.Year);
         }
     }
 }

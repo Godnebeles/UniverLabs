@@ -8,32 +8,37 @@ namespace Restaurant
 {
     public class Storage : IStorage
     {
-        public Dictionary<Ingredient, Weight> Ingredients { get; private set; }
+        public HashSet<RecipeIngredient> Ingredients { get; private set; }
         public List<Dish> Menu = new List<Dish>();
 
         public Storage()
         {
-            Ingredients = new Dictionary<Ingredient, Weight>();
+            Ingredients = new HashSet<RecipeIngredient>();
         }
 
-        public Storage(Dictionary<Ingredient, Weight> ingredients)
+        public Storage(HashSet<RecipeIngredient> ingredients)
         {
             Ingredients = ingredients;
         }
 
-        public int GetCountDishCanCook(Dictionary<Ingredient, Weight> ingredientsList)
+        public int GetCountDishCanCook(HashSet<RecipeIngredient> ingredientsList)
         {
             int totalCount = 0;
 
-            foreach (var neenedIngredient in ingredientsList.Keys)
+            foreach (var neenedIngredient in ingredientsList)
             {
-                if (!Ingredients.ContainsKey(neenedIngredient))
+                if (!Ingredients.Contains(neenedIngredient))
                 {
                     return 0;
                 }
 
-                int count = Convert.ToInt32(Ingredients[neenedIngredient].Amount  /
-                                            ingredientsList[neenedIngredient].Amount);
+                RecipeIngredient ingredient1;
+                RecipeIngredient ingredient2;
+                Ingredients.TryGetValue(neenedIngredient, out ingredient1);
+                ingredientsList.TryGetValue(neenedIngredient, out ingredient2);
+
+                int count = Convert.ToInt32(ingredient1.Weight.Amount  /
+                                            ingredient2.Weight.Amount);
 
                 if (count <= 0)
                     return 0;

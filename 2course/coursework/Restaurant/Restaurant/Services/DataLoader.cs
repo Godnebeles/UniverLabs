@@ -9,14 +9,12 @@ namespace Restaurant
     public class DataLoader
     {
         private string _pathToCookingList = "";
-        private string _pathToStorageIngredients = "";
-        private string _pathToDishesInMenu = "";
+        private string _pathToStorage = "";
 
-        public DataLoader(string pathToCookingList, string pathToStorageIngredients, string pathToDishesWhatCanCook)
+        public DataLoader(string pathToCookingList, string pathToStorage)
         {
             _pathToCookingList = pathToCookingList;
-            _pathToStorageIngredients = pathToStorageIngredients;
-            _pathToDishesInMenu = pathToDishesWhatCanCook;
+            _pathToStorage = pathToStorage;
         }
         
         public CookingPlan LoadCookingPlan()
@@ -29,7 +27,31 @@ namespace Restaurant
             return adapter.ConvertToModel(cookingPlanDTO);
         }
 
+        public Storage LoadStorage()
+        {
+            IAdapter<Storage, StorageDTO> adapter = new StorageAdapter();
+            Serializator<StorageDTO> serializator = new Serializator<StorageDTO>(_pathToStorage);
 
-        
+            StorageDTO storageDTO = serializator.Deserialize();
+
+            return adapter.ConvertToModel(storageDTO);
+        }
+
+        public void SaveCookingPlan(CookingPlan cookingPlan)
+        {
+            IAdapter<CookingPlan, CookingPlanDTO> adapter = new CookingPlanAdapter();
+            Serializator<CookingPlanDTO> serializator = new Serializator<CookingPlanDTO>(_pathToCookingList);
+
+            serializator.Serialize(adapter.ConvertToDTO(cookingPlan));
+        }
+
+        public void SaveStorage(Storage storage)
+        {
+            IAdapter<Storage, StorageDTO> adapter = new StorageAdapter();
+            Serializator<StorageDTO> serializator = new Serializator<StorageDTO>(_pathToStorage);
+
+            serializator.Serialize(adapter.ConvertToDTO(storage));
+        }
+
     }
 }

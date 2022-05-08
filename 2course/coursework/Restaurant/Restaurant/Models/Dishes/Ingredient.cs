@@ -12,7 +12,7 @@ namespace Restaurant
 
         public Ingredient(int id, string name, double price) : base(id, name)
         {
-
+            PricePerOneKilogram = price;
         }
 
         public double GetPrice(Weight weight)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public abstract class BaseModel
+    public abstract class BaseModel : IEquatable<BaseModel>
     {
         public int Id { get; protected set; }
         public string Name { get; protected set; }
@@ -23,11 +23,18 @@ namespace Restaurant
                 Name = newName;
         }
 
-        public override bool Equals(object obj)
+
+        public bool Equals(BaseModel? other)
         {
-            BaseModel other = (BaseModel)obj;
+            if (other == null)
+                return false;
 
             return Id.Equals(other.Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
         }
     }
 }
