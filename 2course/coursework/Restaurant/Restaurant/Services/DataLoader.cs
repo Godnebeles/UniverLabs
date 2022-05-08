@@ -10,13 +10,13 @@ namespace Restaurant
     {
         private string _pathToCookingList = "";
         private string _pathToStorageIngredients = "";
-        private string _pathToDishesWhatCanCook = "";
+        private string _pathToDishesInMenu = "";
 
         public DataLoader(string pathToCookingList, string pathToStorageIngredients, string pathToDishesWhatCanCook)
         {
             _pathToCookingList = pathToCookingList;
             _pathToStorageIngredients = pathToStorageIngredients;
-            _pathToDishesWhatCanCook = pathToDishesWhatCanCook;
+            _pathToDishesInMenu = pathToDishesWhatCanCook;
         }
         
         public CookingPlan LoadCookingPlan()
@@ -30,6 +30,6 @@ namespace Restaurant
         }
 
 
-        public 
+        
     }
 }

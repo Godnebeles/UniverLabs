@@ -13,7 +13,7 @@ namespace Restaurant
         public int Id { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [JsonProperty("price_per_one_kilogram")]
         public double PricePerOneKilogram { get; set; }

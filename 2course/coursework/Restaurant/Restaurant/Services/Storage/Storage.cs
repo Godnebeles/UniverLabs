@@ -9,6 +9,7 @@ namespace Restaurant
     public class Storage : IStorage
     {
         public Dictionary<Ingredient, Weight> Ingredients { get; private set; }
+        public List<Dish> Menu = new List<Dish>();
 
         public Storage()
         {

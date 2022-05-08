@@ -22,5 +22,12 @@ namespace Restaurant
             if(newName != "")
                 Name = newName;
         }
+
+        public override bool Equals(object obj)
+        {
+            BaseModel other = (BaseModel)obj;
+
+            return Id.Equals(other.Id);
+        }
     }
 }
