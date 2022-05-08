@@ -13,7 +13,13 @@ namespace Restaurant
         public CookingPlan()
         {
             Orders = new Dictionary<DateTimeContainer, Dictionary<Dish, int>>();
-        }  
+        }
+
+        public CookingPlan(Dictionary<DateTimeContainer, Dictionary<Dish, int>> orders)
+        {
+            Orders = orders;
+        }
+
 
         public void AddOrder(DateTimeContainer dateTime, Dish dish, int count)
         {

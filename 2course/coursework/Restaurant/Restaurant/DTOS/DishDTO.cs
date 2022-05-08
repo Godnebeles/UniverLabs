@@ -19,7 +19,7 @@ namespace Restaurant
         public double PricePerServing { get; set; }
 
         [JsonProperty("weight_in_one_serving")]
-        public Weight WeightInOneServing { get; set; }
+        public WeightDTO WeightInOneServing { get; set; }
 
         [JsonProperty("recipe")]
         public Dictionary<IngredientDTO, WeightDTO> Recipe { get; set; }

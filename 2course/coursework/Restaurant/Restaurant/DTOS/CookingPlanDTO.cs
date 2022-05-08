@@ -9,7 +9,7 @@ namespace Restaurant
 {
     public class CookingPlanDTO
     {
-        [JsonProperty("date_time")]
-        public Dictionary<DateTimeContainerDTO, Dictionary<DishDTO, int>> Orders { get; set; }
+        [JsonProperty("orders")]
+        public Dictionary<DateTimeContainerDTO, Dictionary<DishDTO, int>> Orders { get; set; } = new Dictionary<DateTimeContainerDTO, Dictionary<DishDTO, int>>();
     }
 }

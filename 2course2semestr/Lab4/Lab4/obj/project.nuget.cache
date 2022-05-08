@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YPmBBkQ9MprZfIwkPLtO5uUj/U4gnaBYrUmTqXINbYzQ+Co2UGL9hqJht9Lk47uuQqr5ZuAgUNDx6TgACQaJxg==",
+  "dgSpecHash": "Ezo8sLKAmW1TkdUYvjgaNRp/re2+an90//a/2Rg9fctVZTDaRZvcczKAQTifHibyaRjKjM/dXnBU6SH7DlZF0w==",
   "success": true,
   "projectFilePath": "D:\\Univer\\UniverLabs\\2course2semestr\\Lab4\\Lab4\\Lab4.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Nyashuka\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Nyashuka\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
