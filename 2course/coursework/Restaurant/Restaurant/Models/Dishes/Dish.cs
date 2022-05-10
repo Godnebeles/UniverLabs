@@ -10,26 +10,26 @@ namespace Restaurant
     {
         public double PricePerServing { get; private set; }
         public Weight WeightInOneServing { get; private set; }
-        public HashSet<RecipeIngredient> Recipe { get; private set; }  
+        public HashSet<IngredientWeight> Recipe { get; private set; }  
 
         public Dish(int id, string name, double pricePerServing, Weight weightInOneServing) : base(id, name)
         {
-            Recipe = new HashSet<RecipeIngredient>();
+            Recipe = new HashSet<IngredientWeight>();
             WeightInOneServing = weightInOneServing;
             PricePerServing = pricePerServing;
         }
 
-        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, HashSet<RecipeIngredient> recipe) : this(id, name, pricePerServing, weightInOneServing)
+        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, HashSet<IngredientWeight> recipe) : this(id, name, pricePerServing, weightInOneServing)
         {
             Recipe = recipe;
         }
 
-        public void DeleteIngredient(RecipeIngredient ingredient)
+        public void DeleteIngredient(IngredientWeight ingredient)
         {
             Recipe.Remove(ingredient);
         }
 
-        public void ChangeWeightNeededIngredient(RecipeIngredient ingredient)
+        public void ChangeWeightNeededIngredient(IngredientWeight ingredient)
         {
             if (Recipe.Contains(ingredient))
             {
@@ -38,7 +38,7 @@ namespace Restaurant
             }
         }
 
-        public void AddIngredientInRecipe(RecipeIngredient ingredient)
+        public void AddIngredientInRecipe(IngredientWeight ingredient)
         {
             if(!Recipe.Contains(ingredient))
             {

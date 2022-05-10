@@ -42,21 +42,22 @@ namespace Restaurant
 
 
             Dish dish1 = new Dish(0, "Паштет з ягідним джемом та крутонами", 90, new Weight(100, UnitOfWeight.G));
-            dish1.AddIngredientInRecipe(new RecipeIngredient(ingredient1, new Weight(220, UnitOfWeight.G)));
-            dish1.AddIngredientInRecipe(new RecipeIngredient(ingredient2, new Weight(60, UnitOfWeight.G)));
+            dish1.AddIngredientInRecipe(new IngredientWeight(ingredient1, new Weight(220, UnitOfWeight.G)));
+            dish1.AddIngredientInRecipe(new IngredientWeight(ingredient2, new Weight(60, UnitOfWeight.G)));
+            dish1.ChangeWeightNeededIngredient(new IngredientWeight(ingredient2, new Weight(65, UnitOfWeight.G)));
             Dish dish2 = new Dish(1, "Сало з гірчицею", 107, new Weight(100, UnitOfWeight.G));
-            dish2.AddIngredientInRecipe(new RecipeIngredient(ingredient3, new Weight(60, UnitOfWeight.G)));
-            dish2.AddIngredientInRecipe(new RecipeIngredient(ingredient4, new Weight(60, UnitOfWeight.G)));
+            dish2.AddIngredientInRecipe(new IngredientWeight(ingredient3, new Weight(60, UnitOfWeight.G)));
+            dish2.AddIngredientInRecipe(new IngredientWeight(ingredient4, new Weight(60, UnitOfWeight.G)));
 
-            _storage.Ingredients.Add(new RecipeIngredient(ingredient1, new Weight(700.0, UnitOfWeight.G)));
-            _storage.Ingredients.Add(new RecipeIngredient(ingredient2, new Weight(633.0, UnitOfWeight.G)));
-            _storage.Ingredients.Add(new RecipeIngredient(ingredient3, new Weight(650, UnitOfWeight.G)));
-            _storage.Ingredients.Add(new RecipeIngredient(ingredient4, new Weight(120, UnitOfWeight.G)));
+            _storage.Ingredients.Add(new IngredientWeight(ingredient1, new Weight(700.0, UnitOfWeight.G)));
+            _storage.Ingredients.Add(new IngredientWeight(ingredient2, new Weight(633.0, UnitOfWeight.G)));
+            _storage.Ingredients.Add(new IngredientWeight(ingredient3, new Weight(650, UnitOfWeight.G)));
+            _storage.Ingredients.Add(new IngredientWeight(ingredient4, new Weight(120, UnitOfWeight.G)));
 
             _storage.Menu.Add(dish1);
             _storage.Menu.Add(dish2);
 
-            _cookingPlan.AddOrder(new DateTimeContainer(12, 3, 2022), dish1, 3);
+            _cookingPlan.AddOrder(new Order(new DateTimeContainer(12, 3, 2022), new DishCount(dish1, 2)));
 
             _dataLoader.SaveCookingPlan(_cookingPlan);
             _dataLoader.SaveStorage(_storage);

@@ -11,7 +11,7 @@ namespace Restaurant
         public DishDTO ConvertToDTO(Dish model)
         {
             IAdapter<Weight, WeightDTO> adapterWeight = new WeightAdapter();
-            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
+            IAdapter<IngredientWeight, IngredientWeightDTO> recipeAdapter = new IngredientWeightAdapter();
 
             DishDTO dto = new DishDTO();
 
@@ -30,7 +30,7 @@ namespace Restaurant
         public Dish ConvertToModel(DishDTO dto)
         {
             IAdapter<Weight, WeightDTO> adapterWeight = new WeightAdapter();
-            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
+            IAdapter<IngredientWeight, IngredientWeightDTO> recipeAdapter = new IngredientWeightAdapter();
 
             Dish model = new Dish(dto.Id, dto.Name, dto.PricePerServing, adapterWeight.ConvertToModel(dto.WeightInOneServing));       
 

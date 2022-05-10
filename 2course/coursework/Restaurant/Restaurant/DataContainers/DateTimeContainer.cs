@@ -15,16 +15,16 @@ namespace Restaurant
             DateTime = new DateTime(year, mounth, day);
         }
 
-        public override int GetHashCode()
-        {
-            return this.DateTime.GetHashCode();
-        }
-
         public bool Equals(DateTimeContainer other)
         {
             return this.DateTime.Day.Equals(other.DateTime.Day) &&
                    this.DateTime.Month.Equals(other.DateTime.Month) &&
                    this.DateTime.Year.Equals(other.DateTime.Year);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.DateTime.GetHashCode();
         }
     }
 }

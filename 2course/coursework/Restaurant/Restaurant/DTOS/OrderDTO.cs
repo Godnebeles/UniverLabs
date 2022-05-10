@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class DataContainerDTO
+    public class OrderDTO
     {
+        
     }
 }

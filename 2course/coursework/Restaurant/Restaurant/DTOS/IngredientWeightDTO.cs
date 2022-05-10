@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class RecipeIngredientDTO
+    public class IngredientWeightDTO
     {
         [JsonProperty("ingredient")]
         public IngredientDTO Ingredient { get; set; } = new IngredientDTO();
 
         [JsonProperty("weight")]
         public WeightDTO Weight { get; set; }
-
-
     }
 }

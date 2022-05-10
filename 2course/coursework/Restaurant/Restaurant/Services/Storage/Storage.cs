@@ -8,20 +8,20 @@ namespace Restaurant
 {
     public class Storage : IStorage
     {
-        public HashSet<RecipeIngredient> Ingredients { get; private set; }
+        public HashSet<IngredientWeight> Ingredients { get; private set; }
         public List<Dish> Menu = new List<Dish>();
 
         public Storage()
         {
-            Ingredients = new HashSet<RecipeIngredient>();
+            Ingredients = new HashSet<IngredientWeight>();
         }
 
-        public Storage(HashSet<RecipeIngredient> ingredients)
+        public Storage(HashSet<IngredientWeight> ingredients)
         {
             Ingredients = ingredients;
         }
 
-        public int GetCountDishCanCook(HashSet<RecipeIngredient> ingredientsList)
+        public int GetCountDishCanCook(HashSet<IngredientWeight> ingredientsList)
         {
             int totalCount = 0;
 
@@ -32,8 +32,8 @@ namespace Restaurant
                     return 0;
                 }
 
-                RecipeIngredient ingredient1;
-                RecipeIngredient ingredient2;
+                IngredientWeight ingredient1;
+                IngredientWeight ingredient2;
                 Ingredients.TryGetValue(neenedIngredient, out ingredient1);
                 ingredientsList.TryGetValue(neenedIngredient, out ingredient2);
 

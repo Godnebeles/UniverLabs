@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Restaurant
 {
@@ -22,6 +19,6 @@ namespace Restaurant
         public WeightDTO WeightInOneServing { get; set; }
 
         [JsonProperty("recipe")]
-        public HashSet<RecipeIngredientDTO> Recipe { get; set; } = new HashSet<RecipeIngredientDTO>();
+        public HashSet<IngredientWeightDTO> Recipe { get; set; } = new HashSet<IngredientWeightDTO>();
     }
 }

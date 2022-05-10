@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class RecipeIngredientAdapter : IAdapter<RecipeIngredient, RecipeIngredientDTO>
+    public class IngredientWeightAdapter : IAdapter<IngredientWeight, IngredientWeightDTO>
     {
-        public RecipeIngredientDTO ConvertToDTO(RecipeIngredient model)
+        public IngredientWeightDTO ConvertToDTO(IngredientWeight model)
         {
             IAdapter<Ingredient, IngredientDTO> ingredientAdapter = new IngredientAdapter();
             IAdapter<Weight, WeightDTO> weightAdapter = new WeightAdapter();
 
-            return new RecipeIngredientDTO()
+            return new IngredientWeightDTO()
             {
                 Ingredient = ingredientAdapter.ConvertToDTO(model.Ingredient),
                 Weight = weightAdapter.ConvertToDTO(model.Weight)
             };
         }
 
-        public RecipeIngredient ConvertToModel(RecipeIngredientDTO dto)
+        public IngredientWeight ConvertToModel(IngredientWeightDTO dto)
         {
             IAdapter<Ingredient, IngredientDTO> ingredientAdapter = new IngredientAdapter();
             IAdapter<Weight, WeightDTO> weightAdapter = new WeightAdapter();
 
-            return new RecipeIngredient(ingredientAdapter.ConvertToModel(dto.Ingredient),
+            return new IngredientWeight(ingredientAdapter.ConvertToModel(dto.Ingredient),
                                         weightAdapter.ConvertToModel(dto.Weight));
         }
     }

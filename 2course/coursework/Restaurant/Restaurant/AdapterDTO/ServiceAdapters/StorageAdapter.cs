@@ -11,7 +11,7 @@ namespace Restaurant
         public StorageDTO ConvertToDTO(Storage model)
         {
             IAdapter<Dish, DishDTO> dishAdapter = new DishAdapter();
-            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
+            IAdapter<IngredientWeight, IngredientWeightDTO> recipeAdapter = new IngredientWeightAdapter();
 
             StorageDTO storageDTO = new StorageDTO();
 
@@ -31,7 +31,7 @@ namespace Restaurant
         public Storage ConvertToModel(StorageDTO dto)
         {
             IAdapter<Dish, DishDTO> dishAdapter = new DishAdapter();
-            IAdapter<RecipeIngredient, RecipeIngredientDTO> recipeAdapter = new RecipeIngredientAdapter();
+            IAdapter<IngredientWeight, IngredientWeightDTO> recipeAdapter = new IngredientWeightAdapter();
 
             Storage storage = new Storage();
 

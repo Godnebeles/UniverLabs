@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class RecipeIngredient : IEquatable<RecipeIngredient>
+    public class IngredientWeight : IEquatable<IngredientWeight>
     {  
         public Ingredient Ingredient { get; private set; }
 
         public Weight Weight { get; private set; }
 
-        public RecipeIngredient(Ingredient ingredient, Weight weight)
+        public IngredientWeight(Ingredient ingredient, Weight weight)
         {
             Ingredient = ingredient;
             Weight = weight;
         }
 
-        public bool Equals(RecipeIngredient? other)
+        public bool Equals(IngredientWeight? other)
         {
             if (other == null)
                 return false;

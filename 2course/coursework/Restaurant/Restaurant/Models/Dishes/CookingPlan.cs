@@ -8,32 +8,25 @@ namespace Restaurant
 {
     public class CookingPlan
     {
-        public Dictionary<DateTimeContainer, Dictionary<Dish, int>> Orders { get; private set; }
+        public HashSet<Order> Orders { get; private set; }
 
         public CookingPlan()
         {
-            Orders = new Dictionary<DateTimeContainer, Dictionary<Dish, int>>();
+            Orders = new HashSet<Order>();
         }
 
-        public CookingPlan(Dictionary<DateTimeContainer, Dictionary<Dish, int>> orders)
+        public CookingPlan(HashSet<Order> orders)
         {
             Orders = orders;
         }
 
 
-        public void AddOrder(DateTimeContainer dateTime, Dish dish, int count)
+        public void AddOrder(Order newOrder)
         {
-            if (Orders.ContainsKey(dateTime))
-                if(Orders[dateTime].ContainsKey(dish))
-                    Orders[dateTime][dish] += count;
-                else
-                    Orders[dateTime].Add(dish, count);
-            else
+            if(!Orders.Contains(newOrder))
             {
-                Dictionary<Dish, int> keyValuePair = new Dictionary<Dish, int>();
-                keyValuePair.Add(dish, count);
-                Orders.Add(dateTime, keyValuePair);
-            }     
+                Orders.Add(newOrder);
+            }
         }
 
     }
