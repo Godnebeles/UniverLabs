@@ -28,3 +28,5 @@ D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\obj\Debug\net5.0-w
 D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\obj\Debug\net5.0-windows\MainPage.baml
 D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\obj\Debug\net5.0-windows\Restaurant.csproj.CopyComplete
+D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\obj\Debug\net5.0-windows\DishUserControl.g.cs
+D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\obj\Debug\net5.0-windows\DishUserControl.baml

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +62,21 @@ namespace Restaurant
 
             _dataLoader.SaveCookingPlan(_cookingPlan);
             _dataLoader.SaveStorage(_storage);
+
+            CookingPlan cookingPlan = _dataLoader.LoadCookingPlan();
+            Storage storage = _dataLoader.LoadStorage();
+            
+
+            DishUserControl dishUserControl = new DishUserControl();
+            Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/pashtet.jpg");
+            dishUserControl.DishImage.Source = new BitmapImage(fileUri);
+
+            DishUserControl dishUserControl1 = new DishUserControl();
+            Uri fileUri1 = new Uri(Directory.GetCurrentDirectory() + "/dish_images/salo.jpg");
+            dishUserControl1.DishImage.Source = new BitmapImage(fileUri1);
+
+            mainPage.DishesListStackPanel.Children.Add(dishUserControl);
+            mainPage.DishesListStackPanel.Children.Add(dishUserControl1);
         }
 
 

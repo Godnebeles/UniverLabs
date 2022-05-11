@@ -10,20 +10,13 @@ namespace Restaurant
     {
         public CookingPlanDTO ConvertToDTO(CookingPlan model)
         {
-            IAdapter<DateTimeContainer, DateTimeContainerDTO> dateTimeAdapter = new DateTimeContainerAdapter();
-            IAdapter<Dish, DishDTO> dishAdapter = new DishAdapter();
+            IAdapter<Order, OrderDTO> adapter = new OrderAdapter();
 
             CookingPlanDTO cookingPlanDTO = new CookingPlanDTO();
 
             foreach (var order in model.Orders)
             {
-                DateTimeContainerDTO currentKey = dateTimeAdapter.ConvertToDTO(order.Key);
-                cookingPlanDTO.Orders.Add(currentKey, new Dictionary<DishDTO, int>());
-               
-                foreach (var dishKeyValue in order.Value)
-                {
-                    cookingPlanDTO.Orders[currentKey].Add(dishAdapter.ConvertToDTO(dishKeyValue.Key), dishKeyValue.Value);
-                }
+                cookingPlanDTO.Orders.Add(adapter.ConvertToDTO(order));
             }
 
             return cookingPlanDTO;
@@ -31,20 +24,13 @@ namespace Restaurant
 
         public CookingPlan ConvertToModel(CookingPlanDTO dto)
         {
-            IAdapter<DateTimeContainer, DateTimeContainerDTO> dateTimeAdapter = new DateTimeContainerAdapter();
-            IAdapter<Dish, DishDTO> dishAdapter = new DishAdapter();
+            IAdapter<Order, OrderDTO> adapter = new OrderAdapter();
 
             CookingPlan cookingPlan = new CookingPlan();
 
             foreach (var order in dto.Orders)
             {
-                DateTimeContainer currentKey = dateTimeAdapter.ConvertToModel(order.Key);
-                cookingPlan.Orders.Add(currentKey, new Dictionary<Dish, int>());
-
-                foreach (var dishKeyValue in order.Value)
-                {
-                    cookingPlan.AddOrder(currentKey, dishAdapter.ConvertToModel(dishKeyValue.Key), dishKeyValue.Value);
-                }
+                cookingPlan.AddOrder(adapter.ConvertToModel(order));
             }
 
             return cookingPlan;

@@ -12,7 +12,7 @@ namespace Restaurant
 
         public DateTimeContainer ConvertToModel(DateTimeContainerDTO dto)
         {
-            throw new NotImplementedException();
+            return new DateTimeContainer(dto.DateTime.Day, dto.DateTime.Month, dto.DateTime.Year);
         }
     }
 }

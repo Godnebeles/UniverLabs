@@ -5,33 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant"
         mc:Ignorable="d"
-        Title="Restaurant" Height="450" Width="800">
+        Title="Restaurant" MinHeight="600" MinWidth="1000" Width="1000" Height="600" WindowStartupLocation="CenterScreen" 
+        FontFamily="Times New Roman" FontSize="20" >
+
+
+    <Window.Resources>
+        <Style x:Key="SideBarMenuButton" TargetType="Button">
+            <Setter Property="Background" Value="Azure"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontFamily" Value="Times New Roman"></Setter>
+            <Setter Property="MinHeight" Value="50px"></Setter>
+            <Setter Property="MinWidth" Value="100px"></Setter>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" CornerRadius="15" Background="{TemplateBinding Background}"
+                                BorderThickness="1">
+                            <ContentPresenter Margin="5 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGreen" TargetName="Border" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+    
     <Grid>
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="1.8*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
 
-        
-        <Grid Grid.Row="0">
+        <Grid Grid.Column="0">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Button Grid.Column="0" Content="Menu" 
-                    Click="ToMenuButton_Click"></Button>
-            <Button Grid.Column="1" Content="List of Orders" 
-                    Click="ToListOfOrders_Click"></Button>
-            <Button Grid.Column="2" Content="Budget Calculator" 
-                    Click="ToCalculatorButton_Click"></Button>
-
+            <Border Background="RosyBrown" BorderBrush="White" BorderThickness="1" CornerRadius="15">
+                <StackPanel VerticalAlignment="Center">
+                    <Button Grid.Column="0" Content="Menu" 
+                        Click="ToMenuButton_Click"
+                        Margin="5" HorizontalContentAlignment="Left"
+                        Style="{StaticResource SideBarMenuButton}" />
+                    <Button Grid.Column="1" Content="List of Orders" 
+                        Click="ToListOfOrders_Click"
+                        Margin="5" HorizontalContentAlignment="Left"
+                        Style="{StaticResource SideBarMenuButton}" />
+                    <Button Grid.Column="2" Content="Budget Calculator" 
+                        Click="ToCalculatorButton_Click"
+                        Margin="5" HorizontalContentAlignment="Left"
+                        Style="{StaticResource SideBarMenuButton}"/>
+                </StackPanel>
+            </Border>
         </Grid>
 
-        <Frame Grid.Row="1" x:Name="MainFrame"></Frame>
+        <Frame Grid.Column="1" x:Name="MainFrame"></Frame>
     
     </Grid>
 </Window>

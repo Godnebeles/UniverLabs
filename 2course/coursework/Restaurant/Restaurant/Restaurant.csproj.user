@@ -10,6 +10,9 @@
     <Compile Update="BudgetCalculatorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DishUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ListOfOrdersPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +22,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="BudgetCalculatorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DishUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ListOfOrdersPage.xaml">

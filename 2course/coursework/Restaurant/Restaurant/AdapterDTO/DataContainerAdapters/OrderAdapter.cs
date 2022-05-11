@@ -10,12 +10,34 @@ namespace Restaurant
     {
         public OrderDTO ConvertToDTO(Order model)
         {
-            throw new NotImplementedException();
+            IAdapter<DateTimeContainer, DateTimeContainerDTO> dateTimeAdapter = new DateTimeContainerAdapter();
+            IAdapter<DishCount, DishCountDTO> dishCountAdapter = new DishCountAdapter();
+
+            OrderDTO dto = new OrderDTO();
+
+            dto.Date = dateTimeAdapter.ConvertToDTO(model.Date);
+
+            foreach(var dish in model.Dishes)
+            {
+                dto.Dishes.Add(dishCountAdapter.ConvertToDTO(dish));
+            }
+
+            return dto;
         }
 
         public Order ConvertToModel(OrderDTO dto)
         {
-            throw new NotImplementedException();
+            IAdapter<DateTimeContainer, DateTimeContainerDTO> dateTimeAdapter = new DateTimeContainerAdapter();
+            IAdapter<DishCount, DishCountDTO> dishCountAdapter = new DishCountAdapter();
+
+            Order model = new Order(dateTimeAdapter.ConvertToModel(dto.Date));
+
+            foreach (var dish in dto.Dishes)
+            {
+                model.AddDish(dishCountAdapter.ConvertToModel(dish));
+            }
+
+            return model;
         }
     }
 }

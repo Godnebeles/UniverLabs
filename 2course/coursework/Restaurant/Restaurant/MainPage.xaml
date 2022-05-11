@@ -8,27 +8,14 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
 
-    <Grid>
+    <Grid Margin="5px">
 
+        <ScrollViewer>
+          
+                <StackPanel x:Name="DishesListStackPanel">
 
-        <DataGrid x:Name="DataGridDishes" AutoGenerateColumns = "False"
-                  IsEnabled="True" IsReadOnly="True"
-                  ScrollViewer.VerticalScrollBarVisibility="Visible" 
-                  Background="#FF302727" Foreground="#FF302727" >
-            
-            
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Dish Name" Binding="{Binding dishName}" />
-                <DataGridTextColumn Header="Price" Binding="{Binding price}" />
-                <DataGridTextColumn Header="Count Serving" Binding="{Binding count}" />
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Add" Click="Button_Click"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+                </StackPanel>
+ 
+        </ScrollViewer>
     </Grid>
 </Page>

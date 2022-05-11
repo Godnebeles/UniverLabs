@@ -16,6 +16,7 @@ namespace Restaurant
             DishDTO dto = new DishDTO();
 
             dto.Id = model.Id;
+            dto.Name = model.Name;
             dto.WeightInOneServing = adapterWeight.ConvertToDTO(model.WeightInOneServing);
             dto.PricePerServing = model.PricePerServing;
 
