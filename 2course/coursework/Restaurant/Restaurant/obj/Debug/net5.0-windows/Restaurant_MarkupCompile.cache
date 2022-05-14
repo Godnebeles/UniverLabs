@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\App.xaml
-5-552644560
+71093163202
 
-42873872156
-194102701839
-BudgetCalculatorPage.xaml;DishUserControl.xaml;ListOfOrdersPage.xaml;MainPage.xaml;MainWindow.xaml;
+442107568826
+196-1272306326
+MainWindow.xaml;Pages\BudgetCalculatorPage.xaml;Pages\DishCreatorPage.xaml;Pages\DishEditingPage.xaml;Pages\MainPage.xaml;UserControls\DishMenuUserControl.xaml;UserControls\DishUserControl.xaml;
 
 False
 

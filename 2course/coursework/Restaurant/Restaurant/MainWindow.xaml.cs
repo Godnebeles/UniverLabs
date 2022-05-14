@@ -21,83 +21,175 @@ namespace Restaurant
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainPage mainPage = new MainPage();
-        ListOfOrdersPage listOfOrdersPage = new ListOfOrdersPage();
-        BudgetCalculatorPage budgetCalculatorPage = new BudgetCalculatorPage();
-        // my tests
+        // pages
+        private MainPage _mainPage = new MainPage();
+        private DishEditingPage _listOfDishesPage = new DishEditingPage();
+        private BudgetCalculatorPage _budgetCalculatorPage = new BudgetCalculatorPage();
+        private DishCreatorPage _dishCreatorPage = new DishCreatorPage();
+        // services
         private Storage _storage = new Storage();
         private CookingPlan _cookingPlan = new CookingPlan();
-        private BudgetCalculator _budgetCalculator;
-
+        private BudgetCalculator _budgetCalculator = new BudgetCalculator(new List<Taxe>());
         private DataLoader _dataLoader = new DataLoader("cooking_list.json", "storage.json");
-        //
+
+
+        
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = mainPage;
+            MainFrame.Content = _mainPage;
+            MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            _listOfDishesPage.OnCreateButtonClick += () => ChangePage(_dishCreatorPage);
+            //Ingredient ingredient1 = new Ingredient(0, "Паштет", 100.0);
+            //Ingredient ingredient2 = new Ingredient(1, "Крутони", 210.0);
+            //Ingredient ingredient3 = new Ingredient(2, "Сало", 210.0);
+            //Ingredient ingredient4 = new Ingredient(3, "Гірчиця", 210.0);
 
-            Ingredient ingredient1 = new Ingredient(0, "Паштет", 100.0);
-            Ingredient ingredient2 = new Ingredient(1, "Крутони", 210.0);
-            Ingredient ingredient3 = new Ingredient(2, "Сало", 210.0);
-            Ingredient ingredient4 = new Ingredient(3, "Гірчиця", 210.0);
 
+            //Dish dish1 = new Dish(0, "Паштет з ягідним джемом та крутонами", 90, new Weight(100, UnitOfWeight.G));
+            //dish1.AddIngredientInRecipe(new IngredientWeight(ingredient1, new Weight(220, UnitOfWeight.G)));
+            //dish1.AddIngredientInRecipe(new IngredientWeight(ingredient2, new Weight(60, UnitOfWeight.G)));
+            //dish1.ChangeWeightNeededIngredient(new IngredientWeight(ingredient2, new Weight(65, UnitOfWeight.G)));
+            //Dish dish2 = new Dish(1, "Сало з гірчицею", 107, new Weight(100, UnitOfWeight.G));
+            //dish2.AddIngredientInRecipe(new IngredientWeight(ingredient3, new Weight(60, UnitOfWeight.G)));
+            //dish2.AddIngredientInRecipe(new IngredientWeight(ingredient4, new Weight(60, UnitOfWeight.G)));
 
-            Dish dish1 = new Dish(0, "Паштет з ягідним джемом та крутонами", 90, new Weight(100, UnitOfWeight.G));
-            dish1.AddIngredientInRecipe(new IngredientWeight(ingredient1, new Weight(220, UnitOfWeight.G)));
-            dish1.AddIngredientInRecipe(new IngredientWeight(ingredient2, new Weight(60, UnitOfWeight.G)));
-            dish1.ChangeWeightNeededIngredient(new IngredientWeight(ingredient2, new Weight(65, UnitOfWeight.G)));
-            Dish dish2 = new Dish(1, "Сало з гірчицею", 107, new Weight(100, UnitOfWeight.G));
-            dish2.AddIngredientInRecipe(new IngredientWeight(ingredient3, new Weight(60, UnitOfWeight.G)));
-            dish2.AddIngredientInRecipe(new IngredientWeight(ingredient4, new Weight(60, UnitOfWeight.G)));
+            //_storage.Ingredients.Add(new IngredientWeight(ingredient1, new Weight(700.0, UnitOfWeight.G)));
+            //_storage.Ingredients.Add(new IngredientWeight(ingredient2, new Weight(633.0, UnitOfWeight.G)));
+            //_storage.Ingredients.Add(new IngredientWeight(ingredient3, new Weight(650, UnitOfWeight.G)));
+            //_storage.Ingredients.Add(new IngredientWeight(ingredient4, new Weight(120, UnitOfWeight.G)));
 
-            _storage.Ingredients.Add(new IngredientWeight(ingredient1, new Weight(700.0, UnitOfWeight.G)));
-            _storage.Ingredients.Add(new IngredientWeight(ingredient2, new Weight(633.0, UnitOfWeight.G)));
-            _storage.Ingredients.Add(new IngredientWeight(ingredient3, new Weight(650, UnitOfWeight.G)));
-            _storage.Ingredients.Add(new IngredientWeight(ingredient4, new Weight(120, UnitOfWeight.G)));
+            //_storage.Menu.Add(dish1);
+            //_storage.Menu.Add(dish2);
 
-            _storage.Menu.Add(dish1);
-            _storage.Menu.Add(dish2);
+            //_cookingPlan.AddOrder(new Order(new DateTimeContainer(12, 3, 2022), new DishCount(dish1, 2)));
 
-            _cookingPlan.AddOrder(new Order(new DateTimeContainer(12, 3, 2022), new DishCount(dish1, 2)));
+            //_dataLoader.SaveCookingPlan(_cookingPlan);
+            //_dataLoader.SaveStorage(_storage);
 
-            _dataLoader.SaveCookingPlan(_cookingPlan);
-            _dataLoader.SaveStorage(_storage);
+            _cookingPlan = _dataLoader.LoadCookingPlan();
+            _storage = _dataLoader.LoadStorage();
 
-            CookingPlan cookingPlan = _dataLoader.LoadCookingPlan();
-            Storage storage = _dataLoader.LoadStorage();
-            
-
-            DishUserControl dishUserControl = new DishUserControl();
-            Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/pashtet.jpg");
-            dishUserControl.DishImage.Source = new BitmapImage(fileUri);
-
-            DishUserControl dishUserControl1 = new DishUserControl();
-            Uri fileUri1 = new Uri(Directory.GetCurrentDirectory() + "/dish_images/salo.jpg");
-            dishUserControl1.DishImage.Source = new BitmapImage(fileUri1);
-
-            mainPage.DishesListStackPanel.Children.Add(dishUserControl);
-            mainPage.DishesListStackPanel.Children.Add(dishUserControl1);
+            PrintMenu(_storage.Menu);
+            PrintDishes(_storage.Menu);
         }
 
 
+        private void PrintMenu(List<Dish> dishes)
+        {
+            foreach(var dish in dishes)
+            {
+                int countDishCanCook = _storage.GetCountDishCanCook(dish.Recipe);
+
+                if (countDishCanCook <= 0)
+                    continue;
+
+                DishMenuUserControl dishUserControl = new DishMenuUserControl();
+                Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Id + ".jpg");
+                dishUserControl.DishImage.Source = new BitmapImage(fileUri);
+
+                dishUserControl.DishData.Tag = dish;
+                dishUserControl.DishName.Text = dish.Name;
+                dishUserControl.DishIngredients.Text = dish.RecipeToString();
+                dishUserControl.DishPrice.Text = dish.PricePerServing + "грн.";
+                dishUserControl.DishCount.Text = "Можна приготувати: " + countDishCanCook + "шт.";
+
+                _mainPage.DishesListStackPanel.Children.Add(dishUserControl);
+            }
+        }
+
+        private void PrintDishes(List<Dish> dishes)
+        {
+            foreach (var dish in dishes)
+            {
+                DishUserControl dishUserControl = new DishUserControl();
+                Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Id + ".jpg");
+                dishUserControl.DishImage.Source = new BitmapImage(fileUri);
+
+                dishUserControl.DishData.Tag = dish;
+                dishUserControl.DishName.Text = dish.Name;
+                dishUserControl.DishIngredients.Text = dish.RecipeToString();
+                dishUserControl.DishPrice.Text = dish.PricePerServing + "грн.";
+
+                _listOfDishesPage.DishesListStackPanel.Children.Add(dishUserControl);
+            }
+        }
+
         private void ToMenuButton_Click(object sender, RoutedEventArgs e)
         {
-            ChangePage((Button)sender, mainPage);
+            ChangePage(_mainPage);
         }
 
         private void ToListOfOrders_Click(object sender, RoutedEventArgs e)
         {
-            ChangePage((Button)sender, listOfOrdersPage);
+            ChangePage(_listOfDishesPage);
         }
 
         private void ToCalculatorButton_Click(object sender, RoutedEventArgs e)
         {
-            ChangePage((Button)sender, budgetCalculatorPage);
+            ChangePage(_budgetCalculatorPage);
         }
 
-        public void ChangePage(Button btn, Page page)
+        public void ChangePage(Page page)
         {
             MainFrame.Content = page;
+        }
+
+        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void ButtonFullScreen_Click(object sender, RoutedEventArgs e)
+        {
+            if(Application.Current.MainWindow.WindowState == WindowState.Normal)
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            else
+                Application.Current.MainWindow.WindowState = WindowState.Normal;
+        }
+
+        private void ButtonMinimized_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+
+        }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = ListViewMenu.SelectedIndex;
+            MoveCursorMenu(index);
+
+            switch (index)
+            {
+                case 0:
+                    ChangePage(_mainPage);
+                    break;
+                case 1:
+                    ChangePage(_mainPage);
+                    break;
+                case 2:
+                    ChangePage(_mainPage);
+                    break;
+                case 3:
+                    ChangePage(_listOfDishesPage);
+                    break;
+                case 4:
+                    ChangePage(_mainPage);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void MoveCursorMenu(int index)
+        {
+            TrainsitionigContentSlide.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
+        }
+    
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

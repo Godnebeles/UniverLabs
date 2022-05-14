@@ -1,8 +1,10 @@
 ﻿
-
-FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\BudgetCalculatorPage.xaml;;
-FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\DishUserControl.xaml;;
-FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\ListOfOrdersPage.xaml;;
-FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\MainPage.xaml;;
+FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\App.xaml;;
 FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\MainWindow.xaml;;
+FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\Pages\BudgetCalculatorPage.xaml;;
+FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\Pages\MainPage.xaml;;
+FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\UserControls\DishMenuUserControl.xaml;;
+FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\UserControls\DishUserControl.xaml;;
+FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\Pages\DishEditingPage.xaml;;
+FD:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\Pages\DishCreatorPage.xaml;;
 

@@ -7,30 +7,42 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="BudgetCalculatorPage.xaml.cs">
+    <Compile Update="Pages\BudgetCalculatorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DishUserControl.xaml.cs">
+    <Compile Update="Pages\DishCreatorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ListOfOrdersPage.xaml.cs">
+    <Compile Update="Pages\DishEditingPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MainPage.xaml.cs">
+    <Compile Update="UserControls\DishUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\DishMenuUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\MainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="BudgetCalculatorPage.xaml">
+    <Page Update="Pages\BudgetCalculatorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DishUserControl.xaml">
+    <Page Update="Pages\DishCreatorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ListOfOrdersPage.xaml">
+    <Page Update="Pages\DishEditingPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainPage.xaml">
+    <Page Update="UserControls\DishMenuUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\DishUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

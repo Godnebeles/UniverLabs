@@ -40,6 +40,11 @@ namespace Restaurant
                 storage.Ingredients.Add(recipeAdapter.ConvertToModel(item));
             }
 
+            foreach(var dish in dto.Menu)
+            {
+                storage.Menu.Add(dishAdapter.ConvertToModel(dish));
+            }
+
             return storage;
         }
     }

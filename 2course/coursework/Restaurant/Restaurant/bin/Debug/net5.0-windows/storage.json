@@ -1,1 +1,116 @@
-{"ingredient_list":[{"ingredient":{"id":0,"name":"Паштет","price_per_one_kilogram":100.0},"weight":{"amount":700.0,"unit":0}},{"ingredient":{"id":1,"name":"Крутони","price_per_one_kilogram":210.0},"weight":{"amount":633.0,"unit":0}},{"ingredient":{"id":2,"name":"Сало","price_per_one_kilogram":210.0},"weight":{"amount":650.0,"unit":0}},{"ingredient":{"id":3,"name":"Гірчиця","price_per_one_kilogram":210.0},"weight":{"amount":120.0,"unit":0}}],"menu":[{"id":0,"name":"Паштет з ягідним джемом та крутонами","price_per_serving":90.0,"weight_in_one_serving":{"amount":100.0,"unit":0},"recipe":[{"ingredient":{"id":0,"name":"Паштет","price_per_one_kilogram":100.0},"weight":{"amount":220.0,"unit":0}},{"ingredient":{"id":1,"name":"Крутони","price_per_one_kilogram":210.0},"weight":{"amount":65.0,"unit":0}}]},{"id":1,"name":"Сало з гірчицею","price_per_serving":107.0,"weight_in_one_serving":{"amount":100.0,"unit":0},"recipe":[{"ingredient":{"id":2,"name":"Сало","price_per_one_kilogram":210.0},"weight":{"amount":60.0,"unit":0}},{"ingredient":{"id":3,"name":"Гірчиця","price_per_one_kilogram":210.0},"weight":{"amount":60.0,"unit":0}}]}]}
+{
+  "ingredient_list": [
+    {
+      "ingredient": {
+        "id": 0,
+        "name": "Паштет",
+        "price_per_one_kilogram": 100.0
+      },
+      "weight": {
+        "amount": 700.0,
+        "unit": 0
+      }
+    },
+    {
+      "ingredient": {
+        "id": 1,
+        "name": "Крутони",
+        "price_per_one_kilogram": 210.0
+      },
+      "weight": {
+        "amount": 633.0,
+        "unit": 0
+      }
+    },
+    {
+      "ingredient": {
+        "id": 2,
+        "name": "Сало",
+        "price_per_one_kilogram": 210.0
+      },
+      "weight": {
+        "amount": 650.0,
+        "unit": 0
+      }
+    },
+    {
+      "ingredient": {
+        "id": 3,
+        "name": "Гірчиця",
+        "price_per_one_kilogram": 210.0
+      },
+      "weight": {
+        "amount": 120.0,
+        "unit": 0
+      }
+    }
+  ],
+  "menu": [
+    {
+      "id": 0,
+      "name": "Паштет з ягідним джемом та крутонами",
+      "price_per_serving": 90.0,
+      "weight_in_one_serving": {
+        "amount": 100.0,
+        "unit": 0
+      },
+      "recipe": [
+        {
+          "ingredient": {
+            "id": 0,
+            "name": "Паштет",
+            "price_per_one_kilogram": 100.0
+          },
+          "weight": {
+            "amount": 220.0,
+            "unit": 0
+          }
+        },
+        {
+          "ingredient": {
+            "id": 1,
+            "name": "Крутони",
+            "price_per_one_kilogram": 210.0
+          },
+          "weight": {
+            "amount": 65.0,
+            "unit": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Сало з гірчицею",
+      "price_per_serving": 107.0,
+      "weight_in_one_serving": {
+        "amount": 100.0,
+        "unit": 0
+      },
+      "recipe": [
+        {
+          "ingredient": {
+            "id": 2,
+            "name": "Сало",
+            "price_per_one_kilogram": 210.0
+          },
+          "weight": {
+            "amount": 60.0,
+            "unit": 0
+          }
+        },
+        {
+          "ingredient": {
+            "id": 3,
+            "name": "Гірчиця",
+            "price_per_one_kilogram": 210.0
+          },
+          "weight": {
+            "amount": 60.0,
+            "unit": 0
+          }
+        }
+      ]
+    }
+  ]
+}

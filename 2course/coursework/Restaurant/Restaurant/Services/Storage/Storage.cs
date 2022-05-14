@@ -21,6 +21,7 @@ namespace Restaurant
             Ingredients = ingredients;
         }
 
+
         public int GetCountDishCanCook(HashSet<IngredientWeight> ingredientsList)
         {
             int totalCount = 0;
@@ -34,6 +35,7 @@ namespace Restaurant
 
                 IngredientWeight ingredient1;
                 IngredientWeight ingredient2;
+
                 Ingredients.TryGetValue(neenedIngredient, out ingredient1);
                 ingredientsList.TryGetValue(neenedIngredient, out ingredient2);
 

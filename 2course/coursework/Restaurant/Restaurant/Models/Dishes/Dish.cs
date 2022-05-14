@@ -45,5 +45,19 @@ namespace Restaurant
                 Recipe.Add(ingredient);
             }
         }
+
+        public string RecipeToString()
+        {
+            string recipe = string.Empty;
+            int counter = 0;
+
+            foreach (var ingredient in Recipe)
+            {
+                recipe += $"{ingredient.Ingredient.Name} - {ingredient.Weight.Amount}гр.{(counter == Recipe.Count - 1 ? "" : "\n")}";
+                counter++;
+            }
+
+            return recipe;
+        }
     }
 }

@@ -1,0 +1,32 @@
+﻿<Page x:Class="Restaurant.DishEditingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Restaurant"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DishEditingPage">
+
+    <Grid Margin="5px">
+        <Grid VerticalAlignment="Top">
+            <Button Content="Create dish" VerticalAlignment="Top" Margin="0 0 0 20" Click="CreateDishButton_Click"/>
+        </Grid>
+        <Grid >
+            <ScrollViewer Margin="0 40 0 0" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Visible">
+
+                <StackPanel x:Name="DishesListStackPanel">
+
+                </StackPanel>
+
+            </ScrollViewer>
+        </Grid>
+           
+          
+       
+
+       
+
+
+    </Grid>
+</Page>
