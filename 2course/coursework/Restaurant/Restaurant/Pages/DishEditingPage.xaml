@@ -8,9 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DishEditingPage">
 
-    <Grid Margin="5px">
+    <Grid Margin="5 10">
         <Grid VerticalAlignment="Top">
-            <Button Content="Create dish" VerticalAlignment="Top" Margin="0 0 0 20" Click="CreateDishButton_Click"/>
+            <Button Content="Записати нову страву" VerticalAlignment="Top" Margin="0 0 0 20" Click="CreateDishButton_Click"/>
         </Grid>
         <Grid >
             <ScrollViewer Margin="0 40 0 0" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Visible">

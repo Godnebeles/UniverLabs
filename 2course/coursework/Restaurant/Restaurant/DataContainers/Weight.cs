@@ -23,6 +23,10 @@ namespace Restaurant
             Unit = unit;
         }
 
-        
+        public override string ToString()
+        {
+            return Amount+"гр.";
+        }
+
     }
 }

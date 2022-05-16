@@ -16,6 +16,12 @@
     <Compile Update="Pages\DishEditingPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\IngredientsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\OrdersPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\DishUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +29,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\IngredientUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\OrdersUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -36,6 +48,12 @@
     <Page Update="Pages\DishEditingPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\IngredientsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserControls\DishMenuUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -46,6 +64,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\IngredientUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\OrdersUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

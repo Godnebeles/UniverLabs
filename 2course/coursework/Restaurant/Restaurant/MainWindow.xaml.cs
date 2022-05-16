@@ -23,9 +23,11 @@ namespace Restaurant
     {
         // pages
         private MainPage _mainPage = new MainPage();
+        private OrdersPage _ordersPage = new OrdersPage();
         private DishEditingPage _listOfDishesPage = new DishEditingPage();
         private BudgetCalculatorPage _budgetCalculatorPage = new BudgetCalculatorPage();
         private DishCreatorPage _dishCreatorPage = new DishCreatorPage();
+        private IngredientsPage _ingredientsPage = new IngredientsPage();
         // services
         private Storage _storage = new Storage();
         private CookingPlan _cookingPlan = new CookingPlan();
@@ -33,7 +35,7 @@ namespace Restaurant
         private DataLoader _dataLoader = new DataLoader("cooking_list.json", "storage.json");
 
 
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -70,14 +72,17 @@ namespace Restaurant
             _cookingPlan = _dataLoader.LoadCookingPlan();
             _storage = _dataLoader.LoadStorage();
 
+
             PrintMenu(_storage.Menu);
             PrintDishes(_storage.Menu);
+            ShowOrders(_cookingPlan.Orders);
+            ShowIngredients(_storage.Ingredients);
         }
 
 
         private void PrintMenu(List<Dish> dishes)
         {
-            foreach(var dish in dishes)
+            foreach (var dish in dishes)
             {
                 int countDishCanCook = _storage.GetCountDishCanCook(dish.Recipe);
 
@@ -115,6 +120,44 @@ namespace Restaurant
             }
         }
 
+        private void ShowOrders(HashSet<Order> orders)
+        {
+            foreach (var order in orders)
+            {
+                foreach (var dish in order.Dishes)
+                {
+                    OrdersUserControl dishUserControl = new OrdersUserControl();
+                    Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Dish.Id + ".jpg");
+                    dishUserControl.DishImage.Source = new BitmapImage(fileUri);
+
+                    dishUserControl.DishData.Tag = dish;
+                    dishUserControl.DishName.Text = dish.Dish.Name;
+                    dishUserControl.DishIngredients.Text = dish.Dish.RecipeToString();
+                    dishUserControl.DishPrice.Text = dish.Dish.PricePerServing + "грн.";
+                    dishUserControl.DishCount.Text = "Треба приготувати: " + dish.Count + "шт.";
+                    dishUserControl.CookDate.Text = "Дата для приготування: " + order.Date.ToString();
+
+                    _ordersPage.OrdersListStackPanel.Children.Add(dishUserControl);
+                }
+            }
+        }
+
+        private void ShowIngredients(HashSet<IngredientWeight> ingredients)
+        {
+            foreach (var ingredient in ingredients)
+            {
+
+                IngredientUserControl dishUserControl = new IngredientUserControl();
+
+                dishUserControl.IngredientName.Text = ingredient.Ingredient.Name;
+                dishUserControl.IngredientPrice.Text = ingredient.Ingredient.PricePerOneKilogram + "грн.";
+                dishUserControl.IngredientWeight.Text = ingredient.Weight.ToString();
+
+                _ingredientsPage.IngredientsListStackPanel.Children.Add(dishUserControl);
+
+            }
+        }
+
         private void ToMenuButton_Click(object sender, RoutedEventArgs e)
         {
             ChangePage(_mainPage);
@@ -141,7 +184,7 @@ namespace Restaurant
         }
         private void ButtonFullScreen_Click(object sender, RoutedEventArgs e)
         {
-            if(Application.Current.MainWindow.WindowState == WindowState.Normal)
+            if (Application.Current.MainWindow.WindowState == WindowState.Normal)
                 Application.Current.MainWindow.WindowState = WindowState.Maximized;
             else
                 Application.Current.MainWindow.WindowState = WindowState.Normal;
@@ -164,16 +207,16 @@ namespace Restaurant
                     ChangePage(_mainPage);
                     break;
                 case 1:
-                    ChangePage(_mainPage);
+                    ChangePage(_ordersPage);
                     break;
                 case 2:
-                    ChangePage(_mainPage);
-                    break;
-                case 3:
                     ChangePage(_listOfDishesPage);
                     break;
+                case 3:
+                    ChangePage(_ingredientsPage);
+                    break;
                 case 4:
-                    ChangePage(_mainPage);
+                    ChangePage(_budgetCalculatorPage);
                     break;
                 default:
                     break;
@@ -185,7 +228,7 @@ namespace Restaurant
             TrainsitionigContentSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
         }
-    
+
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {

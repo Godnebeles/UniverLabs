@@ -26,5 +26,10 @@ namespace Restaurant
         {
             return this.DateTime.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return DateTime.ToString("dd.MM.yyyy");
+        }
     }
 }

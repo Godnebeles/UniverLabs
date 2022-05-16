@@ -8,6 +8,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              MinWidth="650px" Height="auto" Width="auto"
              d:DesignHeight="450" d:DesignWidth="800">
+    
     <Grid x:Name="DishData" Margin="0 5" Tag="">
 
 
