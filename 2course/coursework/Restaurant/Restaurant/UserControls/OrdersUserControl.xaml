@@ -9,9 +9,9 @@
              MinWidth="650px" Height="auto" Width="auto"
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid x:Name="DishData" Margin="0 5" Tag="">
+    <Grid x:Name="DishCountData" Margin="0 5" Tag="">
 
-
+    
         <!--<Border Background="RosyBrown" BorderBrush="White" BorderThickness="1" CornerRadius="15">-->
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Border Background="#dde0e3" BorderThickness="2" CornerRadius="15">
@@ -44,7 +44,7 @@
 
                         <TextBox x:Name="CookDate" HorizontalAlignment="Right" 
                                  IsReadOnly="True" 
-                                 FontSize="18" Margin="5 5 0 0" TextWrapping="Wrap" />
+                                 FontSize="18" Margin="5 5 0 0" TextWrapping="Wrap" Tag=""/>
                         
                         <TextBox x:Name="DishCount" HorizontalAlignment="Right" 
                                  IsReadOnly="True" 
@@ -52,8 +52,8 @@
 
 
                         <StackPanel HorizontalAlignment="Right"  Orientation="Horizontal">
-                            <Button Content="Delete" Margin="5"  />
-                            <Button Content="Done" Margin="5"  />
+                            <Button Content="Відміна" Click="ButtonCancel_Click" Margin="5"  />
+                            <Button Content="Виконано" Click="ButtonFinish_Click" Margin="5"  />
                         </StackPanel>
                        
                     </StackPanel>

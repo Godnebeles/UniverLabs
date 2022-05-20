@@ -41,7 +41,7 @@ namespace Restaurant
             InitializeComponent();
             MainFrame.Content = _mainPage;
             MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-            _listOfDishesPage.OnCreateButtonClick += () => ChangePage(_dishCreatorPage);
+            
             //Ingredient ingredient1 = new Ingredient(0, "Паштет", 100.0);
             //Ingredient ingredient2 = new Ingredient(1, "Крутони", 210.0);
             //Ingredient ingredient3 = new Ingredient(2, "Сало", 210.0);
@@ -73,22 +73,28 @@ namespace Restaurant
             _storage = _dataLoader.LoadStorage();
 
 
-            PrintMenu(_storage.Menu);
-            PrintDishes(_storage.Menu);
+            ShowMenuOfDishes(_storage.Menu);
+            ShowDishes(_storage.Menu);
             ShowOrders(_cookingPlan.Orders);
             ShowIngredients(_storage.Ingredients);
         }
 
-
-        private void PrintMenu(List<Dish> dishes)
+        private void SignEvents()
         {
+            _listOfDishesPage.OnCreateButtonClick += () => ChangePage(_dishCreatorPage);
+        }
+
+        private void ShowMenuOfDishes(List<Dish> dishes)
+        {
+            _mainPage.DishesListStackPanel.Children.Clear();
+
             foreach (var dish in dishes)
             {
                 int countDishCanCook = _storage.GetCountDishCanCook(dish.Recipe);
 
                 if (countDishCanCook <= 0)
                     continue;
-
+                
                 DishMenuUserControl dishUserControl = new DishMenuUserControl();
                 Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Id + ".jpg");
                 dishUserControl.DishImage.Source = new BitmapImage(fileUri);
@@ -98,12 +104,13 @@ namespace Restaurant
                 dishUserControl.DishIngredients.Text = dish.RecipeToString();
                 dishUserControl.DishPrice.Text = dish.PricePerServing + "грн.";
                 dishUserControl.DishCount.Text = "Можна приготувати: " + countDishCanCook + "шт.";
+                dishUserControl.OnAddPressed += AddOrder;
 
                 _mainPage.DishesListStackPanel.Children.Add(dishUserControl);
             }
         }
 
-        private void PrintDishes(List<Dish> dishes)
+        private void ShowDishes(List<Dish> dishes)
         {
             foreach (var dish in dishes)
             {
@@ -122,6 +129,8 @@ namespace Restaurant
 
         private void ShowOrders(HashSet<Order> orders)
         {
+            _ordersPage.OrdersListStackPanel.Children.Clear();
+
             foreach (var order in orders)
             {
                 foreach (var dish in order.Dishes)
@@ -130,12 +139,16 @@ namespace Restaurant
                     Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Dish.Id + ".jpg");
                     dishUserControl.DishImage.Source = new BitmapImage(fileUri);
 
-                    dishUserControl.DishData.Tag = dish;
+                    dishUserControl.DishCountData.Tag = dish;
+                    dishUserControl.CookDate.Tag = order.Date;
                     dishUserControl.DishName.Text = dish.Dish.Name;
                     dishUserControl.DishIngredients.Text = dish.Dish.RecipeToString();
                     dishUserControl.DishPrice.Text = dish.Dish.PricePerServing + "грн.";
                     dishUserControl.DishCount.Text = "Треба приготувати: " + dish.Count + "шт.";
                     dishUserControl.CookDate.Text = "Дата для приготування: " + order.Date.ToString();
+
+                    dishUserControl.OnCancelPressed += CancelOrder;
+                    dishUserControl.OnFinishPressed += FinishOrder;
 
                     _ordersPage.OrdersListStackPanel.Children.Add(dishUserControl);
                 }
@@ -144,9 +157,10 @@ namespace Restaurant
 
         private void ShowIngredients(HashSet<IngredientWeight> ingredients)
         {
+            _ingredientsPage.IngredientsListStackPanel.Children.Clear();
+
             foreach (var ingredient in ingredients)
             {
-
                 IngredientUserControl dishUserControl = new IngredientUserControl();
 
                 dishUserControl.IngredientName.Text = ingredient.Ingredient.Name;
@@ -154,8 +168,27 @@ namespace Restaurant
                 dishUserControl.IngredientWeight.Text = ingredient.Weight.ToString();
 
                 _ingredientsPage.IngredientsListStackPanel.Children.Add(dishUserControl);
-
             }
+        }
+
+        private void AddOrder(Dish dish)
+        {
+            _cookingPlan.AddDishInOrder(new DateTimeContainer(), new DishCount(dish, 1));
+            _storage.DecreaseIngredients(dish.Recipe);
+            ShowMenuOfDishes(_storage.Menu);
+        }
+
+        private void CancelOrder(DateTimeContainer date, DishCount dish)
+        {
+            _cookingPlan.RemoveDishFromOrder(date, new DishCount(dish.Dish,1));
+            _storage.IncreaseIngredients(dish.Dish.Recipe);
+            ShowOrders(_cookingPlan.Orders);
+        }
+
+        private void FinishOrder(DateTimeContainer date, DishCount dish)
+        {
+            _cookingPlan.RemoveDishFromOrder(date, new DishCount(dish.Dish, 1));        
+            ShowOrders(_cookingPlan.Orders);
         }
 
         private void ToMenuButton_Click(object sender, RoutedEventArgs e)
@@ -204,15 +237,18 @@ namespace Restaurant
             switch (index)
             {
                 case 0:
+                    ShowMenuOfDishes(_storage.Menu);
                     ChangePage(_mainPage);
                     break;
                 case 1:
+                    ShowOrders(_cookingPlan.Orders);
                     ChangePage(_ordersPage);
                     break;
                 case 2:
                     ChangePage(_listOfDishesPage);
                     break;
                 case 3:
+                    ShowIngredients(_storage.Ingredients);
                     ChangePage(_ingredientsPage);
                     break;
                 case 4:

@@ -12,6 +12,13 @@ namespace Restaurant
 
         public HashSet<DishCount> Dishes { get; protected set; }
 
+        public Order(DishCount dishCount)
+        {
+            Date = new DateTimeContainer();
+            Dishes = new HashSet<DishCount>();
+            AddDish(dishCount);
+        }
+
         public Order(DateTimeContainer date)
         {
             Date = date;
@@ -31,6 +38,17 @@ namespace Restaurant
             {
                 Dishes.Add(dish);
             }
+            else
+            {
+                DishCount dishCount;
+
+                Dishes.TryGetValue(dish, out dishCount);
+
+                if(dishCount != null)
+                {
+                    dishCount.AddCountDishes(dish.Count);
+                }
+            }
         }
 
         public void ChangeCountDish(DishCount dish)
@@ -44,9 +62,13 @@ namespace Restaurant
 
         public void RemoveDish(DishCount dish)
         {
-            if(Dishes.Contains(dish))
+            DishCount dishCount;
+            if(Dishes.TryGetValue(dish, out dishCount))
             {
-                Dishes.Remove(dish);
+                if (dish.Count >= dishCount.Count)
+                    Dishes.Remove(dish);
+                else
+                    dishCount.DecreaseDishes(1);
             }
         }
 

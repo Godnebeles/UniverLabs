@@ -47,7 +47,7 @@
                                  FontSize="18" Margin="5 5 0 0" TextWrapping="Wrap" />
 
 
-                        <Button Content="Add" HorizontalAlignment="Right" Margin="5"  />
+                        <Button Content="Замовити" HorizontalAlignment="Right" Margin="5" Click="ButtonAdd_Click"/>
                     </StackPanel>
 
 

@@ -20,9 +20,17 @@ namespace Restaurant
     /// </summary>
     public partial class DishMenuUserControl : UserControl
     {
+        public event Action <Dish> OnAddPressed;
         public DishMenuUserControl()
         {
             InitializeComponent();
+        }
+
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Dish dish = (Dish)DishData.Tag;
+
+            OnAddPressed?.Invoke(dish);
         }
     }
 }

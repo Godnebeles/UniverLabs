@@ -18,6 +18,24 @@ namespace Restaurant
             Weight = weight;
         }
 
+        public void DecreaseWeight(Weight weight)
+        {
+            Weight newWeight = Weight;
+
+            newWeight.DecreaseWeight(weight);
+
+            Weight = newWeight;
+        }
+
+        public void IncreaseWeight(Weight weight)
+        {
+            Weight newWeight = Weight;
+
+            newWeight.IncreaseWeight(weight);
+
+            Weight = newWeight;
+        }
+
         public bool Equals(IngredientWeight? other)
         {
             if (other == null)

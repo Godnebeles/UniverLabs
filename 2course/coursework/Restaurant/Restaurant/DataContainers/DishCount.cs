@@ -17,6 +17,17 @@ namespace Restaurant
             Count = count;
         }
 
+        public void AddCountDishes(int count)
+        {
+            Count += count;
+        }
+
+        public void DecreaseDishes(int count)
+        {
+            if(count <= Count)
+                Count -= count;
+        }
+
         public bool Equals(DishCount? other)
         {
             if (other == null)

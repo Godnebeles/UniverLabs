@@ -21,7 +21,6 @@ namespace Restaurant
             Ingredients = ingredients;
         }
 
-
         public int GetCountDishCanCook(HashSet<IngredientWeight> ingredientsList)
         {
             int totalCount = 0;
@@ -54,5 +53,28 @@ namespace Restaurant
             return totalCount;
         }
 
+        public void DecreaseIngredients(HashSet<IngredientWeight> recipe)
+        {
+            foreach (var currentIngredient in recipe)
+            {
+                IngredientWeight ingredient;           
+                if (Ingredients.TryGetValue(currentIngredient, out ingredient))
+                {
+                    ingredient.DecreaseWeight(currentIngredient.Weight);
+                }
+            }
+        }
+
+        public void IncreaseIngredients(HashSet<IngredientWeight> recipe)
+        {
+            foreach (var currentIngredient in recipe)
+            {
+                IngredientWeight ingredient;
+                if (Ingredients.TryGetValue(currentIngredient, out ingredient))
+                {
+                    ingredient.IncreaseWeight(currentIngredient.Weight);
+                }
+            }
+        }
     }
 }

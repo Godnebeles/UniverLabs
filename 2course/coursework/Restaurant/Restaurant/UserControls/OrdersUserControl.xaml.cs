@@ -20,12 +20,29 @@ namespace Restaurant
     /// </summary>
     public partial class OrdersUserControl : UserControl
     {
+        public event Action<DateTimeContainer, DishCount> OnCancelPressed;
+        public event Action<DateTimeContainer, DishCount> OnFinishPressed;
+
         public OrdersUserControl()
         {
             InitializeComponent();
 
         }
+        
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DishCount dish = (DishCount)DishCountData.Tag;
+            DateTimeContainer date = (DateTimeContainer)CookDate.Tag;
 
-       
+            OnCancelPressed?.Invoke(date, dish);
+        }
+
+        private void ButtonFinish_Click(object sender, RoutedEventArgs e)
+        {
+            DishCount dish = (DishCount)DishCountData.Tag;
+            DateTimeContainer date = (DateTimeContainer)CookDate.Tag;
+
+            OnFinishPressed?.Invoke(date, dish);
+        }
     }
 }

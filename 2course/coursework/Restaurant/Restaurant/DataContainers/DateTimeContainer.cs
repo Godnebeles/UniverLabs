@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public struct DateTimeContainer : IEquatable<DateTimeContainer>
+    public class DateTimeContainer : IEquatable<DateTimeContainer>
     {
         public DateTime DateTime { get; private set; }
+
+        public DateTimeContainer()
+        {
+            DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        }
 
         public DateTimeContainer(int day, int mounth, int year)
         {
