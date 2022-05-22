@@ -34,8 +34,6 @@ namespace Restaurant
         private BudgetCalculator _budgetCalculator = new BudgetCalculator(new List<Taxe>());
         private DataLoader _dataLoader = new DataLoader("cooking_list.json", "storage.json");
 
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -264,7 +262,6 @@ namespace Restaurant
             TrainsitionigContentSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
         }
-
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {

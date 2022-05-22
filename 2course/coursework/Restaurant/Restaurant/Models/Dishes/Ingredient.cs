@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class Ingredient : BaseModel
+    public class Ingredient : DishBase
     {
         public double PricePerOneKilogram { get; private set; }
 

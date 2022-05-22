@@ -26,7 +26,7 @@
                         <TextBox x:Name="DishName" 
                                    TextWrapping="Wrap"
                                    IsReadOnly="True"  Width="300px"
-                                   Text="Паштет з ягідним джемом та крутонами" 
+                                   Text="Mazda p7" 
                                    HorizontalAlignment="Center" 
                                    FontSize="20"  FontWeight="Bold"
                                    Margin="5 0 0 0" />

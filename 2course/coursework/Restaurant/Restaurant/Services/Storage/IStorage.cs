@@ -9,5 +9,7 @@ namespace Restaurant
     public interface IStorage
     {
         int GetCountDishCanCook(HashSet<IngredientWeight> ingredientsList);
+        void DecreaseIngredients(HashSet<IngredientWeight> recipe);
+        void IncreaseIngredients(HashSet<IngredientWeight> recipe);
     }
 }

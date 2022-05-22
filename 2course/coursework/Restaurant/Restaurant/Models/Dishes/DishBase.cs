@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public abstract class BaseModel : IEquatable<BaseModel>
+    public abstract class DishBase : IEquatable<DishBase>
     {
         public int Id { get; protected set; }
         public string Name { get; protected set; }
 
-        public BaseModel(int id, string name)
+        public DishBase(int id, string name)
         {
             Id = id;
             Name = name;
@@ -24,7 +24,7 @@ namespace Restaurant
         }
 
 
-        public bool Equals(BaseModel? other)
+        public bool Equals(DishBase? other)
         {
             if (other == null)
                 return false;

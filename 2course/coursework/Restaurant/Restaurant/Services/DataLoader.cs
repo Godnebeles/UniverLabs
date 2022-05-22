@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    public class DataLoader
+    public class DataLoader : IDataLoader
     {
         private string _pathToCookingList = "";
         private string _pathToStorage = "";

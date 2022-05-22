@@ -25,19 +25,18 @@ namespace Restaurant
 
         public void DecreaseWeight(Weight weight)
         {
-            if(Amount >= weight.Amount)
+            if (Amount >= weight.Amount)
                 Amount -= weight.Amount;
         }
 
         public void IncreaseWeight(Weight weight)
         {
-            if (Amount >= weight.Amount)
-                Amount += weight.Amount;
+            Amount += weight.Amount;
         }
 
         public override string ToString()
         {
-            return Amount+"гр.";
+            return Amount + "гр.";
         }
 
     }
