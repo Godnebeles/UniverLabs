@@ -32,7 +32,7 @@
             </Grid>
         </StackPanel>
 
-        <Grid Margin="250 55 0 0">
+        <Grid Margin="250 100 0 50">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Border Background="#FFFFFF" BorderThickness="2" CornerRadius="15">
                     <Frame x:Name="MainFrame" JournalEntry.KeepAlive="False"></Frame>

@@ -4,7 +4,7 @@ using System;
 
 namespace sale_of_vehicles
 {
-    public class Truck : Car
+    public class Truck : Vehicle
     {
         
         public Truck(string name, double price, int numberOfSeats, TypesOfFuel fuelType, double maxWeightOfCargo, TypeOfCargo cargoType) 

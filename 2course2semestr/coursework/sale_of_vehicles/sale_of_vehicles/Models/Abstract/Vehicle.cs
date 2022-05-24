@@ -2,7 +2,7 @@
 
 namespace sale_of_vehicles
 {
-    public abstract class Car : IEquatable<Car>
+    public abstract class Vehicle : IEquatable<Vehicle>
     {
         public Guid Id { get; protected set; }
         public string Name { get; protected set; }
@@ -10,7 +10,7 @@ namespace sale_of_vehicles
         public int NumberOfSeats { get; protected set; }
         public TypesOfFuel FuelType { get; protected set; }
 
-        protected Car(string name, double price, int numberOfSeats, TypesOfFuel fuelType)
+        protected Vehicle(string name, double price, int numberOfSeats, TypesOfFuel fuelType)
         {
             if (name == "")
                 throw new Exception("Incorrect car's name");
@@ -22,12 +22,11 @@ namespace sale_of_vehicles
             FuelType = fuelType;
         }
 
-        public bool Equals(Car other)
+        public bool Equals(Vehicle other)
         {
             if (other == null) return false;
             return Id.Equals(other.Id);
         }
-
 
         public override int GetHashCode()
         {

@@ -2,7 +2,7 @@
 
 namespace sale_of_vehicles
 {
-    public class Bus : Car
+    public class Bus : Vehicle
     {
         public Bus(string name, double price, int numberOfSeats, TypesOfFuel fuelType, int maxCapacityOfPeople)
                     : base(name, price, numberOfSeats, fuelType)

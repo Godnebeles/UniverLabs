@@ -20,33 +20,36 @@ namespace sale_of_vehicles
     /// </summary>
     /// 
     public delegate void SelectedDelegate();
-    public partial class CarCreatorPage : Page
+    public partial class VehicleCreatorPage : Page
     {
         private SelectedDelegate[] selectedDelegates;
 
-        public CarCreatorPage()
+        public VehicleCreatorPage()
         {
             InitializeComponent();
             
-            selectedDelegates = new SelectedDelegate[2] { SelectBus, SelectTruck };
+            selectedDelegates = new SelectedDelegate[2] { CreateBus, CreateTruck };
         }
 
 
-        public void SelectBus()
+        public void CreateBus()
         {
-            CreatWindow.Children.Clear();
-            CreatWindow.Children.Add(new BusCreatUserControl());
+            CurrentVehicleFields.Children.Clear();
+            CurrentVehicleFields.Children.Add(new BusCreatUserControl());
         }
 
-        public void SelectTruck()
+        public void CreateTruck()
         {
-            CreatWindow.Children.Clear();
-            CreatWindow.Children.Add(new TruckCreatUserControl());
+            CurrentVehicleFields.Children.Clear();
+            CurrentVehicleFields.Children.Add(new TruckCreatUserControl());
         }
 
         private void TypeOfVehicle_Selected(object sender, SelectionChangedEventArgs e)
         {
             selectedDelegates[TypeOfVehicle.SelectedIndex].Invoke();
         }
+
+
+
     }
 }

@@ -23,7 +23,7 @@ namespace sale_of_vehicles
     public partial class CarsPage : Page
     {
 
-        private CarShop _carShop;
+        private VehiclesShop _carShop;
         private FilterCarsDelegate[] filterFunctions = {
                                                          (car) =>(car is Bus),
                                                          (car) => (car is Truck)
@@ -35,15 +35,15 @@ namespace sale_of_vehicles
             VehicleTypeFilter.SelectedIndex = 0;
             FuelTypeFilter.SelectedIndex = 0;
 
-            List<Car> cars = new List<Car>();
-            Car car1 = new Truck("ok", 5, 10, TypesOfFuel.Gasoline, 4, TypeOfCargo.Fragile);
-            Car car2 = new Bus("Bus", 1, 2, TypesOfFuel.Gasoline, 4);
+            List<Vehicle> cars = new List<Vehicle>();
+            Vehicle car1 = new Truck("ok", 5, 10, TypesOfFuel.Gasoline, 4, TypeOfCargo.Fragile);
+            Vehicle car2 = new Bus("Bus", 1, 2, TypesOfFuel.Gasoline, 4);
             cars.Add(car1);
             cars.Add(car2);
 
-            _carShop = new CarShop(cars);
+            _carShop = new VehiclesShop(cars);
 
-            CarList.ItemsSource = _carShop.CarList;
+            CarList.ItemsSource = _carShop.VehicleList;
         }
 
     }

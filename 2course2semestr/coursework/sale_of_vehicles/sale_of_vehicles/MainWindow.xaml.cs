@@ -69,7 +69,7 @@ namespace sale_of_vehicles
                     MainFrame.Content = new CarsPage();
                     break;
                 case 1:
-                    MainFrame.Content = new CarCreatorPage();
+                    MainFrame.Content = new VehicleCreatorPage();
                     break;
             }
         }
