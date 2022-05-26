@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 
@@ -7,7 +8,7 @@ namespace Restaurant
     public class DishDTO
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; } = string.Empty;

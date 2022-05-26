@@ -20,9 +20,15 @@ namespace Restaurant
     /// </summary>
     public partial class DishUserControl : UserControl
     {
+        public event Action<Dish> OnDeleteEvent;
         public DishUserControl()
         {
             InitializeComponent();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            OnDeleteEvent?.Invoke((Dish)DishData.Tag);
         }
     }
 }

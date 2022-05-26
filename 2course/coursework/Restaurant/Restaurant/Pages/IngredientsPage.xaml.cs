@@ -20,9 +20,21 @@ namespace Restaurant
     /// </summary>
     public partial class IngredientsPage : Page
     {
+        public event Action OnCreatIngredientClick;
+        public event Action OnSaveChangesEvent;
         public IngredientsPage()
         {
             InitializeComponent();
+        }
+
+        public void CreateIngredientButton_Click(object sender, RoutedEventArgs e)
+        {
+            OnCreatIngredientClick?.Invoke();
+        }
+
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            OnSaveChangesEvent?.Invoke();
         }
     }
 }

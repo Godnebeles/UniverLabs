@@ -92,7 +92,7 @@
                                  Text="90UAH" FontSize="50" FontFamily="Cooper Black" Foreground="#FFC00000" 
                                  Margin="5 5 0 0" />
 
-                        <Button Content="Видалити" HorizontalAlignment="Right" Margin="5"  />
+                        <Button Content="Видалити" HorizontalAlignment="Right" Margin="5" Click="DeleteButton_Click" />
                     </StackPanel>
 
 

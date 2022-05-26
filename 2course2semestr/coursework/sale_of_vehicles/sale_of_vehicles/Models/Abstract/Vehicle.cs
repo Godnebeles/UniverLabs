@@ -9,6 +9,7 @@ namespace sale_of_vehicles
         public double Price { get; protected set; }
         public int NumberOfSeats { get; protected set; }
         public TypesOfFuel FuelType { get; protected set; }
+        
 
         protected Vehicle(string name, double price, int numberOfSeats, TypesOfFuel fuelType)
         {
@@ -21,6 +22,8 @@ namespace sale_of_vehicles
             NumberOfSeats = numberOfSeats;
             FuelType = fuelType;
         }
+
+        public abstract bool CheckFunctionality();
 
         public bool Equals(Vehicle other)
         {

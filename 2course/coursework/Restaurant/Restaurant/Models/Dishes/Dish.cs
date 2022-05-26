@@ -12,14 +12,14 @@ namespace Restaurant
         public Weight WeightInOneServing { get; private set; }
         public HashSet<IngredientWeight> Recipe { get; private set; }  
 
-        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing) : base(id, name)
+        public Dish(Guid id, string name, double pricePerServing, Weight weightInOneServing) : base(id, name)
         {
             Recipe = new HashSet<IngredientWeight>();
             WeightInOneServing = weightInOneServing;
             PricePerServing = pricePerServing;
         }
 
-        public Dish(int id, string name, double pricePerServing, Weight weightInOneServing, HashSet<IngredientWeight> recipe) : this(id, name, pricePerServing, weightInOneServing)
+        public Dish(Guid id, string name, double pricePerServing, Weight weightInOneServing, HashSet<IngredientWeight> recipe) : this(id, name, pricePerServing, weightInOneServing)
         {
             Recipe = recipe;
         }

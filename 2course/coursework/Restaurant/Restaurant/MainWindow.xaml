@@ -34,7 +34,7 @@
 
 
         <Grid Margin="250 55 0 0">
-            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" >
                 <Frame x:Name="MainFrame" JournalEntry.KeepAlive="False"></Frame>
             </Grid>
         </Grid>
@@ -73,13 +73,6 @@
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Chemist" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Інгредієнти" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
-
-                <ListViewItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Cash" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Бюджет" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
 

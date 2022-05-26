@@ -7,13 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Pages\BudgetCalculatorPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\DishCreatorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\DishEditingPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\IngredientCreatorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\IngredientEditorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\IngredientsPage.xaml.cs">
@@ -39,13 +42,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\BudgetCalculatorPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\DishCreatorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\DishEditingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\IngredientCreatorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\IngredientEditorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\IngredientsPage.xaml">

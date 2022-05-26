@@ -38,8 +38,7 @@ namespace Restaurant
                 Ingredients.TryGetValue(neenedIngredient, out ingredient1);
                 ingredientsList.TryGetValue(neenedIngredient, out ingredient2);
 
-                int count = Convert.ToInt32(ingredient1.Weight.Amount  /
-                                            ingredient2.Weight.Amount);
+                int count = Convert.ToInt32(Math.Floor(ingredient1.Weight.Amount/ingredient2.Weight.Amount));
 
                 if (count <= 0)
                     return 0;
@@ -63,6 +62,7 @@ namespace Restaurant
                     ingredient.DecreaseWeight(currentIngredient.Weight);
                 }
             }
+            
         }
 
         public void IncreaseIngredients(HashSet<IngredientWeight> recipe)

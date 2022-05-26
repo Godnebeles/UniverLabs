@@ -9,7 +9,7 @@
              MinWidth="650px" Height="auto" Width="auto"
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid x:Name="DishData"  Tag="">
+    <Grid x:Name="IngredientData"  Tag="">
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
 
             <Border Background="#dde0e3" BorderThickness="2" CornerRadius="15">
@@ -60,7 +60,15 @@
                                        HorizontalAlignment="Center" 
                                        FontSize="20" 
                                        Margin="5 0 0 0" />
+                        
+                        
                     </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Right"  Orientation="Horizontal">
+                        <Button Content="Редагувати" Margin="5" Click="ButtonEdit_Click"/>
+                        <Button Content="Видалити" Margin="5" Click="ButtonDelete_Click"/>
+                    </StackPanel>
+                   
 
                 </StackPanel>
 

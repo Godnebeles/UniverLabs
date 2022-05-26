@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Univer\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj": {}
+    "D:\\Univer\\New folder\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj": {}
   },
   "projects": {
-    "D:\\Univer\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj": {
+    "D:\\Univer\\New folder\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Univer\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj",
+        "projectUniqueName": "D:\\Univer\\New folder\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj",
         "projectName": "Restaurant",
-        "projectPath": "D:\\Univer\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj",
+        "projectPath": "D:\\Univer\\New folder\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\Restaurant.csproj",
         "packagesPath": "C:\\Users\\Nyashuka\\.nuget\\packages\\",
-        "outputPath": "D:\\Univer\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\obj\\",
+        "outputPath": "D:\\Univer\\New folder\\UniverLabs\\2course\\coursework\\Restaurant\\Restaurant\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

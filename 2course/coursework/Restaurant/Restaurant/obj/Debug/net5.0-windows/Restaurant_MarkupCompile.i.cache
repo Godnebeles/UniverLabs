@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\obj\Debug\net5.0-windows\
+D:\Univer\New folder\UniverLabs\2course\coursework\Restaurant\Restaurant\obj\Debug\net5.0-windows\
 Restaurant
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-D:\Univer\UniverLabs\2course\coursework\Restaurant\Restaurant\App.xaml
-11730366403
+D:\Univer\New folder\UniverLabs\2course\coursework\Restaurant\Restaurant\App.xaml
+12812443200
 
-51655601678
+521356963462
 196-1272306326
-MainWindow.xaml;Pages\BudgetCalculatorPage.xaml;Pages\DishCreatorPage.xaml;Pages\DishEditingPage.xaml;Pages\IngredientsPage.xaml;Pages\MainPage.xaml;Pages\OrdersPage.xaml;UserControls\DishMenuUserControl.xaml;UserControls\DishUserControl.xaml;UserControls\IngredientUserControl.xaml;UserControls\OrdersUserControl.xaml;
+MainWindow.xaml;Pages\DishCreatorPage.xaml;Pages\DishEditingPage.xaml;Pages\IngredientCreatorPage.xaml;Pages\IngredientEditorPage.xaml;Pages\IngredientsPage.xaml;Pages\MainPage.xaml;Pages\OrdersPage.xaml;UserControls\DishMenuUserControl.xaml;UserControls\DishUserControl.xaml;UserControls\IngredientUserControl.xaml;UserControls\OrdersUserControl.xaml;
 
-True
+False
 

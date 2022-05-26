@@ -8,18 +8,18 @@ namespace Restaurant
 {
     public class BudgetCalculator : IBudgetCalculator
     {
-        public List<Taxe> Taxes { get; private set; }
+        //public List<Taxe> Taxes { get; private set; }
 
 
-        public BudgetCalculator(List<Taxe> taxes)
-        {
-            Taxes = taxes;
-        }
+        //public BudgetCalculator(List<Taxe> taxes)
+        //{
+        //    Taxes = taxes;
+        //}
 
-        public double CalculateEarnings(Dictionary<Dish, int> dishesList)
-        {
-            throw new NotImplementedException();
-        }
+        //public double CalculateEarnings(Dictionary<Dish, int> dishesList)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         //private double CalculateTotalCost(List<Budget> budgets)
         //{
@@ -56,6 +56,9 @@ namespace Restaurant
 
         //    return totalEarnings;
         //}
-
+        public double CalculateEarnings(Dictionary<Dish, int> dishesList)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

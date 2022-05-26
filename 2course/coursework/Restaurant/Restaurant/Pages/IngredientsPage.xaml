@@ -9,12 +9,17 @@
       Title="MainPage">
 
     <Grid Margin="5 10">
+        
         <Grid VerticalAlignment="Top">
-            <Button Content="Записати новий інгредієнт" VerticalAlignment="Top" Margin="0 0 0 20" />
+            <Button Content="Записати новий інгредієнт" VerticalAlignment="Top" Margin="0 0 0 20"  Click="CreateIngredientButton_Click"/>
+        </Grid>
+
+        <Grid  Margin="0 50 0 0">
+            <Button Content="Зберегти зміни" VerticalAlignment="Top" Click="SaveChanges_Click"/>
         </Grid>
         
-        <Grid>
-            <ScrollViewer Margin="0 40 0 0" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Visible">
+        <Grid Margin="0 50 0 0">
+            <ScrollViewer Margin="0 50 0 0" VerticalAlignment="Top" VerticalScrollBarVisibility="Visible">
 
                 <StackPanel x:Name="IngredientsListStackPanel">
 

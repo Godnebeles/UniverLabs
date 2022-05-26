@@ -6,32 +6,73 @@
       xmlns:local="clr-namespace:Restaurant"
       mc:Ignorable="d" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      MinWidth="650px" Height="auto" Width="auto"
       d:DesignHeight="450" d:DesignWidth="800"  FontSize="20" >
 
-    <Grid >
+    <Grid VerticalAlignment="Top">
         <ScrollViewer>
+
             <StackPanel Orientation="Vertical">
-                <StackPanel Margin="10" Orientation="Horizontal">
-                    <TextBox IsReadOnly="True" Text="Назва" FontWeight="Bold"></TextBox>
-                    <TextBox Width="250" Margin="25 0" x:Name="DishName"></TextBox >
+                <Grid Margin="10"  >
+                    <Button Content="Зберегти" FontWeight="Bold" x:Name="SaveButton" Click="SaveButton_Click"/>
+                </Grid>
+
+                <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBox IsReadOnly="True" Text="Назва" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBox Width="250" Margin="25 0" x:Name="DishName" HorizontalContentAlignment="Center"/>
                 </StackPanel>
 
-                <StackPanel Margin="10" Orientation="Horizontal">
-                    <TextBox IsReadOnly="True" Text="Ціна(грн)" FontWeight="Bold"></TextBox>
-                    <TextBox Width="250" Margin="25 0" x:Name="DishPrice"></TextBox>
+                <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBox IsReadOnly="True" Text="Ціна за порцію(грн)" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBox Width="250" Margin="25 0" x:Name="DishPrice" HorizontalContentAlignment="Center"/>
                 </StackPanel>
 
-                <StackPanel Margin="10" Orientation="Horizontal">
-                    <TextBox IsReadOnly="True" Text="Рецепт" FontWeight="Bold"></TextBox>
-                    <Button Width="250" Content="Додати" Margin="25 0" x:Name="ReceptIngredientAdd"></Button>
+                <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBox IsReadOnly="True" Text="Вага в одній порції(гр.)" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBox Width="250" Margin="25 0" x:Name="DishWeight" HorizontalContentAlignment="Center"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Vertical">
-                    
+                <StackPanel Margin="10" Orientation="Vertical" HorizontalAlignment="Center">
+                    <TextBox IsReadOnly="True" Text="Рецепт" FontWeight="Bold" />
+
                 </StackPanel>
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <ComboBox Margin="50 0" x:Name="IngredientList"
+                              DisplayMemberPath="Name"
+                              SelectedValuePath="Name"
+                              MinWidth="100px">
+
+                    </ComboBox>
+                    <Button Content="Додати" FontWeight="Bold" x:Name="ReceptIngredientAdd" Click="ReceptIngredientAdd_Click"/>
+                </StackPanel>
+
+                <DataGrid FontSize="18" x:Name="IngredientListDataGrid" Margin="10" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="Auto" >
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Header="Назва інгредієнта" Binding="{Binding Name}" Width="1*" />
+
+                        <DataGridTextColumn Header="Вага(гр)" IsReadOnly="False" Binding="{Binding Weight}" Width="1*" />
+                        <!--<DataGridTemplateColumn Header="Вага"  Width="1*"  >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox x:Name="Weight" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+
+                        <DataGridTemplateColumn Width="0.5*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Delete" Click="DeleteButton_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
             </StackPanel>
         </ScrollViewer>
-       
+
     </Grid>
 </Page>

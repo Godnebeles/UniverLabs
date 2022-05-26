@@ -9,11 +9,14 @@
       Title="DishEditingPage">
 
     <Grid Margin="5 10">
-        <Grid VerticalAlignment="Top">
+        <Grid >
             <Button Content="Записати нову страву" VerticalAlignment="Top" Margin="0 0 0 20" Click="CreateDishButton_Click"/>
         </Grid>
-        <Grid >
-            <ScrollViewer Margin="0 40 0 0" VerticalAlignment="Bottom" VerticalScrollBarVisibility="Visible">
+        <Grid  Margin="0 50 0 0">
+            <Button Content="Зберегти зміни" VerticalAlignment="Top" Click="SaveChanges_Click"/>
+        </Grid>
+        <Grid Margin="0 50 0 0">
+            <ScrollViewer Margin="0 40 0 0" VerticalAlignment="Top" VerticalScrollBarVisibility="Visible">
 
                 <StackPanel x:Name="DishesListStackPanel">
 
@@ -22,11 +25,5 @@
             </ScrollViewer>
         </Grid>
            
-          
-       
-
-       
-
-
     </Grid>
 </Page>

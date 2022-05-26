@@ -25,32 +25,33 @@ namespace Restaurant
         private MainPage _mainPage = new MainPage();
         private OrdersPage _ordersPage = new OrdersPage();
         private DishEditingPage _listOfDishesPage = new DishEditingPage();
-        private BudgetCalculatorPage _budgetCalculatorPage = new BudgetCalculatorPage();
-        private DishCreatorPage _dishCreatorPage = new DishCreatorPage();
+        private DishCreatorPage _dishCreatorPage;
         private IngredientsPage _ingredientsPage = new IngredientsPage();
         // services
         private Storage _storage = new Storage();
         private CookingPlan _cookingPlan = new CookingPlan();
-        private BudgetCalculator _budgetCalculator = new BudgetCalculator(new List<Taxe>());
+        //private BudgetCalculator _budgetCalculator = new BudgetCalculator(new List<Taxe>());
         private DataLoader _dataLoader = new DataLoader("cooking_list.json", "storage.json");
 
         public MainWindow()
         {
             InitializeComponent();
+
             MainFrame.Content = _mainPage;
             MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-            
-            //Ingredient ingredient1 = new Ingredient(0, "Паштет", 100.0);
-            //Ingredient ingredient2 = new Ingredient(1, "Крутони", 210.0);
-            //Ingredient ingredient3 = new Ingredient(2, "Сало", 210.0);
-            //Ingredient ingredient4 = new Ingredient(3, "Гірчиця", 210.0);
 
 
-            //Dish dish1 = new Dish(0, "Паштет з ягідним джемом та крутонами", 90, new Weight(100, UnitOfWeight.G));
+            //Ingredient ingredient1 = new Ingredient(Guid.NewGuid(), "Паштет", 100.0);
+            //Ingredient ingredient2 = new Ingredient(Guid.NewGuid(), "Крутони", 210.0);
+            //Ingredient ingredient3 = new Ingredient(Guid.NewGuid(), "Сало", 210.0);
+            //Ingredient ingredient4 = new Ingredient(Guid.NewGuid(), "Гірчиця", 210.0);
+
+
+            //Dish dish1 = new Dish(Guid.NewGuid(), "Паштет з ягідним джемом та крутонами", 90, new Weight(100, UnitOfWeight.G));
             //dish1.AddIngredientInRecipe(new IngredientWeight(ingredient1, new Weight(220, UnitOfWeight.G)));
             //dish1.AddIngredientInRecipe(new IngredientWeight(ingredient2, new Weight(60, UnitOfWeight.G)));
             //dish1.ChangeWeightNeededIngredient(new IngredientWeight(ingredient2, new Weight(65, UnitOfWeight.G)));
-            //Dish dish2 = new Dish(1, "Сало з гірчицею", 107, new Weight(100, UnitOfWeight.G));
+            //Dish dish2 = new Dish(Guid.NewGuid(), "Сало з гірчицею", 107, new Weight(100, UnitOfWeight.G));
             //dish2.AddIngredientInRecipe(new IngredientWeight(ingredient3, new Weight(60, UnitOfWeight.G)));
             //dish2.AddIngredientInRecipe(new IngredientWeight(ingredient4, new Weight(60, UnitOfWeight.G)));
 
@@ -69,7 +70,8 @@ namespace Restaurant
 
             _cookingPlan = _dataLoader.LoadCookingPlan();
             _storage = _dataLoader.LoadStorage();
-
+        
+            SignEvents();
 
             ShowMenuOfDishes(_storage.Menu);
             ShowDishes(_storage.Menu);
@@ -77,9 +79,84 @@ namespace Restaurant
             ShowIngredients(_storage.Ingredients);
         }
 
+        public void SaveAllData()
+        {
+            _dataLoader.SaveCookingPlan(_cookingPlan);
+            _dataLoader.SaveStorage(_storage);
+        }
+
+        public void DeleteDishFromMenu(Dish dish)
+        {
+            _storage.Menu.Remove(dish);
+            ShowDishes(_storage.Menu);
+        }
+
+        public void GoPageToCreatingDish()
+        {
+            DishCreatorPage dishCreatorPage = new DishCreatorPage(_storage.Ingredients.ToList());
+            dishCreatorPage.OnSaveDish += AddNewDish;
+            ChangePage(dishCreatorPage);
+        }
+
+        public void GoPageToCreatingIngredient()
+        {
+            IngredientCreatorPage ingredientCreatorPage = new IngredientCreatorPage();
+            ingredientCreatorPage.OnSaveIngredient += AddNewIngredien;
+            ChangePage(ingredientCreatorPage);
+        }
+
         private void SignEvents()
         {
-            _listOfDishesPage.OnCreateButtonClick += () => ChangePage(_dishCreatorPage);
+            _listOfDishesPage.OnCreateButtonClick += GoPageToCreatingDish;
+            _listOfDishesPage.OnSaveChangesEvent += SaveAllData;
+
+            _ingredientsPage.OnCreatIngredientClick += GoPageToCreatingIngredient;
+            _ingredientsPage.OnSaveChangesEvent += SaveAllData;
+        }
+    
+
+        public void AddNewDish(Dish dish)
+        {
+            _storage.Menu.Add(dish);
+            ShowDishes(_storage.Menu);
+            ChangePage(_listOfDishesPage);
+        }
+
+        public void AddNewIngredien(IngredientWeight ingredient)
+        {
+            _storage.Ingredients.Add(ingredient);
+            ShowIngredients(_storage.Ingredients);
+            ChangePage(_ingredientsPage);
+        }
+
+        public void AddOldIngredien(Ingredient ingredient)
+        {
+           
+            ShowDishes(_storage.Menu);
+            ChangePage(_listOfDishesPage);
+        }
+
+        public void EditIngredient(IngredientWeight ingredient)
+        {
+            _storage.Ingredients.Remove(ingredient);
+            _storage.Ingredients.Add(ingredient);
+            ShowIngredients(_storage.Ingredients);
+            ChangePage(_ingredientsPage);
+        }
+
+        public void DeleteIngredientFromStorage(IngredientWeight ingredient)
+        {
+            _storage.Ingredients.Remove(ingredient);
+            ShowIngredients(_storage.Ingredients);
+        }
+
+        public void EditIngredientInStorage(IngredientWeight ingredient)
+        {
+            IngredientEditorPage ingredientEditorPage = new IngredientEditorPage(ingredient);
+
+            ingredientEditorPage.OnSaveIngredient += EditIngredient;
+
+            ChangePage(ingredientEditorPage);
         }
 
         private void ShowMenuOfDishes(List<Dish> dishes)
@@ -94,8 +171,8 @@ namespace Restaurant
                     continue;
                 
                 DishMenuUserControl dishUserControl = new DishMenuUserControl();
-                Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Id + ".jpg");
-                dishUserControl.DishImage.Source = new BitmapImage(fileUri);
+                //Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Id + ".jpg");
+                //dishUserControl.DishImage.Source = new BitmapImage(fileUri);
 
                 dishUserControl.DishData.Tag = dish;
                 dishUserControl.DishName.Text = dish.Name;
@@ -110,16 +187,19 @@ namespace Restaurant
 
         private void ShowDishes(List<Dish> dishes)
         {
+            _listOfDishesPage.DishesListStackPanel.Children.Clear();
+
             foreach (var dish in dishes)
             {
                 DishUserControl dishUserControl = new DishUserControl();
-                Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Id + ".jpg");
-                dishUserControl.DishImage.Source = new BitmapImage(fileUri);
+                //Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Id + ".jpg");
+                //dishUserControl.DishImage.Source = new BitmapImage(fileUri);
 
                 dishUserControl.DishData.Tag = dish;
                 dishUserControl.DishName.Text = dish.Name;
                 dishUserControl.DishIngredients.Text = dish.RecipeToString();
                 dishUserControl.DishPrice.Text = dish.PricePerServing + "грн.";
+                dishUserControl.OnDeleteEvent += DeleteDishFromMenu;
 
                 _listOfDishesPage.DishesListStackPanel.Children.Add(dishUserControl);
             }
@@ -134,8 +214,8 @@ namespace Restaurant
                 foreach (var dish in order.Dishes)
                 {
                     OrdersUserControl dishUserControl = new OrdersUserControl();
-                    Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Dish.Id + ".jpg");
-                    dishUserControl.DishImage.Source = new BitmapImage(fileUri);
+                    //Uri fileUri = new Uri(Directory.GetCurrentDirectory() + "/dish_images/" + dish.Dish.Id + ".jpg");
+                    //dishUserControl.DishImage.Source = new BitmapImage(fileUri);
 
                     dishUserControl.DishCountData.Tag = dish;
                     dishUserControl.CookDate.Tag = order.Date;
@@ -159,13 +239,16 @@ namespace Restaurant
 
             foreach (var ingredient in ingredients)
             {
-                IngredientUserControl dishUserControl = new IngredientUserControl();
+                IngredientUserControl ingredientUserControl = new IngredientUserControl();
 
-                dishUserControl.IngredientName.Text = ingredient.Ingredient.Name;
-                dishUserControl.IngredientPrice.Text = ingredient.Ingredient.PricePerOneKilogram + "грн.";
-                dishUserControl.IngredientWeight.Text = ingredient.Weight.ToString();
+                ingredientUserControl.IngredientData.Tag = ingredient;
+                ingredientUserControl.IngredientName.Text = ingredient.Ingredient.Name;
+                ingredientUserControl.IngredientPrice.Text = ingredient.Ingredient.PricePerOneKilogram + "грн.";
+                ingredientUserControl.IngredientWeight.Text = ingredient.Weight.ToString();
+                ingredientUserControl.OnDeleteEvent += DeleteIngredientFromStorage;
+                ingredientUserControl.OnEditEvent += EditIngredientInStorage;
 
-                _ingredientsPage.IngredientsListStackPanel.Children.Add(dishUserControl);
+                _ingredientsPage.IngredientsListStackPanel.Children.Add(ingredientUserControl);
             }
         }
 
@@ -197,11 +280,6 @@ namespace Restaurant
         private void ToListOfOrders_Click(object sender, RoutedEventArgs e)
         {
             ChangePage(_listOfDishesPage);
-        }
-
-        private void ToCalculatorButton_Click(object sender, RoutedEventArgs e)
-        {
-            ChangePage(_budgetCalculatorPage);
         }
 
         public void ChangePage(Page page)
@@ -243,14 +321,12 @@ namespace Restaurant
                     ChangePage(_ordersPage);
                     break;
                 case 2:
+                    ShowDishes(_storage.Menu);
                     ChangePage(_listOfDishesPage);
                     break;
                 case 3:
                     ShowIngredients(_storage.Ingredients);
                     ChangePage(_ingredientsPage);
-                    break;
-                case 4:
-                    ChangePage(_budgetCalculatorPage);
                     break;
                 default:
                     break;
@@ -265,7 +341,16 @@ namespace Restaurant
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+            
         }
     }
 }

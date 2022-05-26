@@ -21,6 +21,7 @@ namespace Restaurant
     public partial class DishEditingPage : Page
     {
         public event Action OnCreateButtonClick;
+        public event Action OnSaveChangesEvent;
         public DishEditingPage()
         {
             InitializeComponent();
@@ -29,7 +30,12 @@ namespace Restaurant
 
         private void CreateDishButton_Click(object sender, RoutedEventArgs e)
         {
-            OnCreateButtonClick.Invoke();
+            OnCreateButtonClick?.Invoke();
+        }
+
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            OnSaveChangesEvent?.Invoke();
         }
     }
 }

@@ -8,10 +8,10 @@ namespace Restaurant
 {
     public abstract class DishBase : IEquatable<DishBase>
     {
-        public int Id { get; protected set; }
+        public Guid Id { get; protected set; }
         public string Name { get; protected set; }
 
-        public DishBase(int id, string name)
+        public DishBase(Guid id, string name)
         {
             Id = id;
             Name = name;
@@ -22,7 +22,6 @@ namespace Restaurant
             if(newName != "")
                 Name = newName;
         }
-
 
         public bool Equals(DishBase? other)
         {
