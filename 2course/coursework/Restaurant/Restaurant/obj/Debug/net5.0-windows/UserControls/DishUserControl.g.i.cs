@@ -104,7 +104,7 @@ namespace Restaurant {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Restaurant;V1.0.0.0;component/usercontrols/dishusercontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Restaurant;component/usercontrols/dishusercontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UserControls\DishUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

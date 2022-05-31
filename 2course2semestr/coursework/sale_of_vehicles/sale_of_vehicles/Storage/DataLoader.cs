@@ -15,7 +15,14 @@ namespace sale_of_vehicles
 
         public List<FuelType> LoadFuelData()
         {
-            throw new System.NotImplementedException();
+            return new List<FuelType>() 
+            {
+                new CarFuel("Diesel"),
+                new CarFuel("Gasoline"),
+                new CarFuel("Electricity"),
+                new AviationFuel("Gasoline"),
+                new AviationFuel("Jet Fuel"),
+            };
         }
 
         public List<Vehicle> LoadVehiclesData()

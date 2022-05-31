@@ -120,7 +120,7 @@ namespace Restaurant {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Restaurant;V1.0.0.0;component/usercontrols/ordersusercontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Restaurant;component/usercontrols/ordersusercontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UserControls\OrdersUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

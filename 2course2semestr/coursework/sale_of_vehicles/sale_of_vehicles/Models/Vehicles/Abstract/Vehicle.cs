@@ -6,15 +6,16 @@ namespace sale_of_vehicles
     {
         public Guid Id { get; protected set; }
         public string Name { get; protected set; }
+        public string Model { get; protected set; }
         public double Price { get; protected set; }
         public int NumberOfSeats { get; protected set; }
         public FuelType FuelType { get; protected set; }
         public IFunctionality Functionality { get; protected set; }
 
-        protected Vehicle(string name, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality)
+        protected Vehicle(string name, string model, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality)
         {
-            if (name == "")
-                throw new Exception("Incorrect name!");
+            if (name == "" || model == "")
+                throw new Exception("Incorrect name or model!");
             if(price <= 0)
                 throw new Exception("Incorrect price!");
             if(numberOfSeats <= 0)
@@ -28,6 +29,7 @@ namespace sale_of_vehicles
             NumberOfSeats = numberOfSeats;
             FuelType = fuelType;
             Functionality = functionality;
+            Model = model;
         }
 
         public abstract bool CheckFunctionality();

@@ -30,7 +30,7 @@ namespace sale_of_vehicles
             InitializeComponent();
 
             MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
-
+            PresentCarListPage();
         }
 
         private void PresentCarListPage()
@@ -43,7 +43,6 @@ namespace sale_of_vehicles
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = ListViewMenu.SelectedIndex;
-            MoveCursorMenu(index);
 
             switch (index)
             {
@@ -56,39 +55,7 @@ namespace sale_of_vehicles
             }
         }
 
-        /// <summary>
-        /// Custom interface
-        /// </summary>
-        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void ButtonFullScreen_Click(object sender, RoutedEventArgs e)
-        {
-            if (Application.Current.MainWindow.WindowState == WindowState.Normal)
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
-            else
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
-        }
-
-        private void ButtonMinimized_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
-
-        }
-
-        private void MoveCursorMenu(int index)
-        {
-            TrainsitionigContentSlide.OnApplyTemplate();
-            GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
-        }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
+        
        
     }
 }

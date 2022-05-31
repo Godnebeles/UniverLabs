@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace sale_of_vehicles
@@ -82,6 +83,35 @@ namespace sale_of_vehicles
             return truck;
         }
 
+        public List<PassengerPlane> GetPassengerPlanes()
+        {
+            List<PassengerPlane> truck = new List<PassengerPlane>();
+
+            foreach (var vehicle in VehicleList)
+            {
+                if (vehicle.CheckFunctionality() && vehicle is PassengerPlane)
+                {
+                    truck.Add((PassengerPlane)vehicle);
+                }
+            }
+
+            return truck;
+        }
+
+        public List<TransportPlane> GetTransportPlanes()
+        {
+            List<TransportPlane> truck = new List<TransportPlane>();
+
+            foreach (var vehicle in VehicleList)
+            {
+                if (vehicle.CheckFunctionality() && vehicle is TransportPlane)
+                {
+                    truck.Add((TransportPlane)vehicle);
+                }
+            }
+
+            return truck;
+        }
     }
 
 }

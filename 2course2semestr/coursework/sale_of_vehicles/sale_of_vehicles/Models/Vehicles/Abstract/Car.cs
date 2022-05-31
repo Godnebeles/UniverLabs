@@ -8,14 +8,11 @@ namespace sale_of_vehicles
 {
     public class Car : Vehicle
     {
-        public Car(string name, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality) 
-                   : base(name, price, numberOfSeats, fuelType, functionality)
+        public Car(string name, string model, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality)
+                   : base(name, model, price, numberOfSeats, fuelType, functionality)
         {
 
         }
-
-
-        public string Model { get; private set; } = string.Empty;
 
         public override bool CheckFunctionality()
         {

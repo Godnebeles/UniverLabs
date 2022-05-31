@@ -52,6 +52,7 @@ namespace sale_of_vehicles
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 
@@ -59,12 +60,13 @@ namespace sale_of_vehicles
     {
         private VehiclesShop _carShop;
         private List<FuelType> _fuelTypes;
+        private GasStation _gasStation;
         public VehiclesPage(List<Vehicle> vehicleList)
         {
             InitializeComponent();
 
             VehicleTypeFilter.SelectedIndex = 0;
-            FuelTypeFilter.SelectedIndex = 0;
+            FuelsTypeFilter.SelectedIndex = 0;
 
             FuelType fuel1 = new CarFuel("Diesel");
             FuelType fuel2 = new CarFuel("Gasoline");
@@ -85,10 +87,12 @@ namespace sale_of_vehicles
 
             IFunctionality functionality = new CarFunctionality();
 
-            Vehicle car1 = new Truck("ok", 5, 10, fuel1, 4, TypeOfCargo.Fragile, functionality);
-            Vehicle car2 = new Bus("Bus", 1, 2, fuel2, 4, functionality);
+            Vehicle car1 = new Truck("Truck?&^(", "YT 1" , 500000, 10, fuel1, 4, TypeOfCargo.Fragile, functionality);
+            Vehicle car2 = new Bus("School Bus", "Ford B350",  100000, 22, fuel2, 32, functionality);
+            Vehicle plane1 = new PassengerPlane("Plane \"Mriya\"", "B-P S543", 10000000, 50, fuel2, functionality);
             cars.Add(car1);
             cars.Add(car2);
+            cars.Add(plane1);
 
 
             _carShop = new VehiclesShop(cars);
@@ -105,12 +109,20 @@ namespace sale_of_vehicles
                 CarList.ItemsSource = _carShop.GetBuses();
             else if (VehicleTypeFilter.SelectedIndex == 2)
                 CarList.ItemsSource = _carShop.GetTrucks();
+            else if (VehicleTypeFilter.SelectedIndex == 3)
+                CarList.ItemsSource = _carShop.GetPassengerPlanes();
+            else if (VehicleTypeFilter.SelectedIndex == 4)
+                CarList.ItemsSource = _carShop.GetTransportPlanes();
+
+            if (FuelsTypeFilter.SelectedIndex > 0)
+                FuelNameTypeFilter.IsEnabled = true;
+            else
+                FuelNameTypeFilter.IsEnabled = false;
         }
 
         private void FuelTypeFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            FuelType item = (FuelType)FuelTypeFilter.SelectedItem;
-
+            
         }
     }
 }

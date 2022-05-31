@@ -7,63 +7,53 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Height="600" MinHeight="600" MinWidth="1200" Width="1200" WindowStartupLocation="CenterScreen" 
-        Title="MainWindow" WindowStyle="None">
+        MinHeight="600" MinWidth="1200"  WindowStartupLocation="CenterScreen" 
+        Title="" WindowStyle="SingleBorderWindow">
 
-    <Grid Background="#FFEEEEEE" MouseDown="Grid_MouseDown">
-        <StackPanel Margin="250 0 0 0" VerticalAlignment="Top">
-            <Grid Background="#FF0069C0" Height="15"/>
-            <Grid Margin="5">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
-                    <TextBlock Text="Vehicle support system" VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limousines" FontWeight="Bold"/>
-                    <materialDesign:PackIcon Kind="Car" Width="30px" Height="30px"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonMinimized_Click">
-                        <materialDesign:PackIcon Kind="Minus"/>
-                    </Button>
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Margin="0 0 10 0" Click="ButtonFullScreen_Click">
-                        <materialDesign:PackIcon Kind="Fullscreen"/>
-                    </Button>
-                    <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonFechar_Click">
-                        <materialDesign:PackIcon Kind="Power"/>
-                    </Button>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
-
-        <Grid Margin="250 100 0 50">
-            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Border Background="#FFFFFF" BorderThickness="2" CornerRadius="15">
+    <Grid Background="white">
+        <Grid Margin="250 0 0 0 ">
+            <Grid x:Name="GridPrincipal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
+                <Border Background="#dfe4ea" BorderThickness="1" CornerRadius="15">
                     <Frame x:Name="MainFrame" JournalEntry.KeepAlive="False"></Frame>
                 </Border>
             </Grid>
         </Grid>
 
-        <Grid Width="250" HorizontalAlignment="Left" Background="#FF222222">
-            
-            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
-                <Grid x:Name="GridCursor" Margin="0 100 0 0" Background="#FF0069C0" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"/>
-            </materialDesign:TransitioningContent>
 
-            <ListView x:Name="ListViewMenu" Margin="0 100" Foreground="LightGray" FontFamily="Champagne &amp; Limousines" FontSize="18" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="0">
+        <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Margin="5">
+            <Border Background="#ff7f50" BorderBrush="White" BorderThickness="2" CornerRadius="15">
+                <StackPanel  >
 
-                <ListViewItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="CarSaloon" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Cars" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
+                    <Grid Height="150" Margin="10">
+                        <Border BorderBrush="White" BorderThickness="2" CornerRadius="15">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20" >
+                                <TextBlock Foreground="White" Text="Vehicle support&#10;system" FontSize="20" FontFamily="Champagne &amp; Limousines" FontWeight="Bold"/>
+                                <materialDesign:PackIcon Foreground="black" Kind="Car" Width="30px"  Height="30px" Margin="10"/>
+                            </StackPanel>
+                        </Border>
 
-                <ListViewItem Height="60" >
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Garage" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Cars Editor" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
+                    </Grid>
 
-            </ListView>
+                    <ListView x:Name="ListViewMenu" Foreground="Black"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          FontFamily="Champagne &amp; Limousines" FontSize="20" SelectionChanged="ListViewMenu_SelectionChanged" >
 
+                        <ListViewItem x:Name="ItemHome" Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Foreground="#ffffff" Kind="GarageOpen" Height="25" Width="25" Margin="10"/>
+                                <TextBlock Foreground="#ffffff"  Text="Vehicles" VerticalAlignment="Center" Margin="5 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem x:Name="ItemCreate" Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Foreground="#ffffff" Kind="Pencil" Height="25" Width="25" Margin="10"/>
+                                <TextBlock  Foreground="#ffffff" Text="Create Vehicle" VerticalAlignment="Center" Margin="5 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                    </ListView>
+                </StackPanel>
+            </Border>
+          
         </Grid>
     </Grid>
 

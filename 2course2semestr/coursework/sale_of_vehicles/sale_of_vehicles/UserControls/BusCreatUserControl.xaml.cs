@@ -28,6 +28,7 @@ namespace sale_of_vehicles
         public Vehicle GetData()
         {
             return new Bus(/*name*/                 BusName.Text,
+                           /*model*/                "Rotate",
                            /*price*/                Convert.ToDouble(BusPrice.Text),
                            /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
                            /*fuel type*/            new CarFuel("A23"),

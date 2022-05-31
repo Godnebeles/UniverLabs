@@ -5,9 +5,9 @@ namespace sale_of_vehicles
     public class Truck : Car
     {
         
-        public Truck(string name, double price, int numberOfSeats, FuelType fuelType, double maxWeightOfCargo, 
-                    TypeOfCargo cargoType, IFunctionality functionality) 
-                    : base(name, price, numberOfSeats, fuelType, functionality)
+        public Truck(string name, string model, double price, int numberOfSeats, FuelType fuelType, double maxWeightOfCargo, 
+                        TypeOfCargo cargoType, IFunctionality functionality) 
+                    : base(name, model,price, numberOfSeats, fuelType, functionality)
         {
             MaxWeightOfCargo = maxWeightOfCargo;
             CargoType = cargoType;

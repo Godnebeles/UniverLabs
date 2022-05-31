@@ -33,20 +33,9 @@ namespace sale_of_vehicles
                                                           () => AdditionFields.Children.Add(new TruckCreatUserControl()), 
                                                           () => AdditionFields.Children.Add(new PassengerPlaneCreatUserControl()), 
                                                           () => AdditionFields.Children.Add(new TransportPlaneCreatUserControl()) };
-        }       
-
-        private T GetDataFromList<T>(IEnumerable<object> list)
-        {
-            foreach (var control in list)
-            {
-                if (control is IInterfaceDataReceiver<T> receiver)
-                {
-                    return receiver.GetData();
-                }
-            }
-
-            throw new Exception("User Control is not defined!");
         }
+
+
 
         //public void CreateBus()
         //{
@@ -68,7 +57,18 @@ namespace sale_of_vehicles
         //    TransportPlaneCreatUserControl userControl = new TransportPlaneCreatUserControl();
         //    AdditionFields.Children.Add(userControl);
         //}
+        private T GetDataFromList<T>(IEnumerable<object> list)
+        {
+            foreach (var control in list)
+            {
+                if (control is IInterfaceDataReceiver<T> receiver)
+                {
+                    return receiver.GetData();
+                }
+            }
 
+            throw new Exception("User Control is not defined!");
+        }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             Vehicle vehicle = GetDataFromList<Vehicle>(AdditionFields.Children.Cast<UIElement>());
