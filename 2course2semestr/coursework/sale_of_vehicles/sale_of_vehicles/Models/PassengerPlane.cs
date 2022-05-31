@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sale_of_vehicles.Models
+namespace sale_of_vehicles
 {
-    internal class PassengerPlane : Plane
+    public class PassengerPlane : Plane
     {
-        public PassengerPlane(string name, double price, int numberOfSeats, TypesOfFuel fuelType) : base(name, price, numberOfSeats, fuelType)
+        public PassengerPlane(string name, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality) : 
+                                base(name, price, numberOfSeats, fuelType, functionality)
         {
+
         }
+
+
     }
 }

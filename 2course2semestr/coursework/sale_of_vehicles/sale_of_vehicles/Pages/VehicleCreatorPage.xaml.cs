@@ -27,28 +27,60 @@ namespace sale_of_vehicles
         public VehicleCreatorPage()
         {
             InitializeComponent();
-            
-            selectedDelegates = new SelectedDelegate[2] { CreateBus, CreateTruck };
+
+            //selectedDelegates = new SelectedDelegate[4] { CreateBus, CreateTruck, CreatePassengerPlane, CreateTransportPlane };
+            selectedDelegates = new SelectedDelegate[4] { () => AdditionFields.Children.Add(new BusCreatUserControl()) , 
+                                                          () => AdditionFields.Children.Add(new TruckCreatUserControl()), 
+                                                          () => AdditionFields.Children.Add(new PassengerPlaneCreatUserControl()), 
+                                                          () => AdditionFields.Children.Add(new TransportPlaneCreatUserControl()) };
+        }       
+
+        private T GetDataFromList<T>(IEnumerable<object> list)
+        {
+            foreach (var control in list)
+            {
+                if (control is IInterfaceDataReceiver<T> receiver)
+                {
+                    return receiver.GetData();
+                }
+            }
+
+            throw new Exception("User Control is not defined!");
         }
 
+        //public void CreateBus()
+        //{
+        //    AdditionFields.Children.Add(new BusCreatUserControl());
+        //}
 
-        public void CreateBus()
-        {
-            CurrentVehicleFields.Children.Clear();
-            CurrentVehicleFields.Children.Add(new BusCreatUserControl());
-        }
+        //public void CreateTruck()
+        //{
+        //    AdditionFields.Children.Add(new TruckCreatUserControl());
+        //}
 
-        public void CreateTruck()
+        //public void CreatePassengerPlane()
+        //{
+        //    AdditionFields.Children.Add(new PassengerPlaneCreatUserControl());
+        //}
+
+        //public void CreateTransportPlane()
+        //{
+        //    TransportPlaneCreatUserControl userControl = new TransportPlaneCreatUserControl();
+        //    AdditionFields.Children.Add(userControl);
+        //}
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            CurrentVehicleFields.Children.Clear();
-            CurrentVehicleFields.Children.Add(new TruckCreatUserControl());
+            Vehicle vehicle = GetDataFromList<Vehicle>(AdditionFields.Children.Cast<UIElement>());
+
+            Bus bus = (Bus)vehicle;
         }
 
         private void TypeOfVehicle_Selected(object sender, SelectionChangedEventArgs e)
         {
+            AdditionFields.Children.Clear();
             selectedDelegates[TypeOfVehicle.SelectedIndex].Invoke();
         }
-
 
 
     }

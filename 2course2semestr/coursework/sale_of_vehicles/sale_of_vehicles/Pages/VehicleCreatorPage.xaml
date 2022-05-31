@@ -11,48 +11,39 @@
       FontFamily="{DynamicResource MaterialDesignFont}" FontSize="18">
 
     <Grid Margin="0 20">
-      
-            <ScrollViewer>
-                <StackPanel Margin="50 20">
-                    <StackPanel Orientation="Horizontal" >
-                        <TextBox Text="Type of vehicle" Margin="0 0 50 0"/>
 
-                        <ComboBox x:Name="TypeOfVehicle" SelectionChanged="TypeOfVehicle_Selected" MinWidth="50px">
-                            <ComboBoxItem Content="Bus"/>
-                            <ComboBoxItem Content="Truck"/>
-                        </ComboBox>
-                    </StackPanel>
+        <ScrollViewer>
 
-                    <StackPanel Orientation="Vertical">
+            <StackPanel Margin="50 25" >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBox Text="Type of vehicle" Margin="0 0 25 0"/>
 
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox IsReadOnly="True" Text="Car name" FontWeight="Bold"></TextBox>
-                            <TextBox Width="250" Margin="25 0" x:Name="DishName"></TextBox >
-                        </StackPanel>
+                    <ComboBox x:Name="TypeOfVehicle" SelectionChanged="TypeOfVehicle_Selected" MinWidth="200">
+                        <ComboBoxItem Content="Bus"/>
+                        <ComboBoxItem Content="Truck"/>
+                        <ComboBoxItem Content="Passenger Plane"/>
+                        <ComboBoxItem Content="Transport Plane"/>
+                    </ComboBox>
+                </StackPanel>
 
-                        <StackPanel  Orientation="Horizontal">
-                            <TextBox IsReadOnly="True" Text="Bus price" FontWeight="Bold"></TextBox>
-                            <TextBox Width="250" Margin="25 0" x:Name="CarPrice"></TextBox>
-                        </StackPanel>
+                <StackPanel Orientation="Vertical" >
 
-                        <StackPanel  Orientation="Horizontal">
-                            <TextBox IsReadOnly="True" Text="Type of fuel" FontWeight="Bold"></TextBox>
-                            <ComboBox x:Name="FuelFilter" HorizontalContentAlignment="Center"  Margin="25 0" MinWidth="250">
-                                <ComboBoxItem  Content="Gasoline"></ComboBoxItem>
-                                <ComboBoxItem Content="Diesel"></ComboBoxItem>
-                                <ComboBoxItem Content="Electricity"></ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
+                    <Grid x:Name="AdditionFields">
 
-                    </StackPanel>
-
-                    <Grid x:Name="CurrentVehicleFields">
-                        
                     </Grid>
+                    
+
+                    <Button Margin="0 25" Content="Save vehicle" Click="SaveButton_Click"/>
 
                 </StackPanel>
 
-            </ScrollViewer>
+                <Grid x:Name="CurrentVehicleFields">
+
+                </Grid>
+
+            </StackPanel>
+
+        </ScrollViewer>
 
     </Grid>
 </Page>

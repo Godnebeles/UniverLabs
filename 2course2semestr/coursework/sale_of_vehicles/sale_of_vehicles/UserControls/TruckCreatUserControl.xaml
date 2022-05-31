@@ -12,9 +12,37 @@
 
         <StackPanel Orientation="Vertical">
 
+            <StackPanel Orientation="Horizontal" >
+                <TextBox IsReadOnly="True" Text="Truck model" FontWeight="Bold" />
+                <TextBox MinWidth="200" MaxWidth="400" Margin="25 0" x:Name="BusName" />
+            </StackPanel>
+
             <StackPanel Orientation="Horizontal">
-                <TextBox IsReadOnly="True" Text="Max weight" FontWeight="Bold" ></TextBox>
-                <TextBox MinWidth="250" Margin="25 0" x:Name="PeopleCapacity"></TextBox>
+                <TextBox IsReadOnly="True" Text="Truck price" FontWeight="Bold" />
+                <TextBox MinWidth="200" MaxWidth="400" Margin="25 0" x:Name="BusPrice" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox IsReadOnly="True" Text="Type of fuel" FontWeight="Bold" />
+                <ComboBox x:Name="FuelTypeSelector" HorizontalContentAlignment="Center"  Margin="25 0" MinWidth="200">
+                    <ComboBoxItem  Content="Gasoline"></ComboBoxItem>
+                    <ComboBoxItem Content="Diesel"></ComboBoxItem>
+                    <ComboBoxItem Content="Electricity"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox IsReadOnly="True" Text="Numbers of seats" FontWeight="Bold" ></TextBox>
+                <TextBox MinWidth="200" Margin="25 0" x:Name="NumbersOfSeats"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox IsReadOnly="True" Text="Cargo type" FontWeight="Bold" ></TextBox>
+                <ComboBox x:Name="CargoTypeSelector" HorizontalContentAlignment="Center"  Margin="25 0" MinWidth="200">
+                    <ComboBoxItem  Content="Gasoline"></ComboBoxItem>
+                    <ComboBoxItem Content="Diesel"></ComboBoxItem>
+                    <ComboBoxItem Content="Electricity"></ComboBoxItem>
+                </ComboBox>
             </StackPanel>
 
         </StackPanel>

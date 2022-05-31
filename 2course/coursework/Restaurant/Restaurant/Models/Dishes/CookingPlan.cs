@@ -43,8 +43,7 @@ namespace Restaurant
             if (Orders.Contains(newOrder))
             {
                 Order order;
-                Orders.TryGetValue(newOrder, out order);
-                if(order != null)
+                if(Orders.TryGetValue(newOrder, out order))
                 {
                     order.AddDish(dish);
                 }

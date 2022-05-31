@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sale_of_vehicles.Models
+namespace sale_of_vehicles
 {
     public class Plane : Vehicle
     {
-        public Plane(string name, double price, int numberOfSeats, TypesOfFuel fuelType) : base(name, price, numberOfSeats, fuelType)
+        public Plane(string name, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality) 
+                     : base(name, price, numberOfSeats, fuelType, functionality)
         {
 
         }
 
         public override bool CheckFunctionality()
         {
-            throw new NotImplementedException();
+            return Functionality.IsNormalFunctionality();
         }
     }
 }

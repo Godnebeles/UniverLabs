@@ -18,11 +18,23 @@ namespace sale_of_vehicles
     /// <summary>
     /// Interaction logic for BusCreatUserControl.xaml
     /// </summary>
-    public partial class BusCreatUserControl : UserControl
+    public partial class BusCreatUserControl : UserControl, IInterfaceDataReceiver<Vehicle>
     {
         public BusCreatUserControl()
         {
             InitializeComponent();
         }
+
+        public Vehicle GetData()
+        {
+            return new Bus(/*name*/                 BusName.Text,
+                           /*price*/                Convert.ToDouble(BusPrice.Text),
+                           /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
+                           /*fuel type*/            new CarFuel("A23"),
+                           /*name*/                 Convert.ToInt32(PeopleCapacity.Text),
+                           /*functionality*/        new CarFunctionality()
+                           );
+        }
+
     }
 }

@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace sale_of_vehicles.Services
+namespace sale_of_vehicles
 {
     public class Serializator<T>
     {
@@ -22,12 +22,17 @@ namespace sale_of_vehicles.Services
 
         public T Deserialize()
         {
-            var jsonContent = File.ReadAllText(_path);
+            string jsonContent = File.ReadAllText(_path);
             
             if (jsonContent == null)
-                throw new Exception("File not have needed content!");
+                throw new NullReferenceException();
 
-            return JsonConvert.DeserializeObject<T>(jsonContent);
+            T? data = JsonConvert.DeserializeObject<T>(jsonContent);
+
+            if (data == null)
+                throw new NullReferenceException();
+
+            return data;
         }
     }
 }

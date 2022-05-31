@@ -4,17 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sale_of_vehicles.Models.Abstract
+namespace sale_of_vehicles
 {
     public class Car : Vehicle
     {
-        public Car(string name, double price, int numberOfSeats, TypesOfFuel fuelType) : base(name, price, numberOfSeats, fuelType)
+        public Car(string name, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality) 
+                   : base(name, price, numberOfSeats, fuelType, functionality)
         {
+
         }
+
+
+        public string Model { get; private set; } = string.Empty;
 
         public override bool CheckFunctionality()
         {
-            throw new NotImplementedException();
+            return Functionality.IsNormalFunctionality();
         }
     }
 }

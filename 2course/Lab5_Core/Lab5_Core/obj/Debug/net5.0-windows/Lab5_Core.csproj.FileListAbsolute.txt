@@ -3,7 +3,6 @@ D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\bin\Debug\net5.0-windows\Lab5_C
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\bin\Debug\net5.0-windows\Lab5_Core.runtimeconfig.json
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\bin\Debug\net5.0-windows\Lab5_Core.runtimeconfig.dev.json
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\bin\Debug\net5.0-windows\Lab5_Core.dll
-D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\bin\Debug\net5.0-windows\ref\Lab5_Core.dll
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\bin\Debug\net5.0-windows\Lab5_Core.pdb
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\obj\Debug\net5.0-windows\Lab5_Core.csproj.AssemblyReference.cache
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\obj\Debug\net5.0-windows\Lab5_Core.Form1.resources
@@ -16,3 +15,4 @@ D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\obj\Debug\net5.0-windows\Lab5_C
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\obj\Debug\net5.0-windows\ref\Lab5_Core.dll
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\obj\Debug\net5.0-windows\Lab5_Core.pdb
 D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\obj\Debug\net5.0-windows\Lab5_Core.genruntimeconfig.cache
+D:\Univer\UniverLabs\2course\Lab5_Core\Lab5_Core\obj\Debug\net5.0-windows\refint\Lab5_Core.dll

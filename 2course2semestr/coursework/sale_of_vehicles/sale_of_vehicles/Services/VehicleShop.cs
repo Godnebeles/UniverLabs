@@ -1,52 +1,49 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace sale_of_vehicles
 {
     public class VehiclesShop
     {
-        public List<Vehicle> VehicleList { get; private set; }
+        private List<Vehicle> _vehicleList;     
 
         public VehiclesShop(List<Vehicle> cars)
         {
-            VehicleList = cars;
+            if (cars == null)
+                throw new Exception("Car list can't be a null");
+
+            _vehicleList = cars;
         }
 
-        public void AddCar(Vehicle car)
+        public List<Vehicle> VehicleList
+        {
+            get
+            {
+                return _vehicleList;
+            }
+            private set
+            {
+                _vehicleList = value;
+            }
+        }
+
+        public void AddVehicle(Vehicle car)
         {
             VehicleList.Add(car);
         }
 
-        public void RemoveCar(Vehicle car)
+        public void RemoveVehicle(Vehicle car)
         {
             VehicleList.Remove(car);
         }
-
-        public List<Vehicle> GetFiltered(FilterCarsDelegate[] filters)
-        {
-            List<Vehicle> cars = new List<Vehicle>();
-
-            foreach(var car in VehicleList)
-            {
-                foreach(var filter in filters)
-                {
-                    if(filter(car))
-                    {
-                        cars.Add(car);
-                    }
-                }
-            }
-
-            return cars;
-        }
-
 
         public List<Bus> GetBuses()
         {
             List<Bus> buses = new List<Bus>();
 
-            foreach(var vehicle in VehicleList)
+            foreach (var vehicle in VehicleList)
             {
-                if(vehicle is Bus)
+                if (vehicle.CheckFunctionality() && vehicle is Bus)
                 {
                     buses.Add((Bus)vehicle);
                 }
@@ -55,6 +52,20 @@ namespace sale_of_vehicles
             return buses;
         }
 
+        public List<Plane> GetPlanes()
+        {
+            List<Plane> buses = new List<Plane>();
+
+            foreach (var vehicle in VehicleList)
+            {
+                if (vehicle.CheckFunctionality() && vehicle is Plane)
+                {
+                    buses.Add((Plane)vehicle);
+                }
+            }
+
+            return buses;
+        }
 
         public List<Truck> GetTrucks()
         {
@@ -62,7 +73,7 @@ namespace sale_of_vehicles
 
             foreach (var vehicle in VehicleList)
             {
-                if (vehicle is Truck)
+                if (vehicle.CheckFunctionality() && vehicle is Truck)
                 {
                     truck.Add((Truck)vehicle);
                 }
