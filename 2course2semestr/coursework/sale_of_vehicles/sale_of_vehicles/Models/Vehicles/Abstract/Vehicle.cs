@@ -12,7 +12,7 @@ namespace sale_of_vehicles
         public FuelType FuelType { get; protected set; }
         public IFunctionality Functionality { get; protected set; }
 
-        protected Vehicle(string name, string model, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality)
+        protected Vehicle(Guid id, string name, string model, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality)
         {
             if (name == "" || model == "")
                 throw new Exception("Incorrect name or model!");
@@ -23,7 +23,7 @@ namespace sale_of_vehicles
             if (fuelType == null)
                 throw new Exception("Fuel type can't be null!");
 
-            Id = Guid.NewGuid();
+            Id = id;
             Name = name;
             Price = price;
             NumberOfSeats = numberOfSeats;

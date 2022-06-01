@@ -4,8 +4,8 @@ namespace sale_of_vehicles
 {
     public class DataLoader : IDataLoader
     {
-        private string _pathFuelList = "";
-        private string _pathToVehicleStorage = "";
+        private readonly string  _pathFuelList = "";
+        private readonly string  _pathToVehicleStorage = "";
 
         public DataLoader(string pathFuelList, string pathToVehicle)
         {

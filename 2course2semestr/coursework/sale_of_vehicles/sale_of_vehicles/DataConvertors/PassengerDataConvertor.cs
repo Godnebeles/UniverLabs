@@ -4,12 +4,14 @@
     {
         public PassengerPlaneDTO ConvertToDTO(PassengerPlane model)
         {
-            throw new System.NotImplementedException();
+            return new PassengerPlaneDTO(model.Id, model.Name, model.Model, model.Price, model.NumberOfSeats,
+                                        (AviationFuel)model.FuelType, (PlaneFunctionality)model.Functionality);
         }
 
         public PassengerPlane ConvertToModel(PassengerPlaneDTO dto)
         {
-            throw new System.NotImplementedException();
+            return new PassengerPlane(dto.Id, dto.Name, dto.Model, dto.Price, dto.NumberOfSeats,
+                                      dto.FuelType, dto.Functionality);
         }
     }
 }

@@ -43,7 +43,7 @@
                         </ComboBox>
                     </StackPanel>
 
-                    <StackPanel MinWidth="200px" MinHeight="100"  Margin="50 0" x:Name="FuelNameStackPanel" Orientation="Vertical">
+                    <!--<StackPanel MinWidth="200px" MinHeight="100"  Margin="50 0" x:Name="FuelNameStackPanel" Orientation="Vertical">
                         <TextBox Text="Name of Fuel" TextAlignment="Center"/>
 
                         <ComboBox x:Name="FuelNameTypeFilter" HorizontalContentAlignment="Center" IsEnabled="False" 
@@ -51,18 +51,40 @@
                               DisplayMemberPath="Name"
                               SelectedValuePath="Name"
                               SelectedValue="{Binding Path=FuelTypeEntry}" />
-                    </StackPanel>
+                    </StackPanel>-->
 
                 </StackPanel>
             </Grid>
 
-            <Grid  Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <DataGrid x:Name="CarList" AutoGenerateColumns="False" >
+            <Grid  Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" > 
+                <DataGrid x:Name="VehicleList" AutoGenerateColumns="False">
+
+                    <!--<DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.CellStyle>-->
+
                     <DataGrid.Columns>
+                       
                         <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Width="1*"/>
                         <DataGridTextColumn Header="Model" Binding="{Binding Model, Mode=OneWay}" Width="1*"/>
                         <DataGridTextColumn Header="Price" Binding="{Binding Price, Mode=OneWay}" Width="1*"/>
                         <DataGridTextColumn Header="Number of Seats" Binding="{Binding NumberOfSeats, Mode=OneWay}" Width="1*"/>
+                        <DataGridTemplateColumn >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button FontSize="15" Content="Get info" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button FontSize="15" Content="Delete" Click="DeleteRecord_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

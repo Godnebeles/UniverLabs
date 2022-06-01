@@ -1,11 +1,13 @@
-﻿namespace sale_of_vehicles
+﻿using System;
+
+namespace sale_of_vehicles
 {
     public class Truck : Car
     {
         
-        public Truck(string name, string model, double price, int numberOfSeats, FuelType fuelType, double maxWeightOfCargo, 
-                        TypeOfCargo cargoType, IFunctionality functionality) 
-                    : base(name, model,price, numberOfSeats, fuelType, functionality)
+        public Truck(Guid id, string name, string model, double price, int numberOfSeats, FuelType fuelType, 
+                    IFunctionality functionality, double maxWeightOfCargo, TypeOfCargo cargoType) 
+                    : base(id, name, model,price, numberOfSeats, fuelType, functionality)
         {
             MaxWeightOfCargo = maxWeightOfCargo;
             CargoType = cargoType;

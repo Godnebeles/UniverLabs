@@ -31,7 +31,6 @@
                                 <materialDesign:PackIcon Foreground="black" Kind="Car" Width="30px"  Height="30px" Margin="10"/>
                             </StackPanel>
                         </Border>
-
                     </Grid>
 
                     <ListView x:Name="ListViewMenu" Foreground="Black"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"

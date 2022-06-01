@@ -21,7 +21,6 @@
                 <TextBox IsReadOnly="True" Text="Plane price" TextAlignment="Left" />
                 <TextBox IsReadOnly="True" Text="Type of fuel" TextAlignment="Left" />
                 <TextBox IsReadOnly="True" Text="Numbers of seats" TextAlignment="Left" />
-                <TextBox IsReadOnly="True" Text="Max capacity of people" TextAlignment="Left" />
             </StackPanel>
 
             <StackPanel Grid.Column="1" HorizontalAlignment="Left" >
@@ -34,7 +33,6 @@
                     <ComboBoxItem Content="Electricity"></ComboBoxItem>
                 </ComboBox>
                 <TextBox MinWidth="200" Margin="25 0" x:Name="NumbersOfSeats" TextAlignment="Center" />
-                <TextBox MinWidth="200" Margin="25 0" x:Name="PeopleCapacity" TextAlignment="Center" />
             </StackPanel>
         </Grid>
 

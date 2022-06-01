@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace sale_of_vehicles
 {
-    public delegate List<Vehicle> FilterCarsDelegate();
+    public delegate bool FilterCarsDelegate(Vehicle vehicle);
 }

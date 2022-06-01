@@ -22,16 +22,31 @@ namespace sale_of_vehicles
     /// </summary>
     public partial class VehiclesPage : Page
     {
+        private FilterCarsDelegate[] _filterCarsType = new FilterCarsDelegate[5] {
+                                                         (x) => { return true; },
+                                                         (x) => { return x is Bus; },
+                                                         (x) => { return x is Truck;},
+                                                         (x) => { return x is PassengerPlane; },
+                                                         (x) => { return x is TransportPlane;}
+                                                        };
+        private FilterCarsDelegate[] _filterFuelsType = new FilterCarsDelegate[3]
+                                                        {
+                                                         (x) => { return true; },
+                                                         (x) => { return x.FuelType is CarFuel; },
+                                                         (x) => { return x.FuelType is AviationFuel; }
+                                                        };
+
         private VehiclesShop _carShop;
-        private GasStation _gasStation;
-        public VehiclesPage(List<Vehicle> vehicleList, GasStation gasStation)
+
+        public event Action? OnDataChangedEvent;
+
+        public VehiclesPage(VehiclesShop carShop, GasStation gasStation)
         {
             InitializeComponent();
 
-            _gasStation = gasStation;
-            _carShop = new VehiclesShop(vehicleList);
+            _carShop = carShop;
 
-            InitializePage();        
+            InitializePage();
         }
 
         public void InitializePage()
@@ -39,39 +54,44 @@ namespace sale_of_vehicles
             VehicleTypeFilter.SelectedIndex = 0;
             FuelsTypeFilter.SelectedIndex = 0;
 
-            CarList.ItemsSource = _carShop.VehicleList;
+            UpdateTable();
+        }
+
+
+
+        private void UpdateTable()
+        {
+            List<FilterCarsDelegate> filterCarsDelegates = new List<FilterCarsDelegate>();
+
+            filterCarsDelegates.Add(_filterCarsType[VehicleTypeFilter.SelectedIndex]);
+            filterCarsDelegates.Add(_filterFuelsType[FuelsTypeFilter.SelectedIndex == -1 ? 0 : FuelsTypeFilter.SelectedIndex]);
+
+            VehicleList.ItemsSource = null;
+            VehicleList.ItemsSource = _carShop.GetVehiclesByFilters(filterCarsDelegates);
+        }
+
+        private void DeleteVehicle()
+        {
+            _carShop.RemoveVehicle((Vehicle)VehicleList.SelectedItem);
+            OnDataChangedEvent?.Invoke();
+            UpdateTable();
+        }
+
+        private void DeleteRecord_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteVehicle();
         }
 
         private void VehicleTypeFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CarList.ItemsSource = null;
-            if (VehicleTypeFilter.SelectedIndex == 0)
-                CarList.ItemsSource = _carShop?.VehicleList;
-            else if (VehicleTypeFilter.SelectedIndex == 1)
-                CarList.ItemsSource = _carShop.GetBuses();
-            else if (VehicleTypeFilter.SelectedIndex == 2)
-                CarList.ItemsSource = _carShop.GetTrucks();
-            else if (VehicleTypeFilter.SelectedIndex == 3)
-                CarList.ItemsSource = _carShop.GetPassengerPlanes();
-            else if (VehicleTypeFilter.SelectedIndex == 4)
-                CarList.ItemsSource = _carShop.GetTransportPlanes();  
+            UpdateTable();
         }
 
         private void FuelsTypeFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (FuelsTypeFilter.SelectedIndex > 0)
-                FuelNameTypeFilter.IsEnabled = true;
-            else
-                FuelNameTypeFilter.IsEnabled = false;
-
-            if (FuelsTypeFilter.SelectedIndex == 1)
-            {
-                DataContext = new ConnectionViewModel(_gasStation.GetCarFuels());
-            }
-            else if(FuelsTypeFilter.SelectedIndex == 2)
-            {
-                DataContext = new ConnectionViewModel(_gasStation.GetPlaneFuels());
-            }
+            UpdateTable();
         }
+
+        
     }
 }

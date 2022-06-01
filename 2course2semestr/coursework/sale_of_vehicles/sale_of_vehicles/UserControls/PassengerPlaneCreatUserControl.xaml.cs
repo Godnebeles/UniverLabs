@@ -27,8 +27,9 @@ namespace sale_of_vehicles
 
         public Vehicle GetData()
         {
-            return new PassengerPlane(/*name*/                 Name.Text,
-                                       /*model*/               Model.Text,
+            return new PassengerPlane(/*id*/                    Guid.NewGuid(),
+                                        /*name*/                Name.Text,
+                                       /*model*/                Model.Text,
                                        /*price*/                Convert.ToDouble(Price.Text),
                                        /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
                                        /*fuel type*/            new AviationFuel("A23"),

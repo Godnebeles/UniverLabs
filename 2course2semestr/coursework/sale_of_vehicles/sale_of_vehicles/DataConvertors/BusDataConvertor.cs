@@ -4,12 +4,14 @@
     {
         public BusDTO ConvertToDTO(Bus model)
         {
-            throw new System.NotImplementedException();
+            return new BusDTO(model.Id, model.Name, model.Model,model.Price,model.NumberOfSeats, 
+                        (CarFuel)model.FuelType, (CarFunctionality)model.Functionality, model.MaxCapacityOfPeople);
         }
 
         public Bus ConvertToModel(BusDTO dto)
         {
-            throw new System.NotImplementedException();
+            return new Bus(dto.Id, dto.Name, dto.Model, dto.Price, dto.NumberOfSeats,
+                           dto.FuelType, dto.Functionality, dto.MaxCapacityOfPeople);
         }
     }
 }

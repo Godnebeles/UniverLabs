@@ -27,14 +27,15 @@ namespace sale_of_vehicles
 
         public Vehicle GetData()
         {
-            return new TransportPlane(/*name*/                   Name.Text,
+            return new TransportPlane(/*name*/                   Guid.NewGuid(),
+                                        /*model*/                Name.Text,
                                         /*model*/                Model.Text,
                                         /*price*/                Convert.ToDouble(Price.Text),
                                         /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
                                         /*fuel type*/            new AviationFuel("A23"),
+                                        /*functionality*/        new PlaneFunctionality(),
                                         /*max weight of cargo*/  Convert.ToDouble(MaxWeightOfCargo.Text),
-                                        /*name*/                 (TypeOfCargo)CargoTypeSelector.SelectedIndex,
-                                        /*functionality*/        new PlaneFunctionality()
+                                        /*name*/                 (TypeOfCargo)CargoTypeSelector.SelectedIndex
                                       );
         }
     }

@@ -27,13 +27,15 @@ namespace sale_of_vehicles
 
         public Vehicle GetData()
         {
-            return new Bus(/*name*/                 Name.Text,
-                           /*model*/                "Rotate",
+            return new Bus(/*Id*/                   Guid.NewGuid(),
+                           /*name*/                 Name.Text,
+                           /*model*/                Model.Text,
                            /*price*/                Convert.ToDouble(Price.Text),
                            /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
                            /*fuel type*/            new CarFuel("A23"),
-                           /*name*/                 Convert.ToInt32(PeopleCapacity.Text),
-                           /*functionality*/        new CarFunctionality()
+                           /*name*/                 
+                           /*functionality*/        new CarFunctionality(),
+                                                    Convert.ToInt32(PeopleCapacity.Text)
                            );
         }
 

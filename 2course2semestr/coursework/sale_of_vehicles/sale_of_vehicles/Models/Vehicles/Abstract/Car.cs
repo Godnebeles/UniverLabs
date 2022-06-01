@@ -1,9 +1,11 @@
-﻿namespace sale_of_vehicles
+﻿using System;
+
+namespace sale_of_vehicles
 {
     public class Car : Vehicle
     {
-        public Car(string name, string model, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality)
-                   : base(name, model, price, numberOfSeats, fuelType, functionality)
+        public Car(Guid id, string name, string model, double price, int numberOfSeats, FuelType fuelType, IFunctionality functionality)
+                   : base(id, name, model, price, numberOfSeats, fuelType, functionality)
         {
 
         }

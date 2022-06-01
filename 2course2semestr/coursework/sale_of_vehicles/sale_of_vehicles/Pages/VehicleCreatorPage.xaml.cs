@@ -23,7 +23,7 @@ namespace sale_of_vehicles
     public partial class VehicleCreatorPage : Page
     {
         private SelectedDelegate[] selectedDelegates;
-        public event Action<Vehicle> OnVehicleCreatedEvent;
+        public event Action<Vehicle>? OnVehicleCreatedEvent;
         public VehicleCreatorPage()
         {
             InitializeComponent();

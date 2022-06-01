@@ -38,6 +38,28 @@ namespace sale_of_vehicles
             VehicleList.Remove(car);
         }
 
+        public List<Vehicle> GetVehiclesByFilters(List<FilterCarsDelegate> filterCars)
+        {
+            List<Vehicle> list = new List<Vehicle>();
+
+            foreach (var vehicle in VehicleList)
+            {
+                bool canToAdd = false;
+
+                foreach(var method in filterCars)
+                {
+                    canToAdd = method(vehicle);
+                    if (!canToAdd)
+                        break;
+                }
+
+                if(canToAdd)
+                    list.Add(vehicle);
+            }
+
+            return list;
+        }
+
         public List<Bus> GetBuses()
         {
             List<Bus> buses = new List<Bus>();
