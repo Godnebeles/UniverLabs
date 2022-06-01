@@ -18,11 +18,22 @@ namespace sale_of_vehicles
     /// <summary>
     /// Interaction logic for PassengerPlaneCreatUserControl.xaml
     /// </summary>
-    public partial class PassengerPlaneCreatUserControl : UserControl
+    public partial class PassengerPlaneCreatUserControl : UserControl, IInterfaceDataReceiver<Vehicle>
     {
         public PassengerPlaneCreatUserControl()
         {
             InitializeComponent();
+        }
+
+        public Vehicle GetData()
+        {
+            return new PassengerPlane(/*name*/                 Name.Text,
+                                       /*model*/               Model.Text,
+                                       /*price*/                Convert.ToDouble(Price.Text),
+                                       /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
+                                       /*fuel type*/            new AviationFuel("A23"),
+                                       /*functionality*/        new PlaneFunctionality()
+                                       );
         }
     }
 }

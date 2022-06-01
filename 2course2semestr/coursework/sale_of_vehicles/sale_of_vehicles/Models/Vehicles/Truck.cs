@@ -1,6 +1,4 @@
-﻿
-
-namespace sale_of_vehicles
+﻿namespace sale_of_vehicles
 {
     public class Truck : Car
     {

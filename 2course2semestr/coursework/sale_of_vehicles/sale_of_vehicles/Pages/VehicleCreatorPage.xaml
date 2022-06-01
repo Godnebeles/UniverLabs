@@ -9,15 +9,15 @@
       MinHeight="450" MinWidth="800" 
       FontFamily="{DynamicResource MaterialDesignFont}" FontSize="20" >
 
-    <Grid Margin="0 20">
+    <Grid Margin="0 20" HorizontalAlignment="Center" VerticalAlignment="Center">
 
         <ScrollViewer>
 
             <StackPanel Margin="50 25" >
-                <StackPanel Orientation="Horizontal" >
-                    <TextBox Text="Type of vehicle" Margin="0 0 25 0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Text="Type of vehicle" Margin="0 0 25 0" FontWeight="Bold"/>
 
-                    <ComboBox x:Name="TypeOfVehicle" SelectionChanged="TypeOfVehicle_Selected" MinWidth="200">
+                    <ComboBox x:Name="TypeOfVehicle" SelectionChanged="TypeOfVehicle_Selected" HorizontalContentAlignment="Center" MinWidth="200">
                         <ComboBoxItem Content="Bus"/>
                         <ComboBoxItem Content="Truck"/>
                         <ComboBoxItem Content="Passenger Plane"/>
@@ -27,7 +27,7 @@
 
                 <StackPanel Orientation="Vertical" >
 
-                    <Grid x:Name="AdditionFields">
+                    <Grid x:Name="AdditionFields" >
 
                     </Grid>
 

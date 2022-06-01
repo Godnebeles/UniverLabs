@@ -35,10 +35,12 @@ namespace sale_of_vehicles
 
         private void PresentCarListPage()
         {
-            VehiclesPage vehiclePage = new VehiclesPage(_vehicleShop.VehicleList);
+            VehiclesPage vehiclePage = new VehiclesPage(_vehicleShop.VehicleList, _dataLoader.LoadFuelData());
 
             MainFrame.Content = vehiclePage;
         }
+
+
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -50,12 +52,11 @@ namespace sale_of_vehicles
                     PresentCarListPage();
                     break;
                 case 1:
-                    MainFrame.Content = new VehicleCreatorPage();
+                    var vehiclePage = new VehicleCreatorPage();
+                    vehiclePage.OnVehicleCreatedEvent += _vehicleShop.AddVehicle;
+                    MainFrame.Content = vehiclePage;
                     break;
             }
         }
-
-        
-       
     }
 }

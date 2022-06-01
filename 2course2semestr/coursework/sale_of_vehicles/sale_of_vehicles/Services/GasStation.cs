@@ -38,7 +38,7 @@ namespace sale_of_vehicles
             {
                 if (fuel is AviationFuel)
                 {
-                    fuels.Add((CarFuel)fuel);
+                    fuels.Add((AviationFuel)fuel);
                 }
             }
 

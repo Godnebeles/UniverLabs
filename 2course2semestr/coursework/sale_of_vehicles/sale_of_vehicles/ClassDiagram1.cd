@@ -4,7 +4,7 @@
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABCAgAAAQAAAAAAgAIAAAQAAAAAAIAAEAgAAAAAAAA=</HashCode>
-      <FileName>Models\Abstract\Vehicle.cs</FileName>
+      <FileName>Models\Vehicles\Abstract\Vehicle.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -12,65 +12,104 @@
     <Position X="7.25" Y="4.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Abstract\Plane.cs</FileName>
+      <FileName>Models\Vehicles\Abstract\Plane.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.Car">
     <Position X="3.75" Y="4.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Abstract\Car.cs</FileName>
+      <FileName>Models\Vehicles\Abstract\Car.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.Bus" Collapsed="true">
     <Position X="2.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Bus.cs</FileName>
+      <FileName>Models\Vehicles\Bus.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.TransportPlane" Collapsed="true">
     <Position X="8.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\TransportPlane.cs</FileName>
+      <FileName>Models\Vehicles\TransportPlane.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.PassengerPlane" Collapsed="true">
     <Position X="6.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\PassengerPlane.cs</FileName>
+      <FileName>Models\Vehicles\PassengerPlane.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.Truck" Collapsed="true">
     <Position X="4.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAAAAA=</HashCode>
-      <FileName>Models\Truck.cs</FileName>
+      <FileName>Models\Vehicles\Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.FuelType" Collapsed="true">
-    <Position X="10" Y="0.75" Width="1.5" />
+    <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAEgAAAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Abstract\FuelType.cs</FileName>
+      <FileName>Models\Fuels\Abstract\FuelType.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.CarFuel" Collapsed="true">
-    <Position X="8.75" Y="2" Width="1.5" />
+    <Position X="12.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\CarFuel.cs</FileName>
+      <FileName>Models\Fuels\CarFuel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.AviationFuel" Collapsed="true">
-    <Position X="11.25" Y="2" Width="1.5" />
+    <Position X="15" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\AviationFuel.cs</FileName>
+      <FileName>Models\Fuels\AviationFuel.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="sale_of_vehicles.BusCreatUserControl">
+    <Position X="12.25" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserControls\BusCreatUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="sale_of_vehicles.PassengerPlaneCreatUserControl">
+    <Position X="15" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserControls\PassengerPlaneCreatUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="sale_of_vehicles.TransportPlaneCreatUserControl">
+    <Position X="12.25" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserControls\TransportPlaneCreatUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="sale_of_vehicles.TruckCreatUserControl">
+    <Position X="15" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserControls\TruckCreatUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="sale_of_vehicles.IInterfaceDataReceiver&lt;T&gt;">
+    <Position X="13.75" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Abstract\IInterfaceDataReceiver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -13,16 +13,16 @@ namespace sale_of_vehicles
             _pathToVehicleStorage = pathToVehicle;
         }
 
-        public List<FuelType> LoadFuelData()
+        public GasStation LoadFuelData()
         {
-            return new List<FuelType>() 
+            return new GasStation(new List<FuelType>()
             {
                 new CarFuel("Diesel"),
                 new CarFuel("Gasoline"),
                 new CarFuel("Electricity"),
                 new AviationFuel("Gasoline"),
                 new AviationFuel("Jet Fuel"),
-            };
+            });
         }
 
         public List<Vehicle> LoadVehiclesData()
@@ -66,7 +66,7 @@ namespace sale_of_vehicles
             }
         }
 
-        public void SaveFuelData(List<FuelType> fuelTypes)
+        public void SaveFuelData(GasStation fuelTypes)
         {
             throw new System.NotImplementedException();
         }

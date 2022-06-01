@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
 
 namespace sale_of_vehicles
 {
     public interface IDataLoader
     {
-        void SaveFuelData(List<FuelType> fuelTypes);
-        List<FuelType> LoadFuelData();
+        void SaveFuelData(GasStation fuelTypes);
+        GasStation LoadFuelData();
 
         void SaveVehiclesData(List<Vehicle> vehicles);
         List<Vehicle> LoadVehiclesData(); 

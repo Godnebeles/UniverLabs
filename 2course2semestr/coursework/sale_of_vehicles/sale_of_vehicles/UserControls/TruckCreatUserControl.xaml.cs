@@ -18,11 +18,24 @@ namespace sale_of_vehicles
     /// <summary>
     /// Interaction logic for TruckCreatUserControl.xaml
     /// </summary>
-    public partial class TruckCreatUserControl : UserControl
+    public partial class TruckCreatUserControl : UserControl, IInterfaceDataReceiver<Vehicle>
     {
         public TruckCreatUserControl()
         {
             InitializeComponent();
+        }
+
+        public Vehicle GetData()
+        {
+            return new Truck(/*name*/                 Name.Text,
+                             /*model*/                Model.Text,
+                             /*price*/                Convert.ToDouble(Price.Text),
+                             /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
+                             /*fuel type*/            new CarFuel("A23"),
+                             /*max weight of cargo*/  Convert.ToDouble(MaxWeightOfCargo.Text),
+                             /*name*/                 (TypeOfCargo)CargoTypeSelector.SelectedIndex,
+                             /*functionality*/        new CarFunctionality()
+                           );
         }
     }
 }

@@ -23,7 +23,7 @@ namespace sale_of_vehicles
     public partial class VehicleCreatorPage : Page
     {
         private SelectedDelegate[] selectedDelegates;
-
+        public event Action<Vehicle> OnVehicleCreatedEvent;
         public VehicleCreatorPage()
         {
             InitializeComponent();
@@ -35,28 +35,6 @@ namespace sale_of_vehicles
                                                           () => AdditionFields.Children.Add(new TransportPlaneCreatUserControl()) };
         }
 
-
-
-        //public void CreateBus()
-        //{
-        //    AdditionFields.Children.Add(new BusCreatUserControl());
-        //}
-
-        //public void CreateTruck()
-        //{
-        //    AdditionFields.Children.Add(new TruckCreatUserControl());
-        //}
-
-        //public void CreatePassengerPlane()
-        //{
-        //    AdditionFields.Children.Add(new PassengerPlaneCreatUserControl());
-        //}
-
-        //public void CreateTransportPlane()
-        //{
-        //    TransportPlaneCreatUserControl userControl = new TransportPlaneCreatUserControl();
-        //    AdditionFields.Children.Add(userControl);
-        //}
         private T GetDataFromList<T>(IEnumerable<object> list)
         {
             foreach (var control in list)
@@ -69,19 +47,27 @@ namespace sale_of_vehicles
 
             throw new Exception("User Control is not defined!");
         }
+
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             Vehicle vehicle = GetDataFromList<Vehicle>(AdditionFields.Children.Cast<UIElement>());
 
-            Bus bus = (Bus)vehicle;
+            OnVehicleCreatedEvent?.Invoke(vehicle);
+            
+            MessageBox.Show("Created!");
+
+            ChangeAdditionFields();
         }
 
         private void TypeOfVehicle_Selected(object sender, SelectionChangedEventArgs e)
         {
+            ChangeAdditionFields();
+        }
+
+        private void ChangeAdditionFields()
+        {
             AdditionFields.Children.Clear();
             selectedDelegates[TypeOfVehicle.SelectedIndex].Invoke();
         }
-
-
     }
 }

@@ -12,17 +12,16 @@
     <Grid >
 
         <StackPanel Orientation="Vertical">
-            <Grid >
+            <Grid Margin="0 10">
                 <TextBox TextAlignment="Center" VerticalAlignment="Top"
                      IsReadOnly="True"
                       Text="Filters"></TextBox>
             </Grid>
 
-            <Grid >
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="25 0">
+            <Grid Margin="0 10">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25 0">
 
-                    <StackPanel MinWidth="200px" MinHeight="100" Margin="50 15"  Orientation="Vertical">
-
+                    <StackPanel MinWidth="200px" Margin="50 0"  Orientation="Vertical">
                         <TextBox Text="Type of Vehicle" TextAlignment="Center"/>
 
                         <ComboBox x:Name="VehicleTypeFilter" HorizontalContentAlignment="Center" SelectionChanged="VehicleTypeFilter_SelectionChanged" >
@@ -32,23 +31,19 @@
                             <ComboBoxItem Content="Passenger Plane"></ComboBoxItem>
                             <ComboBoxItem Content="Transport Plane"></ComboBoxItem>
                         </ComboBox>
-
                     </StackPanel>
 
-                    <StackPanel MinWidth="200px" MinHeight="100" Margin="50 15" Orientation="Vertical">
-
+                    <StackPanel MinWidth="200px" MinHeight="100" Margin="50 0" Orientation="Vertical">
                         <TextBox Text="Type of Fuel" TextAlignment="Center"/>
 
-                        <ComboBox  x:Name="FuelsTypeFilter" HorizontalContentAlignment="Center" SelectionChanged="VehicleTypeFilter_SelectionChanged" >
+                        <ComboBox  x:Name="FuelsTypeFilter" HorizontalContentAlignment="Center" SelectionChanged="FuelsTypeFilter_SelectionChanged" >
                             <ComboBoxItem  Content="All"></ComboBoxItem>
                             <ComboBoxItem Content="Car's Fuel"></ComboBoxItem>
                             <ComboBoxItem Content="Aviation's Fuel"></ComboBoxItem>
                         </ComboBox>
-
                     </StackPanel>
 
-                    <StackPanel MinWidth="200px" MinHeight="100"  Margin="50 15" x:Name="FuelNameStackPanel" Orientation="Vertical">
-
+                    <StackPanel MinWidth="200px" MinHeight="100"  Margin="50 0" x:Name="FuelNameStackPanel" Orientation="Vertical">
                         <TextBox Text="Name of Fuel" TextAlignment="Center"/>
 
                         <ComboBox x:Name="FuelNameTypeFilter" HorizontalContentAlignment="Center" IsEnabled="False" 
@@ -56,20 +51,12 @@
                               DisplayMemberPath="Name"
                               SelectedValuePath="Name"
                               SelectedValue="{Binding Path=FuelTypeEntry}" />
-
-
-                        <!--<ComboBoxItem  Content="All"></ComboBoxItem>
-                        <ComboBoxItem  Content="Gasoline"></ComboBoxItem>
-                        <ComboBoxItem Content="Diesel"></ComboBoxItem>
-                        <ComboBoxItem Content="Electricity"></ComboBoxItem>-->
-
-
                     </StackPanel>
 
                 </StackPanel>
             </Grid>
 
-            <Grid  Margin="10 0 10 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid  Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <DataGrid x:Name="CarList" AutoGenerateColumns="False" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Width="1*"/>
@@ -80,8 +67,5 @@
                 </DataGrid>
             </Grid>
         </StackPanel>
-
-        
-
     </Grid>
 </Page>
