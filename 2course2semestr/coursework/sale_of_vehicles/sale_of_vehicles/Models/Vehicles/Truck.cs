@@ -24,6 +24,8 @@ namespace sale_of_vehicles
                    $"Price: ${Price}\n" +
                    $"Number of seats: {NumberOfSeats}pcs.\n" +
                    $"Fuel type: Car's fuel: {FuelType.Name}\n" +
+                   $"Type of Cargo: {CargoType}\n" +
+                   $"Max Weight Of Cargo: {MaxWeightOfCargo}kg.\n" +
                    $"Functionality State: {(Functionality.IsNormalFunctionality() ? FunctionalyState.Good.ToString() : FunctionalyState.Bad.ToString())}";
         }
     }
