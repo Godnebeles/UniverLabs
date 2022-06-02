@@ -15,14 +15,19 @@ namespace sale_of_vehicles
 
         public GasStation LoadFuelData()
         {
-            return new GasStation(new List<FuelType>()
+            try
             {
-                new CarFuel("Diesel"),
-                new CarFuel("Gasoline"),
-                new CarFuel("Electricity"),
-                new AviationFuel("Gasoline"),
-                new AviationFuel("Jet Fuel"),
-            });
+                Serializator<GasStationDTO> serializator = new Serializator<GasStationDTO>(_pathFuelList);
+
+                GasStationDTO gasStationDTO = serializator.Deserialize();
+
+                return new GasStation(gasStationDTO.GetFuels());
+            }
+            catch (System.Exception)
+            {
+                return new GasStation(new List<FuelType>());
+            }
+            
         }
 
         public List<Vehicle> LoadVehiclesData()
@@ -68,7 +73,13 @@ namespace sale_of_vehicles
 
         public void SaveFuelData(GasStation fuelTypes)
         {
-            throw new System.NotImplementedException();
+            GasStationDTO gasStationDTO = new GasStationDTO();
+
+            gasStationDTO.AddFuels(fuelTypes.Fuels);
+
+            Serializator<GasStationDTO> serializator = new Serializator<GasStationDTO>(_pathFuelList);
+
+            serializator.Serialize(gasStationDTO);
         }
 
         public void SaveVehiclesData(List<Vehicle> vehicles)

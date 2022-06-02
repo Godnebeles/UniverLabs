@@ -74,7 +74,7 @@
                         <DataGridTemplateColumn >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button FontSize="15" Content="Get info" />
+                                    <Button FontSize="15" Content="Get info" Click="Button_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

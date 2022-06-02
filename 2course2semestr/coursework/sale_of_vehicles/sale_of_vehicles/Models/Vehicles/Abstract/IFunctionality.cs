@@ -2,6 +2,6 @@
 {
     public interface IFunctionality
     {
-        public bool IsNormalFunctionality();
+        bool IsNormalFunctionality();
     }
 }

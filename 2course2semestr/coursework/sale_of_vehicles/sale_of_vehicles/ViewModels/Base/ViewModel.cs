@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace sale_of_vehicles.ViewModels.Base
 {
-    internal abstract class ViewModel : INotifyPropertyChanged
+    public abstract class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

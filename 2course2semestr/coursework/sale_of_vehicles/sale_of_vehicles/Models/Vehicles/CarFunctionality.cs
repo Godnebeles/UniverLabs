@@ -7,7 +7,8 @@
         
         public bool IsNormalFunctionality()
         {
-            return WheelsState == FunctionalyState.Normal && EngineState == FunctionalyState.Good;
+            return (WheelsState == FunctionalyState.Normal || WheelsState == FunctionalyState.Good) && 
+                    EngineState == FunctionalyState.Good;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace sale_of_vehicles
 {
     public class CarFuel : FuelType
     {
-        public CarFuel(string name) : base(name)
+        public CarFuel(Guid id, string name) : base(id, name)
         {
 
         }

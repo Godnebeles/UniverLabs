@@ -20,20 +20,23 @@ namespace sale_of_vehicles
     /// </summary>
     public partial class PassengerPlaneCreatUserControl : UserControl, IInterfaceDataReceiver<Vehicle>
     {
-        public PassengerPlaneCreatUserControl()
+        public PassengerPlaneCreatUserControl(GasStation gasStation)
         {
             InitializeComponent();
+
+            ConnectionViewModel fuelTypesCollection = new ConnectionViewModel(gasStation.GetPlaneFuels());
+            DataContext = fuelTypesCollection;
         }
 
         public Vehicle GetData()
         {
-            return new PassengerPlane(/*id*/                    Guid.NewGuid(),
-                                        /*name*/                Name.Text,
-                                       /*model*/                Model.Text,
-                                       /*price*/                Convert.ToDouble(Price.Text),
-                                       /*numbers of seats*/     Convert.ToInt32(NumbersOfSeats.Text),
-                                       /*fuel type*/            new AviationFuel("A23"),
-                                       /*functionality*/        new PlaneFunctionality()
+            return new PassengerPlane(      Guid.NewGuid(),
+                                            Name.Text,
+                                            Model.Text,
+                                            Convert.ToDouble(Price.Text),
+                                            Convert.ToInt32(NumbersOfSeats.Text),
+                                            (AviationFuel)FuelNameTypeFilter.SelectedItem,
+                                            new PlaneFunctionality()
                                        );
         }
     }

@@ -28,7 +28,6 @@ namespace sale_of_vehicles
             IDataConvertor<PassengerPlane, PassengerPlaneDTO> passengerPlaneAdapter = new PassengerDataConvertor();
             IDataConvertor<TransportPlane, TransportPlaneDTO> transportPlaneAdapter = new TransportDataConvertor();
 
-
             if (vehicle is Bus)
                 Buses.Add(busAdapter.ConvertToDTO((Bus)vehicle));
             else if (vehicle is Truck)
@@ -37,7 +36,38 @@ namespace sale_of_vehicles
                 PassengerPlanes.Add(passengerPlaneAdapter.ConvertToDTO((PassengerPlane)vehicle));
             else if (vehicle is TransportPlane)
                 TransportPlanes.Add(transportPlaneAdapter.ConvertToDTO((TransportPlane)vehicle));
+        }
 
+        public List<Vehicle> GetVehicles()
+        {
+            IDataConvertor<Bus, BusDTO> busAdapter = new BusDataConvertor();
+            IDataConvertor<Truck, TruckDTO> truckAdapter = new TruckDataConvertor();
+            IDataConvertor<PassengerPlane, PassengerPlaneDTO> passengerPlaneAdapter = new PassengerDataConvertor();
+            IDataConvertor<TransportPlane, TransportPlaneDTO> transportPlaneAdapter = new TransportDataConvertor();
+
+            List<Vehicle> vehicles = new List<Vehicle>();
+
+            foreach (var bus in Buses)
+            {
+                vehicles.Add(busAdapter.ConvertToModel(bus));
+            }
+
+            foreach (var truck in Trucks)
+            {
+                vehicles.Add(truckAdapter.ConvertToModel(truck));
+            }
+
+            foreach (var plane in PassengerPlanes)
+            {
+                vehicles.Add(passengerPlaneAdapter.ConvertToModel(plane));
+            }
+
+            foreach (var plane in TransportPlanes)
+            {
+                vehicles.Add(transportPlaneAdapter.ConvertToModel(plane));
+            }
+
+            return vehicles;
         }
     }
 }

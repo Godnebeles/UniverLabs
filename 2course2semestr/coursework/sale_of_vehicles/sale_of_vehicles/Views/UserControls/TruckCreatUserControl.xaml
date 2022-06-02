@@ -29,11 +29,11 @@
                 <TextBox MinWidth="200" MaxWidth="400" Margin="25 0" x:Name="Name" TextAlignment="Center"/>
                 <TextBox MinWidth="200" MaxWidth="400" Margin="25 0" x:Name="Model" TextAlignment="Center"/>
                 <TextBox MinWidth="200" MaxWidth="400" Margin="25 0" x:Name="Price" TextAlignment="Center"/>
-                <ComboBox x:Name="FuelTypeSelector" HorizontalContentAlignment="Center"  Margin="25 0" MinWidth="200">
-                    <ComboBoxItem  Content="Gasoline"></ComboBoxItem>
-                    <ComboBoxItem Content="Diesel"></ComboBoxItem>
-                    <ComboBoxItem Content="Electricity"></ComboBoxItem>
-                </ComboBox>
+                <ComboBox x:Name="FuelNameTypeFilter" HorizontalContentAlignment="Center"  Margin="25 0" MinWidth="200"
+                              ItemsSource="{Binding Path=FuelTypeEntries}"
+                              DisplayMemberPath="Name"
+                              SelectedValuePath="Name"
+                              SelectedValue="{Binding Path=FuelTypeEntry}" />
                 <TextBox MinWidth="200" Margin="25 0" x:Name="NumbersOfSeats" TextAlignment="Center"/>
                 <ComboBox x:Name="CargoTypeSelector" HorizontalContentAlignment="Center"  Margin="25 0" MinWidth="200">
                     <ComboBoxItem  Content="Gasoline"></ComboBoxItem>

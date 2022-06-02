@@ -15,6 +15,11 @@ namespace sale_of_vehicles
             Fuels = fuels;
         }
 
+        public void AddFuel(FuelType obj)
+        {
+            Fuels.Add(obj);
+        }
+
         public List<FuelType> GetCarFuels()
         {
             List<FuelType> fuels = new List<FuelType>();
@@ -44,5 +49,7 @@ namespace sale_of_vehicles
 
             return fuels;
         }
+
+        
     }
 }

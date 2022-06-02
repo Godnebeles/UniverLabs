@@ -3,14 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:sale_of_vehicles.ViewModels"
         xmlns:local="clr-namespace:sale_of_vehicles.Views.Windows"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         FontFamily="{DynamicResource MaterialDesignFont}"
         MinHeight="600" MinWidth="1200"  WindowStartupLocation="CenterScreen" 
-        Title="" WindowStyle="SingleBorderWindow">
+        Title="{Binding Path=Title}"  
+        WindowStyle="SingleBorderWindow">
 
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    
     <Grid Background="white">
+        
+        
+        
         <Grid Margin="250 0 0 0 ">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                 <Border Background="#dfe4ea" BorderThickness="1" CornerRadius="15">
@@ -20,6 +29,7 @@
         </Grid>
 
 
+        
         <Grid x:Name="GridMenu" Width="250" HorizontalAlignment="Left" Margin="5">
             <Border Background="#ff7f50" BorderBrush="White" BorderThickness="2" CornerRadius="15">
                 <StackPanel  >
@@ -42,18 +52,26 @@
                                 <TextBlock Foreground="#ffffff"  Text="Vehicles" VerticalAlignment="Center" Margin="5 10"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem x:Name="ItemCreate" Height="60">
+                        <ListViewItem x:Name="ItemCreateVehicle" Height="60">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Foreground="#ffffff" Kind="Pencil" Height="25" Width="25" Margin="10"/>
+                                <materialDesign:PackIcon Foreground="#ffffff" Kind="Transportation" Height="25" Width="25" Margin="10"/>
                                 <TextBlock  Foreground="#ffffff" Text="Create Vehicle" VerticalAlignment="Center" Margin="5 10"/>
                             </StackPanel>
                         </ListViewItem>
-
+                        <ListViewItem x:Name="ItemCreateFuel" Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Foreground="#ffffff" Kind="Fuel" Height="25" Width="25" Margin="10"/>
+                                <TextBlock  Foreground="#ffffff" Text="Create Fuel" VerticalAlignment="Center" Margin="5 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        
                     </ListView>
                 </StackPanel>
             </Border>
-          
         </Grid>
+        
+        
+        
     </Grid>
 
 </Window>

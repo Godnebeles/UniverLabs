@@ -1,8 +1,9 @@
-﻿using System;
+﻿using sale_of_vehicles.Models.Abstract;
+using System;
 
 namespace sale_of_vehicles
 {
-    public class Truck : Car
+    public class Truck : Car, IInformationDetails
     {
         
         public Truck(Guid id, string name, string model, double price, int numberOfSeats, FuelType fuelType, 
@@ -15,5 +16,15 @@ namespace sale_of_vehicles
 
         public double MaxWeightOfCargo { get; private set; }
         public TypeOfCargo CargoType { get; private set; }
+
+        public string GetInformation()
+        {
+            return $"Type: Truck\n" +
+                   $"Name: {Name}\n" +
+                   $"Price: ${Price}\n" +
+                   $"Number of seats: {NumberOfSeats}pcs.\n" +
+                   $"Fuel type: Car's fuel: {FuelType.Name}\n" +
+                   $"Functionality State: {(Functionality.IsNormalFunctionality() ? FunctionalyState.Good.ToString() : FunctionalyState.Bad.ToString())}";
+        }
     }
 }

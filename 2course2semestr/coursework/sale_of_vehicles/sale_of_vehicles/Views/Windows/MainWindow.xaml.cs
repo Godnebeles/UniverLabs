@@ -21,11 +21,13 @@ namespace sale_of_vehicles.Views.Windows
     public partial class MainWindow : Window
     {
         private VehiclesShop _vehicleShop;
+        private GasStation _gasStation;
         private IDataLoader _dataLoader;
         public MainWindow()
         {
             _dataLoader = new DataLoader("fuels_type.txt", "vehicle_list.txt");
             _vehicleShop = new VehiclesShop(_dataLoader.LoadVehiclesData());
+            _gasStation = _dataLoader.LoadFuelData();
 
             InitializeComponent();
 
@@ -35,20 +37,31 @@ namespace sale_of_vehicles.Views.Windows
 
         private void PresentCarListPage()
         {
-            VehiclesPage vehiclePage = new VehiclesPage(_vehicleShop, _dataLoader.LoadFuelData());
-            vehiclePage.OnDataChangedEvent += SaveData;
+            VehiclesPage vehiclePage = new VehiclesPage(_vehicleShop, _gasStation);
+            vehiclePage.OnDataChangedEvent += SaveVehiclesData;
             MainFrame.Content = vehiclePage;
         }
 
         private void AddVehicle(Vehicle obj)
         {
             _vehicleShop.AddVehicle(obj);
-            SaveData();
+            SaveVehiclesData();
         }
 
-        private void SaveData()
+        private void AddFuel(FuelType obj)
+        {
+            _gasStation.AddFuel(obj);
+            SaveFuelsData();
+        }
+
+        private void SaveVehiclesData()
         {
             _dataLoader.SaveVehiclesData(_vehicleShop.VehicleList);
+        }
+
+        private void SaveFuelsData()
+        {
+            _dataLoader.SaveFuelData(_gasStation);
         }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -61,9 +74,14 @@ namespace sale_of_vehicles.Views.Windows
                     PresentCarListPage();
                     break;
                 case 1:
-                    var vehiclePage = new VehicleCreatorPage();
+                    var vehiclePage = new VehicleCreatorPage(_gasStation);
                     vehiclePage.OnVehicleCreatedEvent += AddVehicle;
                     MainFrame.Content = vehiclePage;
+                    break;
+                case 2:
+                    var fuelPage = new FuelCreatorPage();
+                    fuelPage.OnFuelCreatedEvent += AddFuel;
+                    MainFrame.Content = fuelPage;
                     break;
             }
         }

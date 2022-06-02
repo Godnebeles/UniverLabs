@@ -25,30 +25,34 @@
   <Class Name="sale_of_vehicles.Bus">
     <Position X="1.75" Y="6.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Vehicles\Bus.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.TransportPlane">
     <Position X="9" Y="6.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAIAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Models\Vehicles\TransportPlane.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.PassengerPlane">
     <Position X="6.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Vehicles\PassengerPlane.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.Truck">
     <Position X="4.5" Y="6.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAIAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Models\Vehicles\Truck.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.FuelType" Collapsed="true">
     <Position X="19.75" Y="2.5" Width="1.5" />
@@ -76,7 +80,7 @@
     <Position X="11.5" Y="4.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserControls\BusCreatUserControl.xaml.cs</FileName>
+      <FileName>Views\UserControls\BusCreatUserControl.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -84,7 +88,7 @@
     <Position X="14.25" Y="6.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserControls\PassengerPlaneCreatUserControl.xaml.cs</FileName>
+      <FileName>Views\UserControls\PassengerPlaneCreatUserControl.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -92,7 +96,7 @@
     <Position X="11.5" Y="6.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserControls\TransportPlaneCreatUserControl.xaml.cs</FileName>
+      <FileName>Views\UserControls\TransportPlaneCreatUserControl.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -100,7 +104,7 @@
     <Position X="14.25" Y="4.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UserControls\TruckCreatUserControl.xaml.cs</FileName>
+      <FileName>Views\UserControls\TruckCreatUserControl.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

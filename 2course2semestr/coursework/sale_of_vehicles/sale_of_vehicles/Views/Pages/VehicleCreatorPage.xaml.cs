@@ -24,15 +24,18 @@ namespace sale_of_vehicles
     {
         private SelectedDelegate[] selectedDelegates;
         public event Action<Vehicle>? OnVehicleCreatedEvent;
-        public VehicleCreatorPage()
+
+        public VehicleCreatorPage(GasStation gasStation)
         {
             InitializeComponent();
 
-            //selectedDelegates = new SelectedDelegate[4] { CreateBus, CreateTruck, CreatePassengerPlane, CreateTransportPlane };
-            selectedDelegates = new SelectedDelegate[4] { () => AdditionFields.Children.Add(new BusCreatUserControl()) , 
-                                                          () => AdditionFields.Children.Add(new TruckCreatUserControl()), 
-                                                          () => AdditionFields.Children.Add(new PassengerPlaneCreatUserControl()), 
-                                                          () => AdditionFields.Children.Add(new TransportPlaneCreatUserControl()) };
+
+
+            selectedDelegates = new SelectedDelegate[4] { () => AdditionFields.Children.Add(new BusCreatUserControl(gasStation)) , 
+                                                          () => AdditionFields.Children.Add(new TruckCreatUserControl(gasStation)), 
+                                                          () => AdditionFields.Children.Add(new PassengerPlaneCreatUserControl(gasStation)), 
+                                                          () => AdditionFields.Children.Add(new TransportPlaneCreatUserControl(gasStation)) 
+                                                        };
         }
 
         private T GetDataFromList<T>(IEnumerable<object> list)
@@ -48,6 +51,13 @@ namespace sale_of_vehicles
             throw new Exception("User Control is not defined!");
         }
 
+        private void ChangeAdditionFields()
+        {
+            AdditionFields.Children.Clear();
+            selectedDelegates[TypeOfVehicle.SelectedIndex].Invoke();
+        }
+
+        #region events this page
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             Vehicle vehicle = GetDataFromList<Vehicle>(AdditionFields.Children.Cast<UIElement>());
@@ -63,11 +73,6 @@ namespace sale_of_vehicles
         {
             ChangeAdditionFields();
         }
-
-        private void ChangeAdditionFields()
-        {
-            AdditionFields.Children.Clear();
-            selectedDelegates[TypeOfVehicle.SelectedIndex].Invoke();
-        }
+        #endregion
     }
 }

@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using sale_of_vehicles.Models.Abstract;
 
 namespace sale_of_vehicles
 {
@@ -22,6 +22,7 @@ namespace sale_of_vehicles
     /// </summary>
     public partial class VehiclesPage : Page
     {
+        #region Filter Delegates
         private FilterCarsDelegate[] _filterCarsType = new FilterCarsDelegate[5] {
                                                          (x) => { return true; },
                                                          (x) => { return x is Bus; },
@@ -35,6 +36,7 @@ namespace sale_of_vehicles
                                                          (x) => { return x.FuelType is CarFuel; },
                                                          (x) => { return x.FuelType is AviationFuel; }
                                                         };
+        #endregion
 
         private VehiclesShop _carShop;
 
@@ -58,7 +60,6 @@ namespace sale_of_vehicles
         }
 
 
-
         private void UpdateTable()
         {
             List<FilterCarsDelegate> filterCarsDelegates = new List<FilterCarsDelegate>();
@@ -77,9 +78,15 @@ namespace sale_of_vehicles
             UpdateTable();
         }
 
+        #region Events this page
         private void DeleteRecord_Click(object sender, RoutedEventArgs e)
         {
             DeleteVehicle();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(((IInformationDetails)VehicleList.SelectedItem).GetInformation());
         }
 
         private void VehicleTypeFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -91,6 +98,7 @@ namespace sale_of_vehicles
         {
             UpdateTable();
         }
+        #endregion
 
         
     }
