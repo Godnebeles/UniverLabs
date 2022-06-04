@@ -9,7 +9,6 @@ namespace Restaurant
     public class Order : IEquatable<Order>
     {
         public DateTimeContainer Date { get; protected set; }
-
         public HashSet<DishCount> Dishes { get; protected set; }
 
         public Order(DishCount dishCount)
@@ -40,11 +39,9 @@ namespace Restaurant
             }
             else
             {
-                DishCount dishCount;
+                DishCount? dishCount;
 
-                Dishes.TryGetValue(dish, out dishCount);
-
-                if(dishCount != null)
+                if(Dishes.TryGetValue(dish, out dishCount))
                 {
                     dishCount.AddCountDishes(dish.Count);
                 }
@@ -62,7 +59,7 @@ namespace Restaurant
 
         public void RemoveDish(DishCount dish)
         {
-            DishCount dishCount;
+            DishCount? dishCount;
             if(Dishes.TryGetValue(dish, out dishCount))
             {
                 if (dish.Count >= dishCount.Count)

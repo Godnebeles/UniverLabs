@@ -20,8 +20,8 @@ namespace Restaurant
     /// </summary>
     public partial class IngredientsPage : Page
     {
-        public event Action OnCreatIngredientClick;
-        public event Action OnSaveChangesEvent;
+        public event Action? OnCreatIngredientClick;
+        public event Action? OnSaveChangesEvent;
         public IngredientsPage()
         {
             InitializeComponent();

@@ -23,9 +23,6 @@ namespace sale_of_vehicles
         public PassengerPlaneCreatUserControl(GasStation gasStation)
         {
             InitializeComponent();
-
-            ConnectionViewModel fuelTypesCollection = new ConnectionViewModel(gasStation.GetPlaneFuels());
-            DataContext = fuelTypesCollection;
         }
 
         public Vehicle GetData()

@@ -20,8 +20,11 @@ namespace Restaurant
             DateTime = new DateTime(year, mounth, day);
         }
 
-        public bool Equals(DateTimeContainer other)
+        public bool Equals(DateTimeContainer? other)
         {
+            if(other == null)
+                return false;
+
             return this.DateTime.Day.Equals(other.DateTime.Day) &&
                    this.DateTime.Month.Equals(other.DateTime.Month) &&
                    this.DateTime.Year.Equals(other.DateTime.Year);

@@ -23,10 +23,6 @@ namespace sale_of_vehicles
         public BusCreatUserControl(GasStation gasStation)
         {
             InitializeComponent();
-
-            ConnectionViewModel fuelTypesCollection = new ConnectionViewModel(gasStation.GetCarFuels());
-            DataContext = fuelTypesCollection;
-
         }
 
         public Vehicle GetData()

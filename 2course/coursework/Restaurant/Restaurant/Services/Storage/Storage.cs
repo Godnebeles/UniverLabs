@@ -32,13 +32,16 @@ namespace Restaurant
                     return 0;
                 }
 
-                IngredientWeight ingredient1;
-                IngredientWeight ingredient2;
+                IngredientWeight? ingredient1;
+                IngredientWeight? ingredient2;
+                
+                int count = 0;
 
-                Ingredients.TryGetValue(neenedIngredient, out ingredient1);
-                ingredientsList.TryGetValue(neenedIngredient, out ingredient2);
-
-                int count = Convert.ToInt32(Math.Floor(ingredient1.Weight.Amount/ingredient2.Weight.Amount));
+                if (Ingredients.TryGetValue(neenedIngredient, out ingredient1) && 
+                    ingredientsList.TryGetValue(neenedIngredient, out ingredient2))
+                {
+                    count = Convert.ToInt32(Math.Floor(ingredient1.Weight.Amount / ingredient2.Weight.Amount));
+                }                     
 
                 if (count <= 0)
                     return 0;
@@ -56,7 +59,8 @@ namespace Restaurant
         {
             foreach (var currentIngredient in recipe)
             {
-                IngredientWeight ingredient;           
+                IngredientWeight? ingredient;          
+                
                 if (Ingredients.TryGetValue(currentIngredient, out ingredient))
                 {
                     ingredient.DecreaseWeight(currentIngredient.Weight);
@@ -69,12 +73,14 @@ namespace Restaurant
         {
             foreach (var currentIngredient in recipe)
             {
-                IngredientWeight ingredient;
+                IngredientWeight? ingredient;
                 if (Ingredients.TryGetValue(currentIngredient, out ingredient))
                 {
                     ingredient.IncreaseWeight(currentIngredient.Weight);
                 }
             }
         }
+
+
     }
 }

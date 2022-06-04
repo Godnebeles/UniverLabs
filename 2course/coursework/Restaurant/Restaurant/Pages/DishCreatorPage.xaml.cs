@@ -22,8 +22,8 @@ namespace Restaurant
     public class IngredientDataGridElement
     {
         public Ingredient Ingredient { get; set; }
-        public string Name { get; set; }
-        public string Weight { get; set; }
+        public string Name { get; set; } = String.Empty;
+        public string Weight { get; set; } = String.Empty;
 
         public IngredientDataGridElement(Ingredient ingredient, string ingredientName)
         {
@@ -33,7 +33,7 @@ namespace Restaurant
     }
     public partial class DishCreatorPage : Page
     {
-        public event Action<Dish> OnSaveDish;
+        public event Action<Dish>? OnSaveDish;
         public DishCreatorPage(List<IngredientWeight> ingredients)
         {
             InitializeComponent();

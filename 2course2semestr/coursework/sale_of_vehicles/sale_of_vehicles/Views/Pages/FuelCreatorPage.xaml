@@ -31,7 +31,7 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="1" HorizontalAlignment="Left" >
-                                <ComboBox x:Name="TypeOfFuel" HorizontalContentAlignment="Center" MinWidth="200">
+                                <ComboBox x:Name="TypeOfFuelComboBox" HorizontalContentAlignment="Center" MinWidth="200">
                                     <ComboBoxItem Content="Car fuel"/>
                                     <ComboBoxItem Content="Aviation fuel"/>
                                 </ComboBox>

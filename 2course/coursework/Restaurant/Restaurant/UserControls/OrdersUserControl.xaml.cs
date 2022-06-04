@@ -20,8 +20,8 @@ namespace Restaurant
     /// </summary>
     public partial class OrdersUserControl : UserControl
     {
-        public event Action<DateTimeContainer, DishCount> OnCancelPressed;
-        public event Action<DateTimeContainer, DishCount> OnFinishPressed;
+        public event Action<DateTimeContainer, DishCount>? OnCancelPressed;
+        public event Action<DateTimeContainer, DishCount>? OnFinishPressed;
 
         public OrdersUserControl()
         {

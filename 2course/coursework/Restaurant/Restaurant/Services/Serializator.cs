@@ -19,7 +19,7 @@ namespace Restaurant
             File.WriteAllText(_path, jsonContent);
         }
 
-        public T Deserialize()
+        public T? Deserialize()
         {
             var jsonContent = File.ReadAllText(_path);
 

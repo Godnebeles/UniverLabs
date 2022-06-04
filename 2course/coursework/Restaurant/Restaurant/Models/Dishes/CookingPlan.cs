@@ -42,7 +42,7 @@ namespace Restaurant
 
             if (Orders.Contains(newOrder))
             {
-                Order order;
+                Order? order;
                 if(Orders.TryGetValue(newOrder, out order))
                 {
                     order.AddDish(dish);
@@ -56,7 +56,7 @@ namespace Restaurant
 
         public void RemoveDishFromOrder(DateTimeContainer dateTimeContainer, DishCount dish)
         {
-            Order order;
+            Order? order;
 
             if (Orders.TryGetValue(new Order(dateTimeContainer, dish), out order))
             {

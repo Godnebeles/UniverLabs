@@ -20,7 +20,7 @@ namespace sale_of_vehicles
     /// </summary>
     public partial class FuelCreatorPage : Page
     {
-        public event Action<FuelType> OnFuelCreatedEvent;
+        public event Action<FuelType>? OnFuelCreatedEvent;
 
         public FuelCreatorPage()
         {
@@ -29,7 +29,10 @@ namespace sale_of_vehicles
 
         private void SaveFuelButton_Click(object sender, RoutedEventArgs e)
         {
-            OnFuelCreatedEvent?.Invoke(new CarFuel(Guid.NewGuid(), Name.Text));
+            if(TypeOfFuelComboBox.SelectedIndex == 0)
+                OnFuelCreatedEvent?.Invoke(new CarFuel(Guid.NewGuid(), Name.Text));
+            else
+                OnFuelCreatedEvent?.Invoke(new AviationFuel(Guid.NewGuid(), Name.Text));
         }
     }
 }

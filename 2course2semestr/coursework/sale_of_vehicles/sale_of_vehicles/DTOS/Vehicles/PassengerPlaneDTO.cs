@@ -2,24 +2,14 @@
 
 namespace sale_of_vehicles
 {
-    public class PassengerPlaneDTO
+    public class PassengerPlaneDTO : VehicleDTO
     {
-        public PassengerPlaneDTO(Guid id, string name, string model, double price, int numberOfSeats, AviationFuel fuelType, PlaneFunctionality functionality)
+        public PassengerPlaneDTO(Guid id, string name, string model, double price, int numberOfSeats, AviationFuel fuelType, PlaneFunctionality functionality) : base(id, name, model, price, numberOfSeats)
         {
-            Id = id;
-            Name = name;
-            Model = model;
-            Price = price;
-            NumberOfSeats = numberOfSeats;
             FuelType = fuelType;
             Functionality = functionality;
         }
 
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Model { get; set; }
-        public double Price { get; set; }
-        public int NumberOfSeats { get; set; }
         public AviationFuel FuelType { get; set; }
         public PlaneFunctionality Functionality { get; set; }
     }

@@ -23,7 +23,7 @@
         <Grid Margin="250 0 0 0 ">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
                 <Border Background="#dfe4ea" BorderThickness="1" CornerRadius="15">
-                    <Frame x:Name="MainFrame" JournalEntry.KeepAlive="False"></Frame>
+                    <Frame x:Name="MainFrame" JournalEntry.KeepAlive="False" ></Frame>
                 </Border>
             </Grid>
         </Grid>

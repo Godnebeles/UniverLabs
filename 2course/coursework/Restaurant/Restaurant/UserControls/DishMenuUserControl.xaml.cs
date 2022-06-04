@@ -20,7 +20,7 @@ namespace Restaurant
     /// </summary>
     public partial class DishMenuUserControl : UserControl
     {
-        public event Action <Dish> OnAddPressed;
+        public event Action <Dish>? OnAddPressed;
         public DishMenuUserControl()
         {
             InitializeComponent();

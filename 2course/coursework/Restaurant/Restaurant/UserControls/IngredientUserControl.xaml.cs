@@ -20,8 +20,8 @@ namespace Restaurant
     /// </summary>
     public partial class IngredientUserControl : UserControl
     {
-        public event Action<IngredientWeight> OnDeleteEvent;
-        public event Action<IngredientWeight> OnEditEvent;
+        public event Action<IngredientWeight>? OnDeleteEvent;
+        public event Action<IngredientWeight>? OnEditEvent;
 
         public IngredientUserControl()
         {

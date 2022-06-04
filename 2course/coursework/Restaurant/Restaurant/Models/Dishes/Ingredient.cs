@@ -10,7 +10,6 @@ namespace Restaurant
     {
         public double PricePerOneKilogram { get; private set; }
 
-
         public Ingredient(Guid id, string name, double price) : base(id, name)
         {
             PricePerOneKilogram = price;

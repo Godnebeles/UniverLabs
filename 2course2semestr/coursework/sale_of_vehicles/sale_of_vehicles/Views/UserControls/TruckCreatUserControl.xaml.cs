@@ -24,8 +24,6 @@ namespace sale_of_vehicles
         {
             InitializeComponent();
 
-            ConnectionViewModel fuelTypesCollection = new ConnectionViewModel(gasStation.GetCarFuels());
-            DataContext = fuelTypesCollection;
         }
 
         public Vehicle GetData()
@@ -41,5 +39,7 @@ namespace sale_of_vehicles
                                  (TypeOfCargo)CargoTypeSelector.SelectedIndex
                              );
         }
+
+
     }
 }

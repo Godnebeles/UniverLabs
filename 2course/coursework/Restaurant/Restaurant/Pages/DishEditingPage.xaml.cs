@@ -20,8 +20,8 @@ namespace Restaurant
     /// </summary>
     public partial class DishEditingPage : Page
     {
-        public event Action OnCreateButtonClick;
-        public event Action OnSaveChangesEvent;
+        public event Action? OnCreateButtonClick;
+        public event Action? OnSaveChangesEvent;
         public DishEditingPage()
         {
             InitializeComponent();

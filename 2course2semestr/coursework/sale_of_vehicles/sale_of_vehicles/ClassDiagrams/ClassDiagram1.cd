@@ -77,7 +77,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="sale_of_vehicles.BusCreatUserControl">
-    <Position X="11.5" Y="4.25" Width="2.25" />
+    <Position X="11.5" Y="4.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\UserControls\BusCreatUserControl.xaml.cs</FileName>
@@ -85,7 +85,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.PassengerPlaneCreatUserControl">
-    <Position X="14.25" Y="6.25" Width="2.25" />
+    <Position X="14.25" Y="6.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\UserControls\PassengerPlaneCreatUserControl.xaml.cs</FileName>
@@ -93,7 +93,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.TransportPlaneCreatUserControl">
-    <Position X="11.5" Y="6.25" Width="2.25" />
+    <Position X="11.5" Y="6.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\UserControls\TransportPlaneCreatUserControl.xaml.cs</FileName>
@@ -101,7 +101,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="sale_of_vehicles.TruckCreatUserControl">
-    <Position X="14.25" Y="4.25" Width="2.25" />
+    <Position X="14.25" Y="4.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\UserControls\TruckCreatUserControl.xaml.cs</FileName>
@@ -125,7 +125,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="sale_of_vehicles.IInterfaceDataReceiver&lt;T&gt;">
-    <Position X="13" Y="2.5" Width="2.25" />
+    <Position X="13" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Services\Abstract\IInterfaceDataReceiver.cs</FileName>

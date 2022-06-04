@@ -20,7 +20,7 @@ namespace Restaurant
     /// </summary>
     public partial class IngredientCreatorPage : Page
     {
-        public event Action<IngredientWeight> OnSaveIngredient;
+        public event Action<IngredientWeight>? OnSaveIngredient;
         public IngredientCreatorPage()
         {
             InitializeComponent();

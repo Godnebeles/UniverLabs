@@ -39,6 +39,7 @@ namespace sale_of_vehicles.Views.Windows
         {
             VehiclesPage vehiclePage = new VehiclesPage(_vehicleShop, _gasStation);
             vehiclePage.OnDataChangedEvent += SaveVehiclesData;
+            ClearHistory();
             MainFrame.Content = vehiclePage;
         }
 
@@ -64,6 +65,22 @@ namespace sale_of_vehicles.Views.Windows
             _dataLoader.SaveFuelData(_gasStation);
         }
 
+        public void ClearHistory()
+        {
+            if (!MainFrame.CanGoBack && !MainFrame.CanGoForward)
+            {
+                return;
+            }
+
+            var entry = MainFrame.RemoveBackEntry();
+            while (entry != null)
+            {
+                entry = MainFrame.RemoveBackEntry();
+            }
+
+            MainFrame.Navigate(new PageFunction<string>() { RemoveFromJournal = true });
+        }
+
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = ListViewMenu.SelectedIndex;
@@ -76,11 +93,13 @@ namespace sale_of_vehicles.Views.Windows
                 case 1:
                     var vehiclePage = new VehicleCreatorPage(_gasStation);
                     vehiclePage.OnVehicleCreatedEvent += AddVehicle;
+                    ClearHistory();
                     MainFrame.Content = vehiclePage;
                     break;
                 case 2:
                     var fuelPage = new FuelCreatorPage();
                     fuelPage.OnFuelCreatedEvent += AddFuel;
+                    ClearHistory();
                     MainFrame.Content = fuelPage;
                     break;
             }
