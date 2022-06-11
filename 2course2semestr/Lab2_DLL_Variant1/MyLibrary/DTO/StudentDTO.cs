@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using MyLibrary.Models;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace MyLibrary
+namespace MyLibrary.DTO
 {
     public class StudentDTO
     {

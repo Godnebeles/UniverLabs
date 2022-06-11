@@ -1,0 +1,109 @@
+===============================
+SLIDE #2
+The purpose of this course work
+is to write application
+vehicle sales support systems,
+with which you can keep list of
+vehicles, sort them by vehicle 
+type and fuel type.
+We also need to use the basics
+Principles of OOP: encapsulation, 
+inheritance, polymorphism.
+-------------------------------
+going: 
+Let's consider how the application of 
+the support system implemented 
+the principles of object-oriented 
+programming
+===============================
+SLIDE #3
+Encapsulation in the program,
+implemented quite simply, his
+goal is to restrict access
+to change data outside the 
+class, that is why properties 
+has a protected setter.
+-------------------------------
+going:
+The second one is inheritance
+===============================
+SLIDE #4
+Inheritance will be implemented 
+as follows.The Abstract class Vehicle
+will be inherited in two 
+classes, Car and
+Plane. They inherit common methods 
+and properties between all 
+successors. The Car will
+be inherited in Bus and Truck, 
+and Plane in PassengerPlane and 
+TransportPlane.
+-------------------------------
+going:
+The third one is polymorphism
+===============================
+SLIDE #5
+The first part of the polymorphism 
+is implemented through the base class 
+Vehicle,  it includes the abstract method, 
+that called method CheckFunctionality. This 
+abstract method will be overridden 
+in the successor classes Car and
+Plane. Also in the base class will 
+be the property:
+Functionality. This property is stored as the 
+data type of the IFunctionality, 
+this interface is implemented 
+in CarFunctionaly and
+PlaneFunctionaly classes.
+The IFunctionaly interface includes
+one method - IsNormalFunctionality,
+this method will be called through 
+abstract method in the Car, 
+Plane classes
+-------------------------------
+going:
+Let's check another implementation of polymorphism
+===============================
+SLIDE #6
+For each UserControl that will be
+used to add
+new vehicles, we 
+implement interface IInterfaceDataReceiver <T> 
+of general type, which include
+method GetData to create the desired
+type of transport. Method GEtData will 
+be called in GetDataFromList method 
+which search for an object implemented 
+through the IInterfaceDataReceiver interface cast
+object to it's type, and calls the GetData method.
+-------------------------------
+going: Let's look class diagram
+===============================
+SLIDE #7
+This is a diagram of the 
+relationship between class 
+vehicle and its successors
+-------------------------------
+going: let's move to next diagram
+===============================
+SLIDE #8
+This is class diagram of the 
+interface IInterfaceDataReceiver 
+and classes that implement it
+-------------------------------
+going:
+===============================
+SLIDE #9
+Now we look at program result.
+You can see the list of vehicles
+that were created. 
+-------------------------------
+going:
+===============================
+SLIDE #10
+And now you can see filtered list 
+of vehicles by chosen categories
+-------------------------------
+going: thanks for you attention
+===============================

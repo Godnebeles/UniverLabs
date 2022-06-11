@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace MyLibrary
+namespace MyLibrary.DTO
 {
     public class PersonDTO
     {

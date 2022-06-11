@@ -1,15 +1,28 @@
-﻿using System;
+﻿using MyLibrary.Exceptions;
+using System;
 
-namespace MyLibrary
+namespace MyLibrary.Models
 {
     public class Exam : IComparable<Exam>, ICloneable
     {
+        private const int MIN_MARK = 0;
+        private const int MAX_MARK = 100;
+
         public string Title { get; private set; }
         public int Mark { get; private set; }
         public DateTime Date { get; private set; } 
 
         public Exam(string title, int mark, DateTime date)
         {
+            if (title == null || title == "")
+            {
+                throw new InvalidExamDataException(title);
+            }
+            if (mark < MIN_MARK || mark > MAX_MARK)
+            {
+                throw new InvalidExamDataException(mark);
+            }
+
             Title = title;
             Mark = mark;
             Date = date;

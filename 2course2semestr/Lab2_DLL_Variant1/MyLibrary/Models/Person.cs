@@ -1,6 +1,7 @@
-﻿using System;
+﻿using MyLibrary.Exceptions;
+using System;
 
-namespace MyLibrary
+namespace MyLibrary.Models
 {
     public class Person : IComparable<Person>, ICloneable
     {
@@ -10,6 +11,11 @@ namespace MyLibrary
 
         public Person(string name, string surname, DateTime birthday)
         {
+            if (name == null || name == "" || surname == null || surname == "")
+            {
+                throw new InvalidPersonDataException(name, surname);
+            }
+
             Name = name;
             Surname = surname;
             Birthday = birthday;

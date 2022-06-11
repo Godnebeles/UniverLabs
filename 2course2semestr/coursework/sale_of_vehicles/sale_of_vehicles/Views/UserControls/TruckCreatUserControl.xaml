@@ -43,7 +43,7 @@
                 <TextBox MinWidth="200" Margin="25 0" x:Name="NumbersOfSeats" TextAlignment="Center"/>
                 
                 <ComboBox x:Name="CargoTypeSelector" HorizontalContentAlignment="Center"  Margin="25 0" MinWidth="200" 
-                          ItemsSource="{Binding Path=TypeOfCargos}" SelectedItem="{Binding Path=TypeOfCargos}"/>
+                          ItemsSource="{Binding Path=TypeOfCargos}"/>
                 
                 <TextBox MinWidth="200" MaxWidth="400" Margin="25 0" x:Name="MaxWeightOfCargo" TextAlignment="Center"/>
             </StackPanel>

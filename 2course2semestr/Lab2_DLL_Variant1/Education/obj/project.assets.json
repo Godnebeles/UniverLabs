@@ -54,11 +54,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Univer\\UniverLabs\\2course2semestr\\Lab2_DLL_Variant1\\Education\\Education.csproj",
+      "projectUniqueName": "D:\\Univer\\Backup\\2course2semestr\\Lab2_DLL_Variant1\\Education\\Education.csproj",
       "projectName": "Education",
-      "projectPath": "D:\\Univer\\UniverLabs\\2course2semestr\\Lab2_DLL_Variant1\\Education\\Education.csproj",
+      "projectPath": "D:\\Univer\\Backup\\2course2semestr\\Lab2_DLL_Variant1\\Education\\Education.csproj",
       "packagesPath": "C:\\Users\\Nyashuka\\.nuget\\packages\\",
-      "outputPath": "D:\\Univer\\UniverLabs\\2course2semestr\\Lab2_DLL_Variant1\\Education\\obj\\",
+      "outputPath": "D:\\Univer\\Backup\\2course2semestr\\Lab2_DLL_Variant1\\Education\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -111,7 +111,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

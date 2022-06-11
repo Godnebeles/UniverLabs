@@ -1,4 +1,4 @@
-﻿namespace MyLibrary
+﻿namespace MyLibrary.Models
 {
     public enum EducationalLevels
     {

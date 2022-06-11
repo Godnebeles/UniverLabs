@@ -1,7 +1,8 @@
-﻿using System;
+﻿using MyLibrary.Exceptions;
+using System;
 using System.Collections.Generic;
 
-namespace MyLibrary
+namespace MyLibrary.Models
 {
     public class Student : IComparable<Student>, ICloneable
     {
@@ -24,6 +25,11 @@ namespace MyLibrary
 
         public Student(Person person, EducationalLevels levelToObtain)
         {
+            if (!Enum.IsDefined(typeof(EducationalLevels), levelToObtain))
+            {
+                throw new InvalidStudentDataException(levelToObtain);
+            }
+
             PersonInfo = person;
             LevelToObtain = levelToObtain;
             PassedExams = new List<Exam>();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W9EH+egsVzlgVd16cscWG3UH9m0K1BoqIdfEwtkSZlyltHcDdoHpVPqDue0wxbS4UobgZYXYZfKf2eioTW6Tdw==",
+  "dgSpecHash": "6u54gX+gFEoECXTmwPLTd8z0vPjzErmoZPjJIw23QJa808rBO9SrWBLRCkVKHV5wFLJpiSQJOIfVgOniYIqYmw==",
   "success": true,
-  "projectFilePath": "D:\\Univer\\UniverLabs\\2course2semestr\\Lab2_DLL_Variant1\\MyLibrary\\MyLibrary.csproj",
+  "projectFilePath": "D:\\Univer\\Backup\\2course2semestr\\Lab2_DLL_Variant1\\MyLibrary\\MyLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nyashuka\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
